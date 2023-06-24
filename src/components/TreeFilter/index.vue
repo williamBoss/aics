@@ -38,7 +38,7 @@ defineComponent({
 
 const props = defineProps({
   // 请求分类数据的 api ==> 非必传
-  requestApi: { type: () => Promise, default: undefined, required: false },
+  requestApi: { type: Promise, default: undefined, required: false },
   // 分类数据，如果有分类数据，则大于 api 请求 ==> 非必传
   data: { type: Array, default: undefined, required: false },
   // treeFilter 标题 ==> 非必传

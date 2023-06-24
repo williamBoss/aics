@@ -146,7 +146,7 @@
 import { onMounted, reactive, ref } from 'vue'
 import { ElMessage as elMessage } from 'element-plus'
 import { resetForm } from '@/utils/util'
-import { DeptService, UserService } from '@/api/api'
+import { DeptService, UserService } from '@/api/sys-api.js'
 
 defineProps({
   title: {

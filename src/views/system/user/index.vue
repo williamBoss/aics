@@ -4,7 +4,7 @@
     class="flx main"
   >
     <TreeFilter
-      :request-api="DeptService.getDeptTreeSelect"
+      :request-api="DeptService.getDeptTreeSelect()"
       :default-value="initParam.departmentId"
       title="科室列表"
       @change="changeInitParam"
@@ -252,13 +252,13 @@
 <script setup>
 import { defineComponent, onMounted, reactive, ref, watch } from 'vue'
 import TreeFilter from '@/components/TreeFilter/index.vue'
-import { DeptService, DictService, UserService } from '@/api/api'
+import { DeptService, DictService, UserService } from '@/api/sys-api.js'
 import { Delete, EditPen, Plus, Refresh, Search } from '@element-plus/icons-vue'
 import { addDateRange, resetForm } from '@/utils/util'
 import { ElMessage as elMessage } from 'element-plus'
-import { useConfirmHandleData } from '@/hooks/useConfirmHandleData'
-import { usePromptHandleData } from '@/hooks/usePromptHandleData'
 import UserInfo from '@/views/system/user/dialog/userInfo.vue'
+import { useConfirmHandle } from '@/hooks/useConfirmHandle.js'
+import { usePromptHandle } from '@/hooks/usePromptHandle.js'
 
 defineComponent({
   name: 'SysUser'
@@ -337,7 +337,7 @@ const getUserList = () => {
 }
 
 const changeStatus = async (val, params) => {
-  await useConfirmHandleData(
+  await useConfirmHandle(
     UserService.user.changeUserStatus,
     {
       userId: params.userId,
@@ -369,7 +369,7 @@ const handleUpdate = (row) => {
 }
 
 const handleResetPwd = (row) => {
-  usePromptHandleData('请输入"' + row.userName + '"的新密码').then(({ value }) => {
+  usePromptHandle('请输入"' + row.userName + '"的新密码').then(({ value }) => {
     UserService.user.resetUserPwd(row.userId, value).then(() => {
       elMessage.success('修改成功，新密码是：' + value)
     })
@@ -377,7 +377,7 @@ const handleResetPwd = (row) => {
 }
 
 const handleDelete = (row) => {
-  useConfirmHandleData(UserService.user.del, row.userId, `删除用户编号为${row.userId}的数据项`).then(() => {
+  useConfirmHandle(UserService.user.del, row.userId, `删除用户编号为${row.userId}的数据项`).then(() => {
     getUserList()
   })
 }

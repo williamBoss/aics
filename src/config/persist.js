@@ -5,7 +5,7 @@
  * @param {Storage} storage 存储位置
  * @return {{paths: Array, storage: Storage, key: String}} persist
  * */
-const piniaPersistConfig = (key, paths = [], storage = window.localStorage) => {
+const piniaPersistConfig=(key, paths, storage=window.localStorage) => {
   return {
     key,
     storage,

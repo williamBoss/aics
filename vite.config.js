@@ -6,9 +6,9 @@ import components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver as elementPlusResolver } from 'unplugin-vue-components/resolvers'
 import icons from 'unplugin-icons/vite'
 import iconsResolver from 'unplugin-icons/resolver'
-import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import elementPlus from 'unplugin-element-plus/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode, ssrBuild }) => {
@@ -29,6 +29,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     },
     plugins: [
       vue(),
+      elementPlus(),
       icons({
         autoInstall: true,
         compiler: 'vue3'
@@ -47,14 +48,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
           iconsResolver({
             enabledCollections: ['ep']
           })
-        ]
-      }),
-      createStyleImportPlugin({
-        libs: [
-          {
-            libraryName: 'element-plus',
-            resolveStyle: (name) => `element-plus/lib/theme-chalk/${name}.css`
-          }
         ]
       }),
       createSvgIconsPlugin({

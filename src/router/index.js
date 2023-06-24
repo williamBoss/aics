@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import pinia, { globalStore } from '@/store/index.js'
-import { ElMessage } from 'element-plus'
+import { ElMessage as elMessage } from 'element-plus'
 import { errorRouter, staticRouter } from '@/router/modules/staticRouter.js'
 import { LOGIN_URL } from '@/config/config.js'
 import { initDynamicRouter } from '@/router/modules/dynamicRouter.js'
@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
       })
       .catch((err) => {
         global.logOut().then(() => {
-          ElMessage.error(err)
+          elMessage.error(err)
           next({ path: '/' })
         })
       })

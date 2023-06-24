@@ -16,14 +16,14 @@ export const staticRouter = [
     meta: { requiresAuth: false }
   },
   {
-    path: HOME_URL,
+    path: '/layout',
     name: 'home',
     component: () => import('@/layout/index.vue'),
-    redirect: '/specialisedClinic/index',
+    redirect: HOME_URL,
     meta: { requiresAuth: true },
     children: [
       {
-        path: '/index',
+        path: '/home/index',
         name: 'index',
         component: () => {},
         meta: {

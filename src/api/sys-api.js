@@ -28,7 +28,7 @@ export class UserService {
  */
 export class LoginService {
   // 获取验证码
-  static getCodeImg = () => Request.get > '/code'
+  static getCodeImg = () => Request.get('/code')
 
   // 登录方法
   static login = (username, password, code, uuid) => Request.post('/auth/login', { username, password, code, uuid })

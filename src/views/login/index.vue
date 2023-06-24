@@ -26,8 +26,8 @@
           </el-form-item>
           <el-form-item prop="password">
             <el-input
-              type="password"
               v-model="loginForm.password"
+              type="password"
               placeholder="密码"
               show-password
             >
@@ -44,17 +44,17 @@
             <div class="login-code">
               <img
                 :src="codeUrl"
-                @click="getCode"
                 alt="login-code"
+                @click="getCode"
               />
             </div>
           </el-form-item>
         </el-form>
         <div class="login-btn">
           <el-button
-            @click="login(loginFormRef)"
-            size="large"
             :loading="loading"
+            size="large"
+            @click="login(loginFormRef)"
           >
             <span>登录</span>
           </el-button>
@@ -67,12 +67,12 @@
 <script setup>
 import { defineComponent, onMounted, reactive, ref } from 'vue'
 import { ElNotification as elNotification } from 'element-plus'
-import { LoginService } from '@/api/api'
 import { Base64 } from 'js-base64'
 import { getTimeState } from '@/utils/util'
 import { useRouter } from 'vue-router'
 import { HOME_URL } from '@/config/config'
 import { globalStore } from '@/store'
+import { LoginService } from '@api/sys-api.js'
 
 defineComponent({
   name: 'LoginSys'
@@ -107,8 +107,7 @@ const login = (formEl) => {
       LoginService.login(loginForm.username, loginForm.password, loginForm.code, loginForm.uuid)
         .then((res) => {
           const { data } = res
-          const token = data.access_token
-          global.setToken(token)
+          global.token = data.access_token
           router.replace(HOME_URL)
           elNotification({
             title: getTimeState(),

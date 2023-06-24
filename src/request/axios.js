@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { showMessage } from './status.js' // 引入状态码文件
 import { ElMessage } from 'element-plus'
-import pinia, { GlobalStore } from '@/store/index.js'
+import pinia, { globalStore } from '@/store/index.js'
 import router from '@/router/index.js'
 
 /* 实例化请求配置 */
@@ -25,12 +25,12 @@ const instance = axios.create({
  */
 instance.interceptors.request.use(
   (config) => {
-    const globalStore = GlobalStore(pinia)
+    const global = globalStore(pinia)
     // 登录流程控制中，根据本地是否存在token判断用户的登录情况
     // 但是即使token存在，也有可能token是过期的，所以在每次的请求头中携带token
     // 后台根据携带的token判断用户的登录情况，并返回给我们对应的状态码
     // 而后我们可以在响应拦截器中，根据状态码进行一些统一的操作。
-    const token = globalStore.token
+    const token = global.token
     const isToken = (config.headers || {}).isToken
     if (token && !isToken) {
       config.headers.Authorization = `Bearer ${token}` // 让每个请求携带自定义token 请根据实际情况自行修改
@@ -83,7 +83,7 @@ instance.interceptors.response.use(
     return Promise.reject(response)
   },
   (error) => {
-    const globalStore = GlobalStore(pinia)
+    const global = globalStore(pinia)
     const { response } = error
     if (response) {
       showMessage(response.status)
@@ -117,7 +117,7 @@ instance.interceptors.response.use(
     // eg:请求超时或断网时，更新state的network状态
     // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
     // 后续增加断网情况下做的一些操作
-    globalStore.networkState = false
+    global.networkState = false
     ElMessage.warning('网络连接异常,请稍后再试!')
   }
 )

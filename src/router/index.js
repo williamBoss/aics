@@ -30,8 +30,11 @@ router.beforeEach((to, from, next) => {
       // 保存我们所在的位置，以便以后再来
       query: { redirect: fullPath }
     })
-  } else if (to.meta.requiresAuth && (!global.userInfo || Object.keys(global.userInfo).length === 0)) {
+  } else if (to.meta.requiresAuth) {
     // 判断当前用户是否已拉取完user_info信息
+    if (global.userInfo || Object.keys(global.userInfo).length !== 0) {
+      next()
+    }
     global
       .getUserInfo()
       .then(() => {

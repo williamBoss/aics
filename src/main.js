@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import pinia from '@/store/index.js'
+import router from '@/router/index.js'
+import { SvgIcon } from '@/components/SvgIcon/index.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(pinia).use(router)
+app.component('SvgIcon', SvgIcon).mount('#app')

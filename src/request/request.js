@@ -10,7 +10,7 @@ export class Request {
    * @param {object} params 参数
    * @return {Promise<unknown>} 返回
    */
-  static get = (url, params) => {
+  static get = (url, params = {}) => {
     return new Promise((resolve, reject) => {
       axios
         .get(url, { params })
@@ -30,7 +30,7 @@ export class Request {
    * @param {AxiosRequestConfig} config 请求头配置
    * @return {Promise<unknown>} 返回
    */
-  static post = (url, params, config) => {
+  static post = (url, params, config = {}) => {
     return new Promise((resolve, reject) => {
       axios
         .post(url, params, config)
@@ -68,7 +68,7 @@ export class Request {
    * @param {object} params 参数
    * @return {Promise<unknown>} 返回
    */
-  static delete = (url, params) => {
+  static delete = (url, params = {}) => {
     return new Promise((resolve, reject) => {
       axios
         .delete(url, params)

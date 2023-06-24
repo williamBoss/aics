@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   'env': {
     browser: true,
     node: true,
@@ -71,7 +71,7 @@ module.exports = {
      * 风格指南
      */
     'space-before-function-paren': 0, // 函数名称或function关键字与开始参数之间允许有空格
-    'array-bracket-spacing': 0, // 数组方括号内必须空格
+    'array-bracket-spacing': [ 'error', 'never' ], // 数组方括号内必须空格
     'comma-dangle': [ 'error', 'never' ], // 禁止末尾逗号
     'eol-last': 2, // 要求文件末尾存在空行
     // 对象冒号前禁止空格，冒号后必须空格
@@ -85,6 +85,17 @@ module.exports = {
     'space-infix-ops': 2, // 操作符周围必须有空格
     'spaced-comment': [ 'error', 'always' ], // 注释后面必须跟随至少一个空白
     'object-curly-spacing': 0,
-    'no-unused-expressions': 0
+    'no-unused-expressions': 0,
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        'singleline': {
+          'max': 1
+        },
+        'multiline': {
+          'max': 1
+        }
+      }
+    ]
   }
 }

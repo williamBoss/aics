@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { showMessage } from './status.js' // 引入状态码文件
 import { ElMessage } from 'element-plus'
-import pinia, { GlobalStore } from '@/store'
-import router from '@/router'
+import pinia, { GlobalStore } from '@/store/index.js'
+import router from '@/router/index.js'
 
 /* 实例化请求配置 */
 const instance = axios.create({

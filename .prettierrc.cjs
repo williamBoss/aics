@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   printWidth: 120,
   tabWidth: 2,
   // 字符串是否使用单引号，默认为false，使用双引号
@@ -9,5 +9,10 @@ module.exports = {
   trailingComma: 'none',
   // 开启 eslint 支持
   eslintIntegration: true,
-  endOfLine: 'auto'
+  endOfLine: 'auto',
+  arrayBracketSpacing: true,
+  bracketSpacing: true,
+  spaceAroundOperators: true,
+  spaceBeforeFunctionParen: true,
+  singleAttributePerLine: true
 }

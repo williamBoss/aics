@@ -9,6 +9,12 @@ export const staticRouter = [
     redirect: LOGIN_URL
   },
   {
+    path: '/form',
+    name: 'form',
+    component: () => import('@/views/form/form.vue'),
+    meta: { requiresAuth: false, title: '', icon: '', iconType: '', hidden: false }
+  },
+  {
     path: LOGIN_URL,
     name: 'login',
     component: () => import('@/views/login/index.vue'),

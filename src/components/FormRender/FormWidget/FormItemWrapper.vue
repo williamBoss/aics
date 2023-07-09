@@ -14,8 +14,7 @@
 
 <script setup>
 import { computed, defineComponent, inject } from 'vue'
-import { useCommonComputed } from '@components/FormRender/Container/Common.js'
-import { commonProps } from '@components/FormRender/FormWidget/Common.js'
+import { commonProps, useCommonComputed } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
   name: 'FormItemWrapper'

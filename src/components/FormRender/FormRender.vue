@@ -56,10 +56,10 @@
 
 <script setup>
 import { computed, defineComponent, getCurrentInstance, onMounted, provide, ref } from 'vue'
-import { buildDefaultFormJson } from '@components/FormRender/FormConfig.js'
+import { buildDefaultFormJson } from '@components/FormRender/formConfig.js'
 import { generateId } from '@/utils/util.js'
 import { cloneDeep } from 'lodash'
-import { loadComponents } from '@components/FormRender/LoadComponents.js'
+import { loadComponents } from '@components/FormRender/loadComponents.js'
 
 defineComponent({
   name: 'FormRender'

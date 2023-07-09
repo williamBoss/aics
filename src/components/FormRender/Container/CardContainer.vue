@@ -62,7 +62,7 @@
 
 <script setup>
 import { defineComponent } from 'vue'
-import { commonProps, useCommonComputed } from '@components/FormRender/Container/Common.js'
+import { commonProps, useCommonComputed } from '@components/FormRender/Container/common.js'
 
 defineComponent({
   name: 'CardContainer'

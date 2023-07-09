@@ -1,5 +1,5 @@
 import { computed, onMounted, ref } from 'vue'
-import { loadComponents } from '@components/FormRender/LoadComponents.js'
+import { loadComponents } from '@components/FormRender/loadComponents.js'
 
 export const commonProps = {
   widget: { type: Object, default: Object }

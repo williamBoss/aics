@@ -1,0 +1,61 @@
+<template>
+  <form-item-wrapper
+    :field="field"
+    :rules="rules"
+  >
+    <el-radio-group
+      ref="fieldEditor"
+      v-model="fieldModel"
+      :class="[customClass]"
+      :disabled="field.options.disabled"
+      :size="widgetSize"
+      @change="handleChangeEvent"
+    >
+      <template v-if="field.options.buttonStyle">
+        <el-radio-button
+          v-for="(item, index) in field.options.optionItems"
+          :key="index"
+          :label="item.value"
+          :disabled="item.disabled"
+        >
+          {{ item.label }}
+        </el-radio-button>
+      </template>
+      <template v-else>
+        <el-radio
+          v-for="(item, index) in field.options.optionItems"
+          :key="index"
+          :label="item.value"
+          :disabled="item.disabled"
+        >
+          {{ item.label }}
+        </el-radio>
+      </template>
+    </el-radio-group>
+  </form-item-wrapper>
+</template>
+
+<script setup>
+import { defineComponent, getCurrentInstance, ref } from 'vue'
+import { commonProps, useCommonComputed, useEventFunction } from '@components/FormRender/FormWidget/common.js'
+import FormItemWrapper from '@components/FormRender/FormWidget/FormItemWrapper.vue'
+
+defineComponent({
+  name: 'RadioWidget'
+})
+
+const props = defineProps({
+  ...commonProps
+})
+
+const instance = getCurrentInstance()
+const fieldEditor = ref()
+const oldFieldValue = ref(null)
+const fieldModel = ref(null)
+const rules = ref([])
+
+const { widgetSize, customClass } = useCommonComputed(props)
+const { handleChangeEvent } = useEventFunction(instance, props, oldFieldValue)
+</script>
+
+<style scoped></style>

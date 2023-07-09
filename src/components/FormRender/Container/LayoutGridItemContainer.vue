@@ -59,7 +59,7 @@
 
 <script setup>
 import { computed, defineComponent, reactive } from 'vue'
-import { commonProps, useCommonComputed } from '@components/FormRender/Container/Common.js'
+import { commonProps, useCommonComputed } from '@components/FormRender/Container/common.js'
 
 defineComponent({
   name: 'LayoutGridItemContainer'

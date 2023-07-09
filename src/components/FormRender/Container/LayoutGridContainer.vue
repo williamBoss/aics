@@ -32,7 +32,7 @@
 
 <script setup>
 import { defineComponent } from 'vue'
-import { commonProps, useCommonComputed } from '@components/FormRender/Container/Common.js'
+import { commonProps, useCommonComputed } from '@components/FormRender/Container/common.js'
 import LayoutGridItemContainer from '@components/FormRender/Container/LayoutGridItemContainer.vue'
 
 defineComponent({

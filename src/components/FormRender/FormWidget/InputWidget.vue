@@ -30,7 +30,7 @@
 <script setup>
 import FormItemWrapper from '@components/FormRender/FormWidget/FormItemWrapper.vue'
 import { computed, defineComponent, getCurrentInstance, ref } from 'vue'
-import { commonProps, useCommonComputed, useEventFunction } from '@components/FormRender/FormWidget/Common.js'
+import { commonProps, useCommonComputed, useEventFunction } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
   name: 'InputWidget'
@@ -39,14 +39,15 @@ defineComponent({
 const props = defineProps({
   ...commonProps
 })
+
 const fieldEditor = ref()
-// field组件change之前的值
 const oldFieldValue = ref(null)
 const fieldModel = ref(null)
 const rules = ref([])
 const inputType = computed(() =>
   props.field.options.type && props.field.options.type !== 'number' ? props.field.options.type : 'text'
 )
+
 const { widgetSize } = useCommonComputed(props)
 const { handleBlurCustomEvent, handleFocusCustomEvent, handleChangeEvent, handleInputCustomEvent } = useEventFunction(
   getCurrentInstance,

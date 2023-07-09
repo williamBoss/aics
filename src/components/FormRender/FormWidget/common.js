@@ -10,10 +10,12 @@ export const commonProps = {
 
 export const useCommonComputed = (props) => {
   const formConfig = inject('formConfig')
+  const customClass = computed(() => (props.widget && props.widget.options.customClass) || '')
   const widgetSize = computed(() => props.field.options.size || 'default')
 
   return {
     formConfig,
+    customClass,
     widgetSize
   }
 }

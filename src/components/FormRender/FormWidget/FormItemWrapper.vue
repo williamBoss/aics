@@ -1,6 +1,6 @@
 <template>
   <el-form-item
-    v-if="field.formItemFlag && field.options.hidden"
+    v-if="field.formItemFlag && !field.options.hidden"
     :class="[customClass]"
     :prop="getPropName()"
     :label="label"
@@ -30,12 +30,9 @@ const props = defineProps({
 })
 const formConfig = inject('formConfig')
 const { customClass } = useCommonComputed(props)
-const labelWidth = computed(() => {
-  if (props.field.options.labelHidden) {
-    return 0
-  }
-  return props.field.options.labelWidth || formConfig.value.labelWidth
-})
+const labelWidth = computed(() =>
+  props.field.options.labelHidden ? 0 : props.field.options.labelWidth || formConfig.labelWidth || 0
+)
 const label = computed(() => (!props.field.options.labelHidden && props.field.options.label) || '')
 
 const getPropName = () => {

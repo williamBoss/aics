@@ -1,6 +1,6 @@
 <template>
   <el-col
-    v-show="widget.options.hidden"
+    v-show="!widget.options.hidden"
     :key="widget.id"
     class="grid-cell"
     :class="[customClass]"
@@ -29,7 +29,7 @@
         </template>
         <template v-else>
           <component
-            :is="subWidget.type + '-widget'"
+            :is="components[subWidget.type + '-widget']"
             :key="swIdx"
             :field="subWidget"
           >
@@ -81,7 +81,7 @@ const layoutProps = reactive({
   sm: props.widget.options.sm || 12,
   md: props.widget.options.md || 12
 })
-const { customClass, getComponentByContainer } = useCommonComputed(props)
+const { customClass, components, getComponentByContainer } = useCommonComputed(props)
 const colHeightStyle = computed(() => (props.colHeight ? { height: props.colHeight + 'px' } : {}))
 </script>
 

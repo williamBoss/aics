@@ -29,6 +29,6 @@ defineComponent({
 const router = useRouter()
 </script>
 
-<style scoped lang="scss">
-@import './index.scss';
+<style scoped>
+@import 'index.css';
 </style>

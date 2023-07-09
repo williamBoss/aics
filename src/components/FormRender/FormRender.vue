@@ -55,10 +55,11 @@
 </template>
 
 <script setup>
-import { computed, defineComponent, getCurrentInstance, provide, ref } from 'vue'
+import { computed, defineComponent, getCurrentInstance, onMounted, provide, ref } from 'vue'
 import { buildDefaultFormJson } from '@components/FormRender/FormConfig.js'
 import { generateId } from '@/utils/util.js'
 import { cloneDeep } from 'lodash'
+import { loadComponents } from '@components/FormRender/LoadComponents.js'
 
 defineComponent({
   name: 'FormRender'
@@ -77,6 +78,7 @@ const props = defineProps({
   }
 })
 const instance = getCurrentInstance()
+const components = ref({})
 const formId = ref(null)
 const fromRenderRef = ref()
 const formJsonObj = ref(props.formJson)
@@ -92,15 +94,15 @@ const size = computed(() => (formConfig.value && formConfig.value.size) || 'defa
 const disabled = computed(() => (formConfig.value && formConfig.value.disabled) || false)
 
 provide('refList', widgetRefList)
-provide('formConfig', () => formJsonObj.value.formConfig)
+provide('formConfig', formJsonObj.value.formConfig)
 provide('formModel', { formModel: formDataModel })
 
 const getContainerWidgetName = (widget) => {
-  return widget.type + '-container'
+  return components.value[widget.type + '-container']
 }
 
 const getWidgetName = (widget) => {
-  return widget.type + '-widget'
+  return components.value[widget.type + '-widget']
 }
 
 const initFormObject = () => {
@@ -163,6 +165,10 @@ const processFormWidget = (wItem) => {
 
 initFormObject()
 buildFormModel((formJsonObj.value && formJsonObj.value.widgetList) || null)
+
+onMounted(async () => {
+  components.value = await loadComponents()
+})
 </script>
 
 <style scoped></style>

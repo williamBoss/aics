@@ -1,6 +1,6 @@
 <template>
   <el-row
-    v-show="widget.options.hidden"
+    v-show="!widget.options.hidden"
     :ref="widget.id"
     :key="widget.id"
     class="grid-container"

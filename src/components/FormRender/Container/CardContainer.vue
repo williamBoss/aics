@@ -1,6 +1,6 @@
 <template>
   <el-card
-    v-show="widget.options.hidden"
+    v-show="!widget.options.hidden"
     :ref="widget.id"
     :key="widget.id"
     class="card-container"
@@ -39,7 +39,7 @@
         </template>
         <template v-else>
           <component
-            :is="subWidget.type + '-widget'"
+            :is="components[subWidget.type + '-widget']"
             :key="swIdx"
             :field="subWidget"
           >
@@ -71,7 +71,7 @@ defineComponent({
 const props = defineProps({
   ...commonProps
 })
-const { customClass, getComponentByContainer } = useCommonComputed(props)
+const { customClass, components, getComponentByContainer } = useCommonComputed(props)
 </script>
 
 <style scoped></style>

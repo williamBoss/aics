@@ -39,6 +39,7 @@ defineComponent({
 const props = defineProps({
   ...commonProps
 })
+const fieldEditor = ref()
 // field组件change之前的值
 const oldFieldValue = ref(null)
 const fieldModel = ref(null)

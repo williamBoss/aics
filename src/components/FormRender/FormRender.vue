@@ -96,6 +96,7 @@ const disabled = computed(() => (formConfig.value && formConfig.value.disabled) 
 provide('refList', widgetRefList)
 provide('formConfig', formJsonObj.value.formConfig)
 provide('formModel', { formModel: formDataModel })
+provide('setFormData', (formData) => setFormData(formData))
 
 const getContainerWidgetName = (widget) => {
   return components.value[widget.type + '-container']
@@ -140,12 +141,11 @@ const buildDataFromWidget = (wItem) => {
         wItem.tabs?.forEach((tabItem) => processContainers(tabItem.widgetList))
         break
       case 'grid-col':
+      default:
         processContainers(wItem.widgetList)
         break
-      default:
-        break
     }
-  } else if (wItem.category === 'formItem') {
+  } else if (wItem.formItemFlag) {
     processFormWidget(wItem)
   }
 }
@@ -155,12 +155,20 @@ const processContainers = (widgetList) => {
 }
 
 const processFormWidget = (wItem) => {
-  if (!props.formData.hasOwnProperty(wItem.options.name)) {
-    formDataModel[wItem.options.name] = wItem.options.defaultValue
-  } else {
+  if (props.formData && props.formData.hasOwnProperty(wItem.options.name)) {
     const initialValue = props.formData[wItem.options.name]
-    formDataModel[wItem.options.name] = cloneDeep(initialValue)
+    formDataModel.value[wItem.options.name] = cloneDeep(initialValue)
+  } else {
+    formDataModel.value[wItem.options.name] = wItem.options.defaultValue
   }
+}
+
+const setFormData = (formData) => {
+  Object.keys(formDataModel.value).forEach((propName) => {
+    if (formData && formData.hasOwnProperty(propName)) {
+      formDataModel.value[propName] = cloneDeep(formData[propName])
+    }
+  })
 }
 
 initFormObject()

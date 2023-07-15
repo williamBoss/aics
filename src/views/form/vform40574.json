@@ -1,361 +1,39 @@
 {
   "widgetList": [
     {
-      "key": 40094,
+      "key": 24454,
       "type": "card",
       "category": "container",
+      "icon": "card",
       "widgetList": [
         {
-          "key": 68154,
+          "key": 75240,
           "type": "layout-grid",
           "category": "container",
+          "icon": "grid",
           "cols": [
             {
               "type": "grid-col",
               "category": "container",
+              "icon": "grid-col",
+              "internal": true,
               "widgetList": [
                 {
-                  "key": 50328,
+                  "key": 76840,
                   "type": "input",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "input102881",
-                    "label": "input",
-                    "type": "text",
-                    "defaultValue": "",
-                    "placeholder": "",
-                    "columnWidth": "200px",
-                    "size": "",
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "readonly": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "clearable": true,
-                    "showPassword": false,
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": [],
-                    "minLength": null,
-                    "maxLength": null,
-                    "showWordLimit": false,
-                    "onInput": "",
-                    "onChange": "",
-                    "onFocus": "",
-                    "onBlur": ""
-                  },
-                  "id": "input102881"
-                },
-                {
-                  "key": 89031,
-                  "type": "select",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "select41579",
-                    "label": "select",
-                    "labelAlign": "",
-                    "defaultValue": [],
-                    "placeholder": "",
-                    "columnWidth": "200px",
-                    "size": "",
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "labelWrap": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "clearable": true,
-                    "filterable": false,
-                    "allowCreate": false,
-                    "remote": false,
-                    "automaticDropdown": false,
-                    "multiple": true,
-                    "multipleLimit": 0,
-                    "dsEnabled": false,
-                    "dsName": "",
-                    "dataSetName": "",
-                    "labelKey": "label",
-                    "valueKey": "value",
-                    "optionItems": [
-                      {
-                        "label": "select 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "select 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "select 3",
-                        "value": 3
-                      },
-                      {
-                        "value": 4,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 5,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 6,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 7,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 8,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 9,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 10,
-                        "label": "new option"
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": [],
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onRemoteQuery": "",
-                    "onChange": "",
-                    "onFocus": "",
-                    "onBlur": "",
-                    "onValidate": ""
-                  },
-                  "id": "select41579"
-                },
-                {
-                  "key": 68154,
-                  "type": "layout-grid",
-                  "alias": "",
-                  "category": "container",
-                  "icon": "grid",
-                  "cols": [
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 105515,
-                          "type": "radio",
-                          "icon": "radio-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "radio50550",
-                            "label": "radio",
-                            "labelAlign": "",
-                            "defaultValue": null,
-                            "columnWidth": "200px",
-                            "size": "",
-                            "displayStyle": "inline",
-                            "buttonStyle": true,
-                            "border": false,
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "radio 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "radio 2",
-                                "value": 2
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onChange": "",
-                            "onValidate": ""
-                          },
-                          "id": "radio50550"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol5167",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": []
-                      },
-                      "id": "grid-col-5167"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 89031,
-                          "type": "select",
-                          "icon": "select-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "select86598",
-                            "label": "select",
-                            "labelAlign": "",
-                            "defaultValue": [],
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": true,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "filterable": false,
-                            "allowCreate": false,
-                            "remote": false,
-                            "automaticDropdown": false,
-                            "multiple": true,
-                            "multipleLimit": 0,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "select 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
-                              },
-                              {
-                                "value": 4,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 5,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 6,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 7,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 8,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 9,
-                                "label": "new option"
-                              },
-                              {
-                                "value": 10,
-                                "label": "new option"
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onRemoteQuery": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": ""
-                          },
-                          "id": "select86598"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol109570",
-                        "hidden": false,
-                        "span": 16,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": []
-                      },
-                      "id": "grid-col-109570"
-                    }
-                  ],
-                  "options": {
-                    "name": "grid107684",
-                    "hidden": false,
-                    "gutter": 12,
-                    "colHeight": null,
-                    "customClass": []
-                  },
-                  "id": "grid107684"
-                },
-                {
-                  "key": 50328,
-                  "type": "input",
-                  "alias": "",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input72028",
+                    "name": "input19508",
                     "label": "input",
                     "labelAlign": "",
                     "type": "text",
-                    "defaultValue": "",
+                    "defaultValue": "123456789",
                     "placeholder": "",
                     "columnWidth": "200px",
                     "size": "",
                     "labelWidth": null,
-                    "labelHidden": true,
-                    "labelWrap": false,
+                    "labelHidden": false,
                     "readonly": false,
                     "disabled": false,
                     "hidden": false,
@@ -386,24 +64,71 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input72028"
+                  "id": "input19508"
                 },
                 {
-                  "key": 89031,
+                  "key": 59958,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio55358",
+                    "label": "radio",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "radio 1",
+                        "value": 1
+                      },
+                      {
+                        "label": "radio 2",
+                        "value": 2
+                      },
+                      {
+                        "label": "radio 3",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio55358"
+                },
+                {
+                  "key": 112740,
                   "type": "select",
                   "icon": "select-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "select106266",
+                    "name": "select46539",
                     "label": "select",
                     "labelAlign": "",
-                    "defaultValue": [],
+                    "defaultValue": "",
                     "placeholder": "",
                     "columnWidth": "200px",
                     "size": "",
                     "labelWidth": null,
                     "labelHidden": false,
-                    "labelWrap": false,
                     "disabled": false,
                     "hidden": false,
                     "clearable": true,
@@ -411,13 +136,8 @@
                     "allowCreate": false,
                     "remote": false,
                     "automaticDropdown": false,
-                    "multiple": true,
+                    "multiple": false,
                     "multipleLimit": 0,
-                    "dsEnabled": false,
-                    "dsName": "",
-                    "dataSetName": "",
-                    "labelKey": "label",
-                    "valueKey": "value",
                     "optionItems": [
                       {
                         "label": "select 1",
@@ -430,41 +150,13 @@
                       {
                         "label": "select 3",
                         "value": 3
-                      },
-                      {
-                        "value": 4,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 5,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 6,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 7,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 8,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 9,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 10,
-                        "label": "new option"
                       }
                     ],
                     "required": false,
                     "requiredHint": "",
                     "validation": "",
                     "validationHint": "",
-                    "customClass": [],
+                    "customClass": "",
                     "labelIconClass": null,
                     "labelIconPosition": "rear",
                     "labelTooltip": null,
@@ -476,187 +168,37 @@
                     "onBlur": "",
                     "onValidate": ""
                   },
-                  "id": "select106266"
-                },
+                  "id": "select46539"
+                }
+              ],
+              "options": {
+                "name": "gridCol20785",
+                "hidden": false,
+                "span": 12,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": ""
+              },
+              "id": "grid-col-20785"
+            },
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
                 {
-                  "type": "layout-grid",
-                  "alias": "",
-                  "category": "container",
-                  "icon": "grid",
-                  "cols": [
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 105515,
-                          "type": "radio",
-                          "icon": "radio-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "radio67727",
-                            "label": "radio",
-                            "labelAlign": "",
-                            "defaultValue": null,
-                            "columnWidth": "200px",
-                            "size": "",
-                            "displayStyle": "inline",
-                            "buttonStyle": true,
-                            "border": false,
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "radio 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "radio 2",
-                                "value": 2
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onChange": "",
-                            "onValidate": ""
-                          },
-                          "id": "radio67727"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol42628",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-42628"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 89031,
-                          "type": "select",
-                          "icon": "select-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "select106189",
-                            "label": "select",
-                            "labelAlign": "",
-                            "defaultValue": "",
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "filterable": false,
-                            "allowCreate": false,
-                            "remote": false,
-                            "automaticDropdown": false,
-                            "multiple": false,
-                            "multipleLimit": 0,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "select 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onRemoteQuery": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": ""
-                          },
-                          "id": "select106189"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol55564",
-                        "hidden": false,
-                        "span": 16,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-55564"
-                    }
-                  ],
-                  "options": {
-                    "name": "grid38691",
-                    "hidden": false,
-                    "gutter": 12,
-                    "colHeight": null,
-                    "customClass": ""
-                  },
-                  "id": "grid38691"
-                },
-                {
-                  "key": 75801,
+                  "key": 91558,
                   "type": "textarea",
                   "icon": "textarea-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "textarea26747",
+                    "name": "textarea16142",
                     "label": "textarea",
                     "labelAlign": "",
                     "rows": 3,
@@ -666,7 +208,6 @@
                     "size": "",
                     "labelWidth": null,
                     "labelHidden": false,
-                    "labelWrap": false,
                     "readonly": false,
                     "disabled": false,
                     "hidden": false,
@@ -674,7 +215,7 @@
                     "requiredHint": "",
                     "validation": "",
                     "validationHint": "",
-                    "customClass": "",
+                    "customClass": [],
                     "labelIconClass": null,
                     "labelIconPosition": "rear",
                     "labelTooltip": null,
@@ -689,11 +230,144 @@
                     "onBlur": "",
                     "onValidate": ""
                   },
-                  "id": "textarea26747"
+                  "id": "textarea16142"
+                },
+                {
+                  "key": 22401,
+                  "type": "checkbox",
+                  "icon": "checkbox-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "checkbox6981",
+                    "label": "checkbox",
+                    "labelAlign": "",
+                    "defaultValue": [],
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "check 1",
+                        "value": 1
+                      },
+                      {
+                        "label": "check 2",
+                        "value": 2
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 34534523534",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3adfljl nbajbnfkljan",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      },
+                      {
+                        "label": "check 3",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "checkbox6981"
+                },
+                {
+                  "key": 96114,
+                  "type": "date-range",
+                  "icon": "date-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "date43740",
+                    "label": "date",
+                    "labelAlign": "",
+                    "type": "date",
+                    "defaultValue": null,
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "autoFullWidth": true,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "editable": false,
+                    "format": "YYYY-MM-DD",
+                    "valueFormat": "YYYY-MM-DD",
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "date43740"
                 }
               ],
               "options": {
-                "name": "gridCol40299",
+                "name": "gridCol87735",
                 "hidden": false,
                 "span": 12,
                 "offset": 0,
@@ -703,821 +377,175 @@
                 "md": 12,
                 "sm": 12,
                 "xs": 12,
-                "customClass": []
+                "customClass": ""
               },
-              "id": "grid-col-40299"
-            },
-            {
-              "type": "grid-col",
-              "category": "container",
-              "icon": "grid-col",
-              "internal": true,
-              "widgetList": [
-                {
-                  "key": 89031,
-                  "type": "select",
-                  "icon": "select-field",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "select13835",
-                    "label": "select",
-                    "labelAlign": "",
-                    "defaultValue": [],
-                    "placeholder": "",
-                    "columnWidth": "200px",
-                    "size": "",
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "labelWrap": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "clearable": true,
-                    "filterable": false,
-                    "allowCreate": false,
-                    "remote": false,
-                    "automaticDropdown": false,
-                    "multiple": true,
-                    "multipleLimit": 0,
-                    "dsEnabled": false,
-                    "dsName": "",
-                    "dataSetName": "",
-                    "labelKey": "label",
-                    "valueKey": "value",
-                    "optionItems": [
-                      {
-                        "label": "select 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "select 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "select 3",
-                        "value": 3
-                      },
-                      {
-                        "value": 4,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 5,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 6,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 7,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 8,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 9,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 10,
-                        "label": "new option"
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": [],
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onRemoteQuery": "",
-                    "onChange": "",
-                    "onFocus": "",
-                    "onBlur": "",
-                    "onValidate": ""
-                  },
-                  "id": "select13835"
-                },
-                {
-                  "key": 89031,
-                  "type": "select",
-                  "icon": "select-field",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "select30734",
-                    "label": "select",
-                    "labelAlign": "",
-                    "defaultValue": [],
-                    "placeholder": "",
-                    "columnWidth": "200px",
-                    "size": "",
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "labelWrap": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "clearable": true,
-                    "filterable": false,
-                    "allowCreate": false,
-                    "remote": false,
-                    "automaticDropdown": false,
-                    "multiple": true,
-                    "multipleLimit": 0,
-                    "dsEnabled": false,
-                    "dsName": "",
-                    "dataSetName": "",
-                    "labelKey": "label",
-                    "valueKey": "value",
-                    "optionItems": [
-                      {
-                        "label": "select 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "select 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "select 3",
-                        "value": 3
-                      },
-                      {
-                        "value": 4,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 5,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 6,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 7,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 8,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 9,
-                        "label": "new option"
-                      },
-                      {
-                        "value": 10,
-                        "label": "new option"
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": [],
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onRemoteQuery": "",
-                    "onChange": "",
-                    "onFocus": "",
-                    "onBlur": "",
-                    "onValidate": ""
-                  },
-                  "id": "select30734"
-                },
-                {
-                  "key": 68154,
-                  "type": "layout-grid",
-                  "alias": "",
-                  "category": "container",
-                  "icon": "grid",
-                  "cols": [
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 105515,
-                          "type": "radio",
-                          "icon": "radio-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "radio101915",
-                            "label": "radio",
-                            "labelAlign": "",
-                            "defaultValue": null,
-                            "columnWidth": "200px",
-                            "size": "",
-                            "displayStyle": "inline",
-                            "buttonStyle": false,
-                            "border": false,
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "radio 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "radio 2",
-                                "value": 2
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onChange": "",
-                            "onValidate": ""
-                          },
-                          "id": "radio101915"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol87134",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-87134"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 50328,
-                          "type": "input",
-                          "alias": "",
-                          "icon": "text-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "input100384",
-                            "label": "input",
-                            "labelAlign": "",
-                            "type": "text",
-                            "defaultValue": "",
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "readonly": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "showPassword": false,
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "minLength": null,
-                            "maxLength": null,
-                            "showWordLimit": false,
-                            "prefixIcon": "",
-                            "suffixIcon": "",
-                            "appendButton": false,
-                            "appendButtonDisabled": false,
-                            "buttonIcon": "custom-search",
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onInput": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": "",
-                            "onAppendButtonClick": ""
-                          },
-                          "id": "input100384"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol101567",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": []
-                      },
-                      "id": "grid-col-101567"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 50328,
-                          "type": "input",
-                          "alias": "",
-                          "icon": "text-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "input83888",
-                            "label": "input",
-                            "labelAlign": "",
-                            "type": "text",
-                            "defaultValue": "",
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "readonly": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "showPassword": false,
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": "",
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "minLength": null,
-                            "maxLength": null,
-                            "showWordLimit": false,
-                            "prefixIcon": "",
-                            "suffixIcon": "",
-                            "appendButton": false,
-                            "appendButtonDisabled": false,
-                            "buttonIcon": "custom-search",
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onInput": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": "",
-                            "onAppendButtonClick": ""
-                          },
-                          "id": "input83888"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol84554",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-84554"
-                    }
-                  ],
-                  "options": {
-                    "name": "grid103234",
-                    "hidden": false,
-                    "gutter": 12,
-                    "colHeight": null,
-                    "customClass": ""
-                  },
-                  "id": "grid103234"
-                },
-                {
-                  "type": "layout-grid",
-                  "alias": "",
-                  "category": "container",
-                  "icon": "grid",
-                  "cols": [
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 105515,
-                          "type": "radio",
-                          "icon": "radio-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "radio71740",
-                            "label": "radio",
-                            "labelAlign": "",
-                            "defaultValue": null,
-                            "columnWidth": "200px",
-                            "size": "",
-                            "displayStyle": "inline",
-                            "buttonStyle": true,
-                            "border": false,
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "radio 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "radio 2",
-                                "value": 2
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onChange": "",
-                            "onValidate": ""
-                          },
-                          "id": "radio71740"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol54659",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-54659"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 89031,
-                          "type": "select",
-                          "icon": "select-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "select96953",
-                            "label": "",
-                            "labelAlign": "",
-                            "defaultValue": "",
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "filterable": false,
-                            "allowCreate": false,
-                            "remote": false,
-                            "automaticDropdown": false,
-                            "multiple": false,
-                            "multipleLimit": 0,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "select 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onRemoteQuery": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": ""
-                          },
-                          "id": "select96953"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol115140",
-                        "hidden": false,
-                        "span": 16,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": []
-                      },
-                      "id": "grid-col-115140"
-                    }
-                  ],
-                  "options": {
-                    "name": "grid63107",
-                    "hidden": false,
-                    "gutter": 12,
-                    "colHeight": null,
-                    "customClass": ""
-                  },
-                  "id": "grid63107"
-                },
-                {
-                  "type": "layout-grid",
-                  "alias": "",
-                  "category": "container",
-                  "icon": "grid",
-                  "cols": [
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 105515,
-                          "type": "radio",
-                          "icon": "radio-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "radio29990",
-                            "label": "radio",
-                            "labelAlign": "",
-                            "defaultValue": null,
-                            "columnWidth": "200px",
-                            "size": "",
-                            "displayStyle": "inline",
-                            "buttonStyle": true,
-                            "border": false,
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "radio 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "radio 2",
-                                "value": 2
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onChange": "",
-                            "onValidate": ""
-                          },
-                          "id": "radio29990"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol61763",
-                        "hidden": false,
-                        "span": 8,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-61763"
-                    },
-                    {
-                      "type": "grid-col",
-                      "category": "container",
-                      "icon": "grid-col",
-                      "internal": true,
-                      "widgetList": [
-                        {
-                          "key": 89031,
-                          "type": "select",
-                          "icon": "select-field",
-                          "formItemFlag": true,
-                          "options": {
-                            "name": "select36345",
-                            "label": "select",
-                            "labelAlign": "",
-                            "defaultValue": "",
-                            "placeholder": "",
-                            "columnWidth": "200px",
-                            "size": "",
-                            "labelWidth": null,
-                            "labelHidden": false,
-                            "labelWrap": false,
-                            "disabled": false,
-                            "hidden": false,
-                            "clearable": true,
-                            "filterable": false,
-                            "allowCreate": false,
-                            "remote": false,
-                            "automaticDropdown": false,
-                            "multiple": false,
-                            "multipleLimit": 0,
-                            "dsEnabled": false,
-                            "dsName": "",
-                            "dataSetName": "",
-                            "labelKey": "label",
-                            "valueKey": "value",
-                            "optionItems": [
-                              {
-                                "label": "select 1",
-                                "value": 1
-                              },
-                              {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
-                              }
-                            ],
-                            "required": false,
-                            "requiredHint": "",
-                            "validation": "",
-                            "validationHint": "",
-                            "customClass": [],
-                            "labelIconClass": null,
-                            "labelIconPosition": "rear",
-                            "labelTooltip": null,
-                            "onCreated": "",
-                            "onMounted": "",
-                            "onRemoteQuery": "",
-                            "onChange": "",
-                            "onFocus": "",
-                            "onBlur": "",
-                            "onValidate": ""
-                          },
-                          "id": "select36345"
-                        }
-                      ],
-                      "options": {
-                        "name": "gridCol64026",
-                        "hidden": false,
-                        "span": 16,
-                        "offset": 0,
-                        "push": 0,
-                        "pull": 0,
-                        "responsive": false,
-                        "md": 12,
-                        "sm": 12,
-                        "xs": 12,
-                        "customClass": ""
-                      },
-                      "id": "grid-col-64026"
-                    }
-                  ],
-                  "options": {
-                    "name": "grid72165",
-                    "hidden": false,
-                    "gutter": 12,
-                    "colHeight": null,
-                    "customClass": ""
-                  },
-                  "id": "grid72165"
-                }
-              ],
-              "options": {
-                "name": "gridCol61668",
-                "hidden": false,
-                "span": 12,
-                "offset": 0,
-                "push": 0,
-                "pull": 0,
-                "responsive": false,
-                "md": 12,
-                "sm": 12,
-                "xs": 12,
-                "customClass": []
-              },
-              "id": "grid-col-61668"
+              "id": "grid-col-87735"
             }
           ],
           "options": {
-            "name": "grid35115",
+            "name": "grid82007",
             "hidden": false,
-            "gutter": 20,
+            "gutter": 12,
             "colHeight": null,
             "customClass": ""
           },
-          "id": "grid35115"
+          "id": "grid82007"
+        },
+        {
+          "key": 59074,
+          "type": "divider",
+          "icon": "divider",
+          "formItemFlag": false,
+          "options": {
+            "name": "divider46968",
+            "label": "",
+            "columnWidth": "200px",
+            "direction": "horizontal",
+            "contentPosition": "center",
+            "hidden": false,
+            "customClass": "",
+            "onCreated": "",
+            "onMounted": ""
+          },
+          "id": "divider46968"
         }
       ],
       "options": {
-        "name": "card22056",
-        "label": "患者基本信息",
-        "showLabel": true,
+        "name": "card28128",
+        "label": "card",
         "hidden": false,
+        "folded": false,
+        "showFold": true,
         "cardWidth": "100%",
         "shadow": "never",
         "customClass": []
       },
-      "id": "card22056"
+      "id": "card28128"
+    },
+    {
+      "key": 24454,
+      "type": "card",
+      "category": "container",
+      "icon": "card",
+      "widgetList": [
+        {
+          "key": 91558,
+          "type": "textarea",
+          "icon": "textarea-field",
+          "formItemFlag": true,
+          "options": {
+            "name": "textarea50615",
+            "label": "textarea",
+            "labelAlign": "",
+            "rows": 3,
+            "defaultValue": "",
+            "placeholder": "",
+            "columnWidth": "200px",
+            "size": "",
+            "labelWidth": null,
+            "labelHidden": false,
+            "readonly": false,
+            "disabled": false,
+            "hidden": false,
+            "required": false,
+            "requiredHint": "",
+            "validation": "",
+            "validationHint": "",
+            "customClass": [],
+            "labelIconClass": null,
+            "labelIconPosition": "rear",
+            "labelTooltip": null,
+            "minLength": null,
+            "maxLength": null,
+            "showWordLimit": false,
+            "onCreated": "",
+            "onMounted": "",
+            "onInput": "",
+            "onChange": "",
+            "onFocus": "",
+            "onBlur": "",
+            "onValidate": ""
+          },
+          "id": "textarea50615"
+        },
+        {
+          "key": 76840,
+          "type": "input",
+          "icon": "text-field",
+          "formItemFlag": true,
+          "options": {
+            "name": "input114260",
+            "label": "input",
+            "labelAlign": "",
+            "type": "text",
+            "defaultValue": "",
+            "placeholder": "",
+            "columnWidth": "200px",
+            "size": "",
+            "labelWidth": null,
+            "labelHidden": false,
+            "readonly": false,
+            "disabled": false,
+            "hidden": false,
+            "clearable": true,
+            "showPassword": false,
+            "required": false,
+            "requiredHint": "",
+            "validation": "",
+            "validationHint": "",
+            "customClass": "",
+            "labelIconClass": null,
+            "labelIconPosition": "rear",
+            "labelTooltip": null,
+            "minLength": null,
+            "maxLength": null,
+            "showWordLimit": false,
+            "prefixIcon": "",
+            "suffixIcon": "",
+            "appendButton": false,
+            "appendButtonDisabled": false,
+            "buttonIcon": "custom-search",
+            "onCreated": "",
+            "onMounted": "",
+            "onInput": "",
+            "onChange": "",
+            "onFocus": "",
+            "onBlur": "",
+            "onValidate": "",
+            "onAppendButtonClick": ""
+          },
+          "id": "input114260"
+        }
+      ],
+      "options": {
+        "name": "card42801",
+        "label": "card",
+        "hidden": false,
+        "folded": false,
+        "showFold": true,
+        "cardWidth": "100%",
+        "shadow": "never",
+        "customClass": []
+      },
+      "id": "card42801"
     }
   ],
   "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
     "labelWidth": 80,
     "labelPosition": "top",
     "size": "",
     "labelAlign": "label-left-align",
-    "rulesName": "rules",
+    "cssCode": "",
     "customClass": [],
+    "functions": "",
+    "layoutType": "PC",
+    "jsonVersion": 3,
     "onFormCreated": "",
     "onFormMounted": "",
-    "onFormDataChange": ""
+    "onFormDataChange": "",
+    "dataSources": []
   }
 }

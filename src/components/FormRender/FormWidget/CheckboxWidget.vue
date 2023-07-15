@@ -35,7 +35,7 @@ const props = defineProps({
 })
 const fieldEditor = ref()
 const oldFieldValue = ref(null)
-const fieldModel = ref(null)
+const fieldModel = ref([])
 const rules = ref([])
 
 const { widgetSize } = useCommonComputed(props)
@@ -46,7 +46,6 @@ const { handleChangeEvent } = useEventFunction(getCurrentInstance, props, oldFie
 .checkbox-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .checkbox-container .el-checkbox {

@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { computed, defineComponent, inject } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { commonProps, useCommonComputed } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
@@ -27,8 +27,7 @@ const props = defineProps({
     default: Array
   }
 })
-const formConfig = inject('formConfig')
-const { customClass } = useCommonComputed(props)
+const { customClass, formConfig } = useCommonComputed(props)
 const labelWidth = computed(() =>
   props.field.options.labelHidden ? 0 : props.field.options.labelWidth || formConfig.labelWidth || 0
 )

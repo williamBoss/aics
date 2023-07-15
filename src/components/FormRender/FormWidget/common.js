@@ -1,4 +1,4 @@
-import { computed, inject } from 'vue'
+import { computed, inject, watch } from 'vue'
 import { cloneDeep } from 'lodash'
 
 export const commonProps = {
@@ -57,4 +57,35 @@ export const useEventFunction = (instance, props, oldFieldValue) => {
     handleChangeEvent,
     handleInputCustomEvent
   }
+}
+
+export const useInitField = (props, oldFieldValue, fieldModel) => {
+  const { formModel } = inject('formModel')
+  const setFormData = inject('setFormData')
+
+  const initFieldModel = () => {
+    if (!props.field.formItemFlag) {
+      return
+    }
+
+    if (formModel.value[props.field.options.name] === undefined && props.field.options.defaultValue) {
+      fieldModel.value = props.field.options.defaultValue
+    } else if (formModel.value[props.field.options.name] === undefined) {
+      formModel.value[props.field.options.name] = null
+    } else {
+      fieldModel.value = formModel.value[props.field.options.name]
+    }
+    oldFieldValue.value = cloneDeep(fieldModel.value)
+  }
+
+  watch(fieldModel, (newVal, oldVal) => {
+    if (newVal !== oldVal) {
+      const formData = {
+        [props.field.options.name]: newVal
+      }
+      setFormData(formData)
+    }
+  })
+
+  return { initFieldModel, setFormData, watch }
 }

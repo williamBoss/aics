@@ -8,7 +8,7 @@
       :index="subItem.name"
     >
       <template #title>
-        <el-icon>
+        <el-icon v-if="subItem.meta.iconType">
           <svg-icon
             v-if="subItem.meta.iconType === 'sl'"
             :name="subItem.meta.icon"
@@ -56,7 +56,7 @@ defineComponent({
 })
 
 defineProps({
-  menuList: { type: Array, default: [] }
+  menuList: { type: Array, default: Array }
 })
 
 const router = useRouter()
@@ -64,3 +64,5 @@ const handleClickMenu = (subItem) => {
   router.push(subItem.path)
 }
 </script>
+
+<style scoped></style>

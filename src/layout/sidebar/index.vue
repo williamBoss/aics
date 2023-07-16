@@ -1,21 +1,25 @@
 <template>
-  <div class="sidebar">
+  <div
+    class="sidebar"
+    :style="{ width: sidebarCollapse ? '65px' : '210px' }"
+  >
+    <div class="logo flx-center">
+      <img
+        class="logo-img"
+        src="@/assets/images/logo/logo-mini.jpg"
+        alt="logo"
+      />
+      <span class="logo-text">{{ title }}</span>
+    </div>
     <el-scrollbar>
-      <div class="logo">
-        <img
-          src="@/assets/images/logo/logo-header.png"
-          alt=""
-        />
-      </div>
       <el-menu
         :default-active="'specialisedClinic'"
-        class="menu"
-        background-color="#3156A3"
+        background-color="#4949C9"
         text-color="#fff"
         :collapse="sidebarCollapse"
         :collapse-transition="false"
       >
-        <SubMenu :menuList="menu.children" />
+        <SubMenu :menu-list="menu.children" />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -36,57 +40,43 @@ const sidebarCollapse = ref(inject('sidebarCollapse'))
 // todo 暂时使用静态路由生成菜单 后面需要调整为接口获取
 // const menu = AuthStore()
 const menu = staticRouter.find((e) => e.name === 'home')
+const title = ref(import.meta.env.VITE_APP_TITLE)
 </script>
 
 <style scoped>
 .sidebar {
   height: 100vh;
-  background: #3156a3;
-}
-
-.sidebar .menu {
-  border-right: unset;
-}
-
-.sidebar .menu :deep(.el-menu-item) {
-  margin-left: 10px;
-}
-
-.sidebar .menu :deep(.el-menu-item.is-active) {
-  width: 100%;
-  height: 80px;
-  background: url('@/assets/images/menu-active.svg') no-repeat;
-  font-size: 14px;
-  font-weight: 500;
-  color: #486da3;
+  background: #4949c9;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
 }
 
 .sidebar .logo {
-  height: 70px;
-  line-height: 50px;
-  padding: 0 10px;
-  margin-top: 2px;
-  overflow: hidden;
-  text-align: center;
+  box-sizing: border-box;
+  height: 55px;
 }
 
-.sidebar .logo img {
-  width: 150px;
-  text-align: center;
-  vertical-align: middle;
+.sidebar .logo .logo-img {
+  width: 28px;
+  object-fit: contain;
+  margin-right: 6px;
 }
 
-.sidebar .logo span {
-  width: 96px;
-  height: 22px;
-  font-size: 16px;
-  font-weight: 500;
+.sidebar .logo .logo-text {
+  font-size: 21.5px;
+  font-weight: bold;
   color: #ffffff;
-  line-height: 22px;
-  vertical-align: middle;
+  white-space: nowrap;
 }
 
-.sidebar .menu:not(.el-menu--collapse) {
-  width: 170px;
+.sidebar .el-scrollbar {
+  height: calc(100vh - 55px);
+}
+
+.sidebar .el-scrollbar .el-menu {
+  width: 100%;
+  overflow-x: hidden;
+  border-right: none;
 }
 </style>

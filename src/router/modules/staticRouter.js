@@ -3,7 +3,7 @@ import { HOME_URL, LOGIN_URL } from '@/config/config'
 /**
  * staticRouter(静态路由)
  */
-export const staticRouter = [
+export const staticRouter=[
   {
     path: '/',
     redirect: LOGIN_URL
@@ -35,7 +35,31 @@ export const staticRouter = [
         meta: {
           requiresAuth: true,
           title: '首页',
-          icon: 'shouye',
+          icon: 'homePage',
+          iconType: 'sl',
+          hidden: false
+        }
+      },
+      {
+        path: '/home/index',
+        name: 'index',
+        component: () => {},
+        meta: {
+          requiresAuth: true,
+          title: '会诊管理',
+          icon: 'consultation',
+          iconType: 'sl',
+          hidden: false
+        }
+      },
+      {
+        path: '/home/index',
+        name: 'index',
+        component: () => {},
+        meta: {
+          requiresAuth: true,
+          title: '数据分析',
+          icon: 'dataAnalysis',
           iconType: 'sl',
           hidden: false
         }
@@ -45,9 +69,9 @@ export const staticRouter = [
         name: 'system',
         meta: {
           requiresAuth: true,
-          title: '系统管理',
-          icon: 'Setting',
-          iconType: 'el',
+          title: '系统设置',
+          icon: 'settings',
+          iconType: 'sl',
           hidden: false
         },
         children: [
@@ -58,8 +82,20 @@ export const staticRouter = [
             meta: {
               requiresAuth: true,
               title: '用户管理',
-              icon: 'User',
-              iconType: 'el',
+              icon: '',
+              iconType: '',
+              hidden: false
+            }
+          },
+          {
+            path: '/system/user',
+            name: 'user',
+            component: () => import('@/views/system/user/index.vue'),
+            meta: {
+              requiresAuth: true,
+              title: '医院信息管理',
+              icon: '',
+              iconType: '',
               hidden: false
             }
           }
@@ -72,7 +108,7 @@ export const staticRouter = [
 /**
  * errorRouter(错误页面路由)
  */
-export const errorRouter = [
+export const errorRouter=[
   {
     path: '/403',
     name: '403',
@@ -102,7 +138,7 @@ export const errorRouter = [
 /**
  * notFoundRouter(找不到路由)
  */
-export const notFoundRouter = {
+export const notFoundRouter={
   path: '/:pathMatch(.*)*',
   name: 'notFound',
   redirect: { name: '404' }

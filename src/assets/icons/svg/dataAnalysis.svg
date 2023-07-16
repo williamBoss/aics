@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>数据</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="切图" transform="translate(-71.000000, -170.000000)" stroke="#FFFFFF">
+            <g id="shuju-2" transform="translate(71.000000, 170.000000)">
+                <rect id="矩形" x="0.982239425" y="0.50304654" width="12" height="13" rx="2"></rect>
+                <line x1="3.98223943" y1="6.50304654" x2="3.98223943" y2="9.50304654" id="直线-4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="9.98223943" y1="6.50304654" x2="9.98223943" y2="9.50304654" id="直线-4" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="6.98223943" y1="4.50304654" x2="6.98223943" y2="9.50304654" id="直线-4" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

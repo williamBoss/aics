@@ -6,7 +6,7 @@
     :height="props.size"
   >
     <use
-      :xlink:href="symbolId"
+      :href="symbolId"
       :fill="props.color"
     />
   </svg>

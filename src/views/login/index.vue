@@ -9,7 +9,7 @@
     <div class="login-box">
       <div class="login-form">
         <div class="login-logo">
-          <h2 class="logo-text">肺癌全病程管理系统</h2>
+          <h2 class="logo-text">{{ title }}</h2>
         </div>
         <el-form
           ref="loginFormRef"
@@ -79,6 +79,7 @@ defineComponent({
 })
 
 const router = useRouter()
+const title = ref(import.meta.env.VITE_APP_TITLE)
 const global = globalStore()
 const codeUrl = ref()
 const loginFormRef = ref()

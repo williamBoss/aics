@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside :width="sidebarCollapse ? '65px' : '170px'">
+    <el-aside :width="sidebarCollapse ? '65px' : '210px'">
       <Sidebar />
     </el-aside>
     <el-container>

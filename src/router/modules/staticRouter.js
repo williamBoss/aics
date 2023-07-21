@@ -41,8 +41,8 @@ export const staticRouter=[
         }
       },
       {
-        path: '/home/index',
-        name: 'index',
+        path: '/consultation/index',
+        name: 'consultationIndex',
         component: () => {},
         meta: {
           requiresAuth: true,
@@ -53,8 +53,8 @@ export const staticRouter=[
         }
       },
       {
-        path: '/home/index',
-        name: 'index',
+        path: '/dataAnalysis/index',
+        name: 'dataAnalysisIndex',
         component: () => {},
         meta: {
           requiresAuth: true,
@@ -65,41 +65,28 @@ export const staticRouter=[
         }
       },
       {
-        path: '/system',
-        name: 'system',
+        path: '/system/user',
+        name: 'user',
+        component: () => import('@/views/system/user/index.vue'),
         meta: {
           requiresAuth: true,
-          title: '系统设置',
+          title: '用户管理',
+          icon: 'User',
+          iconType: 'el',
+          hidden: false
+        }
+      },
+      {
+        path: '/system/hospital',
+        name: 'hospital',
+        component: () => {},
+        meta: {
+          requiresAuth: true,
+          title: '医院信息管理',
           icon: 'settings',
           iconType: 'sl',
           hidden: false
-        },
-        children: [
-          {
-            path: '/system/user',
-            name: 'user',
-            component: () => import('@/views/system/user/index.vue'),
-            meta: {
-              requiresAuth: true,
-              title: '用户管理',
-              icon: '',
-              iconType: '',
-              hidden: false
-            }
-          },
-          {
-            path: '/system/user',
-            name: 'user',
-            component: () => import('@/views/system/user/index.vue'),
-            meta: {
-              requiresAuth: true,
-              title: '医院信息管理',
-              icon: '',
-              iconType: '',
-              hidden: false
-            }
-          }
-        ]
+        }
       }
     ]
   }

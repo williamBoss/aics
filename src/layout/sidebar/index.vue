@@ -5,15 +5,16 @@
   >
     <div class="logo flx-center">
       <img
+        v-if="headerLogo"
         class="logo-img"
-        src="@/assets/images/logo/logo-mini.jpg"
+        :src="headerLogo"
         alt="logo"
       />
       <span class="logo-text">{{ title }}</span>
     </div>
     <el-scrollbar>
       <el-menu
-        :default-active="'specialisedClinic'"
+        :default-active="'index'"
         background-color="#4949C9"
         text-color="#fff"
         :collapse="sidebarCollapse"
@@ -41,6 +42,7 @@ const sidebarCollapse = ref(inject('sidebarCollapse'))
 // const menu = AuthStore()
 const menu = staticRouter.find((e) => e.name === 'home')
 const title = ref(import.meta.env.VITE_APP_TITLE)
+const headerLogo = ref(import.meta.env.VITE_APP_HEADER_LOGO)
 </script>
 
 <style scoped>
@@ -50,6 +52,7 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease;
+  padding-left: 10px;
 }
 
 .sidebar .logo {
@@ -78,5 +81,7 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
   width: 100%;
   overflow-x: hidden;
   border-right: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 </style>

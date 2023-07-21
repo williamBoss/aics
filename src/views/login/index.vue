@@ -1,10 +1,10 @@
 <template>
   <div class="login-container flx-center">
     <div class="logo">
-      <img
+      <!--<img
         src="@/assets/images/logo/logo.png"
         alt="logo"
-      />
+      />-->
     </div>
     <div class="login-box">
       <div class="login-form">

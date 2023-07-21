@@ -65,4 +65,40 @@ const handleClickMenu = (subItem) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+li.el-menu-item {
+  transition: none;
+}
+
+li.el-menu-item.is-active {
+  background-color: #ffffff;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+li.el-menu-item.is-active::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 0 5px #ffffff;
+  background-color: transparent;
+  z-index: 9999;
+}
+
+li.el-menu-item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 5px -5px 0 5px #ffffff;
+  background-color: transparent;
+  z-index: 9999;
+}
+</style>

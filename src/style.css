@@ -1,9 +1,11 @@
 :root {
     --el-font-weight-primary: 400 !important;
-    --el-color-primary: #486DA3 !important;
+    --el-color-primary: #4949c9 !important;
 }
 
-html, body, #app {
+html,
+body,
+#app {
     font-family: 'Source Han Sans SC', sans-serif;
     width: 100%;
     height: 100%;
@@ -48,7 +50,7 @@ html, body, #app {
     height: 0;
     overflow: hidden;
     clear: both;
-    content: "";
+    content: '';
 }
 
 /* 文字单行省略号 */
@@ -85,6 +87,15 @@ html, body, #app {
     box-shadow: inset 0 0 0 white;
 }
 
+.main-title {
+    height: 22px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+
 .table {
     display: flex;
     flex: 1;
@@ -114,14 +125,14 @@ html, body, #app {
     border-radius: 8px !important;
 }
 
-.table .card-body {
-    min-height: calc(100vh - 250px);
+.card .card-header .title {
+    height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 24px;
 }
 
-.card-body-padding {
-    padding: 4px;
-}
-
-.padding-0 {
-    padding: 0;
+.margin-b-16 {
+    margin-bottom: 16px;
 }

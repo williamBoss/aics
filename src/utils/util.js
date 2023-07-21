@@ -202,6 +202,17 @@ export function treeToArray(tree, children) {
  * 随机数
  * @return {number}
  */
-export const generateId=function() {
+export const generateId=() => {
   return Math.floor(Math.random() * 100000 + Math.random() * 20000 + Math.random() * 5000)
+}
+
+import randomColor from 'randomcolor'
+
+/**
+ * 获取随机颜色
+ * @param {object} config 配置
+ * @return {[]|*|string|[(*|number),(*|number),(*|number)]}
+ */
+export const useRandomColor=(config={}) => {
+  return randomColor(config)
 }

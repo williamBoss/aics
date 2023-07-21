@@ -31,7 +31,7 @@ export const staticRouter=[
       {
         path: '/home/index',
         name: 'index',
-        component: () => {},
+        component: () => import('@/views/homePage/index.vue'),
         meta: {
           requiresAuth: true,
           title: '首页',
@@ -43,7 +43,7 @@ export const staticRouter=[
       {
         path: '/consultation/index',
         name: 'consultationIndex',
-        component: () => {},
+        component: () => import('@/views/consultation/index.vue'),
         meta: {
           requiresAuth: true,
           title: '会诊管理',
@@ -55,7 +55,7 @@ export const staticRouter=[
       {
         path: '/dataAnalysis/index',
         name: 'dataAnalysisIndex',
-        component: () => {},
+        component: () => import('@/views/dataAnalysis/index.vue'),
         meta: {
           requiresAuth: true,
           title: '数据分析',
@@ -79,7 +79,7 @@ export const staticRouter=[
       {
         path: '/system/hospital',
         name: 'hospital',
-        component: () => {},
+        component: () => import('@/views/hospital/index.vue'),
         meta: {
           requiresAuth: true,
           title: '医院信息管理',

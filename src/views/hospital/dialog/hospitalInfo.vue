@@ -55,6 +55,9 @@
 <script setup>
 import { defineComponent, reactive, ref } from 'vue'
 import { resetForm } from '@/utils/util'
+import { HospitalService } from '@api/consultation-api.js'
+import { ElMessage } from 'element-plus'
+import { ElMessage as elMessage } from 'element-plus/es/components/message/index'
 
 defineComponent({
   name: 'HospitalInfo'
@@ -67,7 +70,7 @@ defineProps({
   }
 })
 
-// const emit = defineEmits(['refresh'])
+const emit = defineEmits(['refresh'])
 const open = ref(false)
 const formRef = ref()
 const form = ref({})
@@ -75,15 +78,15 @@ const rules = reactive({
   hospitalName: [{ required: true, message: '医院名称不能为空', trigger: 'blur' }]
 })
 const hospitalLevelOptions = reactive([
-  { label: '三甲医院', value: 0 },
-  { label: '三级医院', value: 1 },
-  { label: '二级医院', value: 2 },
-  { label: '社区医院', value: 3 }
+  { label: '三甲医院', value: '三甲医院' },
+  { label: '三级医院', value: '三级医院' },
+  { label: '二级医院', value: '二级医院' },
+  { label: '社区医院', value: '社区医院' }
 ])
 
 const acceptParams = (data = {}) => {
-  if (data.data) {
-    form.value = data.data
+  if (data) {
+    form.value = data
   }
   open.value = true
 }
@@ -92,8 +95,18 @@ const submitForm = async (formEl) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
-      if (form.value.hospitalId) {
+      if (form.value.hospitalKey) {
+        HospitalService.hospital.update(form.value).then(() => {
+          open.value = false
+          ElMessage.success('成功')
+          emit('refresh')
+        })
       } else {
+        HospitalService.hospital.add(form.value).then(() => {
+          open.value = false
+          elMessage.success('成功')
+          emit('refresh')
+        })
       }
     } else {
       console.log('error submit!', fields)

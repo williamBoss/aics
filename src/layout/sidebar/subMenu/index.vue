@@ -86,7 +86,7 @@ li.el-menu-item.is-active::before {
   border-bottom-right-radius: 20px;
   box-shadow: 5px 5px 0 5px #ffffff;
   background-color: transparent;
-  z-index: 9999;
+  z-index: 999;
 }
 
 li.el-menu-item.is-active::after {
@@ -99,6 +99,6 @@ li.el-menu-item.is-active::after {
   border-top-right-radius: 20px;
   box-shadow: 5px -5px 0 5px #ffffff;
   background-color: transparent;
-  z-index: 9999;
+  z-index: 999;
 }
 </style>

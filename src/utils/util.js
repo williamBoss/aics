@@ -1,3 +1,6 @@
+import randomColor from 'randomcolor'
+import pinyin from 'js-pinyin'
+
 /**
  * @description 获取当前时间
  * @return {string}
@@ -39,7 +42,7 @@ export const resetForm=(formEl) => {
  * @param {string} propName
  * @return {*}
  */
-export function addDateRange(params, propName) {
+export function addDateRange(params, propName=undefined) {
   const search=params
   search.params={}
   const { dateRange }=search
@@ -206,8 +209,6 @@ export const generateId=() => {
   return Math.floor(Math.random() * 100000 + Math.random() * 20000 + Math.random() * 5000)
 }
 
-import randomColor from 'randomcolor'
-
 /**
  * 获取随机颜色
  * @param {object} config 配置
@@ -215,4 +216,14 @@ import randomColor from 'randomcolor'
  */
 export const useRandomColor=(config={}) => {
   return randomColor(config)
+}
+
+/**
+ * 获取字符串的拼音首字母
+ * @param {string} char
+ * @return {*|string[]}
+ */
+export const getPinyinInitials=(char) => {
+  pinyin.setOptions({ checkPolyphone: false, charCase: 0 })
+  return pinyin.getCamelChars(char.charAt(0))
 }

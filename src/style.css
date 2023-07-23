@@ -1,6 +1,12 @@
 :root {
     --el-font-weight-primary: 400 !important;
     --el-color-primary: #4949c9 !important;
+    --el-button-bg-color: #4949c9 !important;
+    --el-button-border-color: #4949c9 !important;
+    --el-button-hover-bg-color: rgb(128, 128, 217) !important;
+    --el-button-hover-border-color: rgb(128, 128, 217) !important;
+    --el-button-active-bg-color: rgb(62, 62, 165) !important;
+    --el-button-active-border-color: rgb(62, 62, 165) !important;
 }
 
 html,
@@ -135,4 +141,27 @@ body,
 
 .margin-b-16 {
     margin-bottom: 16px;
+}
+
+.margin-t-30 {
+    margin-top: 30px;
+}
+
+.margin-t-60 {
+    margin-top: 60px;
+}
+
+.table-header {
+    height: 54px;
+    background-color: #f5f5ff !important;
+    border-radius: 4px 4px 0 0;
+}
+
+.table-header-item {
+    height: 22px;
+    background-color: inherit !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 22px;
 }

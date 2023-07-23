@@ -13,6 +13,7 @@
     "axios": "^1.4.0",
     "element-plus": "^2.3.6",
     "js-base64": "^3.7.5",
+    "js-pinyin": "^0.2.4",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "pinia": "^2.1.4",

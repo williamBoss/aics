@@ -1,95 +1,109 @@
 <template>
-  <div class="flx margin-b-16">
-    <div class="main-title">
-      <span>医院信息</span>
+  <div
+    v-loading="loading"
+    element-loading-text="获取数据中"
+  >
+    <div class="flx margin-b-16">
+      <div class="main-title">
+        <span>医院信息</span>
+      </div>
+      <div class="flx-right">
+        <el-input
+          v-model="state.searchParam.hospitalName"
+          placeholder="请输入医院名称"
+          :prefix-icon="Search"
+          clearable
+          style="width: 240px"
+          @keyup.enter="handleQuery"
+        />
+        <el-button
+          type="primary"
+          color="#4949C9"
+          :icon="Plus"
+          style="margin-left: 15px; font-size: 15px"
+          @click="handleAdd"
+        />
+      </div>
     </div>
-    <div class="flx-right">
-      <el-input
-        v-model="state.searchParam.hospitalName"
-        placeholder="请输入医院名称"
-        :prefix-icon="Search"
-        clearable
-        style="width: 240px"
-        @keyup.enter="handleQuery"
-      />
-      <el-button
-        type="primary"
-        color="#4949C9"
-        :icon="Plus"
-        style="margin-left: 15px; font-size: 15px"
-        @click="handleAdd"
+    <div class="body">
+      <div
+        v-if="state.tableData.length === 0"
+        class="flx-center"
+        style="height: 100%"
+      >
+        <p style="color: #a8abb2">暂无数据</p>
+      </div>
+      <el-scrollbar v-else>
+        <el-row style="flex-wrap: wrap; gap: 15px">
+          <el-card
+            v-for="(row, index) in state.tableData"
+            :key="index"
+            class="card"
+            shadow="never"
+          >
+            <div class="header">
+              <div
+                class="img"
+                :style="{ background: randomColor[index % 10][0] }"
+              >
+                <p :style="{ color: randomColor[index % 10][1] }">
+                  {{ getPinyinInitials(row.hospitalName) }}
+                </p>
+              </div>
+              <div class="operation">
+                <el-dropdown>
+                  <el-icon>
+                    <MoreFilled />
+                  </el-icon>
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item>
+                        <el-button
+                          type="primary"
+                          link
+                          @click="handleUpdate(row)"
+                        >
+                          编辑
+                        </el-button>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                        <el-button
+                          type="danger"
+                          link
+                          @click="handleDelete(row)"
+                        >
+                          删除
+                        </el-button>
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
+              </div>
+            </div>
+            <div>
+              <p>{{ row.hospitalName }}</p>
+              <el-tag class="margin-b-16">{{ row.hospitalLevel }}</el-tag>
+            </div>
+            <div>
+              <el-button @click="navigateToDetail(row)">详情</el-button>
+            </div>
+          </el-card>
+        </el-row>
+      </el-scrollbar>
+    </div>
+    <div class="footer">
+      <el-pagination
+        :current-page="state.pageable.pageNum"
+        :page-size="state.pageable.pageSize"
+        :page-sizes="[10, 25, 50, 100]"
+        background
+        layout="->, total, sizes, prev, pager, next"
+        :total="state.pageable.total"
+        style="margin-top: 20px"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
       />
     </div>
-  </div>
-  <div class="body">
-    <el-scrollbar>
-      <el-row style="flex-wrap: wrap; gap: 15px">
-        <el-card
-          v-for="(i, index) in 10"
-          :key="index"
-          class="card"
-          shadow="never"
-        >
-          <div class="header">
-            <div
-              class="img"
-              :style="{ background: randomColor[index % 10][0] }"
-            >
-              <p :style="{ color: randomColor[index % 10][1] }">Z</p>
-            </div>
-            <div class="operation">
-              <el-dropdown>
-                <el-icon>
-                  <MoreFilled />
-                </el-icon>
-                <template #dropdown>
-                  <el-dropdown-menu>
-                    <el-dropdown-item>
-                      <el-button
-                        type="primary"
-                        link
-                        @click="handleUpdate"
-                      >
-                        编辑
-                      </el-button>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <el-button
-                        type="danger"
-                        link
-                        @click="handleDelete"
-                      >
-                        删除
-                      </el-button>
-                    </el-dropdown-item>
-                  </el-dropdown-menu>
-                </template>
-              </el-dropdown>
-            </div>
-          </div>
-          <div>
-            <p>北京友谊医院</p>
-            <el-tag class="margin-b-16">三甲</el-tag>
-          </div>
-          <div>
-            <el-button>详情</el-button>
-          </div>
-        </el-card>
-      </el-row>
-    </el-scrollbar>
-  </div>
-  <div class="footer">
-    <el-pagination
-      :current-page="state.pageable.pageNum"
-      :page-size="state.pageable.pageSize"
-      :page-sizes="[10, 25, 50, 100]"
-      background
-      layout="->, total, sizes, prev, pager, next"
-      :total="state.pageable.total"
-      style="margin-top: 20px"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    />
   </div>
   <hospital-info
     ref="hospitalInfoRef"
@@ -99,11 +113,13 @@
 </template>
 
 <script setup>
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
 import { MoreFilled, Plus, Search } from '@element-plus/icons-vue'
-import { useRandomColor } from '@/utils/util.js'
+import { addDateRange, getPinyinInitials, useRandomColor } from '@/utils/util.js'
 import { useConfirmHandle } from '@/hooks/useConfirmHandle.js'
 import HospitalInfo from '@/views/hospital/dialog/hospitalInfo.vue'
+import router from '@/router/index.js'
+import { HospitalService } from '@api/consultation-api.js'
 
 defineComponent({
   name: 'HospitalList'
@@ -142,7 +158,16 @@ const handleQuery = () => {
 }
 
 /** 查询列表 */
-const getList = () => {}
+const getList = () => {
+  loading.value = true
+  Object.assign(state.totalParam, state.searchParam, state.pageable)
+  HospitalService.hospital.getList(addDateRange(state.totalParam)).then((response) => {
+    const data = response.data
+    state.tableData = data.records
+    state.pageable.total = Number(data.total)
+    loading.value = false
+  })
+}
 
 /**
  * @description 每页条数改变
@@ -177,15 +202,30 @@ const handleUpdate = (row) => {
   loading.value = true
   title.value = '修改医院信息'
   hospitalInfoRef.value.reset()
-  hospitalInfoRef.value.acceptParams(response.data)
-  loading.value = false
+  HospitalService.hospital.getInfoById(row.hospitalKey).then((response) => {
+    hospitalInfoRef.value.acceptParams(response.data)
+    loading.value = false
+  })
 }
 
 const handleDelete = (row) => {
-  useConfirmHandle(UserService.user.del, row.userId, `删除${row.hospitalName}的数据项`).then(() => {
+  useConfirmHandle(HospitalService.hospital.del, row.hospitalKey, `删除${row.hospitalName}的数据项`).then(() => {
     getList()
   })
 }
+
+const navigateToDetail = (row) => {
+  router.push({
+    name: 'hospitalDetail',
+    params: {
+      hospitalId: row.hospitalKey
+    }
+  })
+}
+
+onMounted(() => {
+  handleQuery()
+})
 </script>
 
 <style scoped>

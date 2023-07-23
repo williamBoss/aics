@@ -87,6 +87,19 @@ export const staticRouter=[
           iconType: 'sl',
           hidden: false
         }
+      },
+      {
+        path: '/system/hospital/detail/:hospitalId',
+        name: 'hospitalDetail',
+        component: () => import('@/views/hospital/detail.vue'),
+        meta: {
+          requiresAuth: true,
+          title: '',
+          icon: '',
+          iconType: '',
+          hidden: true
+        },
+        props: (route) => ({ ...route.params })
       }
     ]
   }

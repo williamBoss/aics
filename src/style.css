@@ -1,6 +1,9 @@
 :root {
     --el-font-weight-primary: 400 !important;
     --el-color-primary: #4949c9 !important;
+}
+
+.el-button--primary {
     --el-button-bg-color: #4949c9 !important;
     --el-button-border-color: #4949c9 !important;
     --el-button-hover-bg-color: rgb(128, 128, 217) !important;

@@ -14,7 +14,10 @@
         <el-checkbox
           v-for="(item, index) in field.options.optionItems"
           :key="index"
-          class="el-checkbox"
+          :class="{
+            'el-checkbox': true,
+            'row-checkbox-option': field.options.isRowCheckOption
+          }"
           :label="item.value"
           :disabled="item.disabled"
         >
@@ -50,5 +53,9 @@ const { handleChangeEvent } = useEventFunction(getCurrentInstance, props, oldFie
 
 .checkbox-container .el-checkbox {
   margin-bottom: 10px;
+}
+
+.row-checkbox-option {
+  flex: 0 0 100%;
 }
 </style>

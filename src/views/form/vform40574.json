@@ -79,7 +79,7 @@
                     "columnWidth": "200px",
                     "size": "",
                     "displayStyle": "inline",
-                    "buttonStyle": false,
+                    "buttonStyle": true,
                     "border": false,
                     "labelWidth": null,
                     "labelHidden": false,
@@ -251,6 +251,7 @@
                     "labelHidden": false,
                     "disabled": false,
                     "hidden": false,
+                    "isRowCheckOption": true,
                     "optionItems": [
                       {
                         "label": "check 1",

@@ -58,4 +58,20 @@ const { widgetSize, customClass } = useCommonComputed(props)
 const { handleChangeEvent } = useEventFunction(instance, props, oldFieldValue)
 </script>
 
-<style scoped></style>
+<style scoped>
+:deep(.el-radio-button) {
+  margin-right: 15px;
+}
+
+:deep(.el-radio-button) .el-radio-button__inner {
+  background: #eaeaf9;
+  color: #4949c9;
+  border-radius: 4px;
+  border: 0;
+}
+
+::v-deep(.el-radio-button).is-active .el-radio-button__inner {
+  background: #4949c9;
+  color: #ffffff;
+}
+</style>

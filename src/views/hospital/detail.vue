@@ -447,7 +447,7 @@ onMounted(() => {
       Object.entries(antiInfectionSpecialtyEnum).forEach(([key, value]) => {
         pharmacist.options.antiInfectionSpecialtyOptions.push({
           label: value,
-          value: key
+          value: Number(key)
         })
       })
     })

@@ -117,16 +117,31 @@ body,
     margin-bottom: 10px;
 }
 
+.table .table-box .table-button .el-button {
+    margin-bottom: 15px;
+}
+
+.table-header {
+    height: 54px;
+    background-color: #f5f5ff !important;
+    border-radius: 4px 4px 0 0;
+}
+
+.table-header-item {
+    height: 22px;
+    background-color: inherit !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 22px;
+}
+
 .header-button-lf {
     float: left;
 }
 
 .header-button-ri {
     float: right;
-}
-
-.table .table-box .table-button .el-button {
-    margin-bottom: 15px;
 }
 
 .card {
@@ -152,19 +167,4 @@ body,
 
 .margin-t-60 {
     margin-top: 60px;
-}
-
-.table-header {
-    height: 54px;
-    background-color: #f5f5ff !important;
-    border-radius: 4px 4px 0 0;
-}
-
-.table-header-item {
-    height: 22px;
-    background-color: inherit !important;
-    font-size: 14px;
-    font-weight: 500;
-    color: #222222;
-    line-height: 22px;
 }

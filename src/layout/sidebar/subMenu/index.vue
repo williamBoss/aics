@@ -71,7 +71,7 @@ li.el-menu-item {
 }
 
 li.el-menu-item.is-active {
-  background-color: #ffffff;
+  background-color: #f4f6fb;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 }
@@ -84,7 +84,7 @@ li.el-menu-item.is-active::before {
   width: 20px;
   height: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 5px 5px 0 5px #ffffff;
+  box-shadow: 5px 5px 0 5px #f4f6fb;
   background-color: transparent;
   z-index: 999;
 }
@@ -97,7 +97,7 @@ li.el-menu-item.is-active::after {
   width: 20px;
   height: 20px;
   border-top-right-radius: 20px;
-  box-shadow: 5px -5px 0 5px #ffffff;
+  box-shadow: 5px -5px 0 5px #f4f6fb;
   background-color: transparent;
   z-index: 999;
 }

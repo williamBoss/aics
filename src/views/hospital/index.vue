@@ -122,7 +122,7 @@ import router from '@/router/index.js'
 import { HospitalService } from '@api/consultation-api.js'
 
 defineComponent({
-  name: 'HospitalList'
+  name: 'HospitalIndex'
 })
 
 const loading = ref(false)

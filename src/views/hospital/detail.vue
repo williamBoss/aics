@@ -269,7 +269,7 @@ import { HospitalService } from '@api/consultation-api.js'
 import { getPinyinInitials, resetForm } from '@/utils/util.js'
 import { useConfirmHandle } from '@/hooks/useConfirmHandle.js'
 import { ElMessage } from 'element-plus'
-import DynamicTable from '@components/Table/DynamicTable.vue'
+import DynamicTable from '@components/Table/DynamicEditTable.vue'
 
 const antiInfectionSpecialtyEnum = {
   0: '否',

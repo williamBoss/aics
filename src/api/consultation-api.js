@@ -112,3 +112,38 @@ export class HospitalService {
     delBatch: (ids) => Request.delete(`${apiPrefix}/pharmacist/removes/`, ids)
   }
 }
+
+/**
+ * 问卷
+ */
+export class QuestionnaireService {
+  static questionnaire = {
+    /**
+     * 获取问卷tab和模板
+     * @param {string} code
+     * @return {Promise<*>}
+     */
+    getTabInfo: (code) => Request.get(`${apiPrefix}/questionnaire/getTabInfo/${code}`),
+
+    /**
+     * @typedef {object} answer
+     * @property {Object} answerMap - 答题信息
+     * @property {number} isFinished - 是否是已完成 0:否 1：是
+     * @property {number} recordId - 记录id
+     * @example {"answerMap": {},"isFinished": 0,"recordId": 0}
+     */
+    /**
+     * 保存用户填写问卷记录信息
+     * @param  {answer} data
+     * @return {Promise<*>}
+     */
+    saveAnswer: (data) => Request.post(`${apiPrefix}/questionnaire/saveAnswer`, data),
+
+    /**
+     * 获取用户填写问卷记录信息
+     * @param {number} recordId
+     * @return {Promise<*>}
+     */
+    getAnswer: (recordId) => Request.post(`${apiPrefix}/questionnaire/getAnswer/${recordId}`)
+  }
+}

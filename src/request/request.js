@@ -30,7 +30,7 @@ export class Request {
    * @param {AxiosRequestConfig} config 请求头配置
    * @return {Promise<unknown>} 返回
    */
-  static post = (url, params, config = {}) => {
+  static post = (url, params = {}, config = {}) => {
     return new Promise((resolve, reject) => {
       axios
         .post(url, params, config)

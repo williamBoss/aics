@@ -112,7 +112,7 @@ const login = (formEl) => {
           router.replace(HOME_URL)
           elNotification({
             title: getTimeState(),
-            message: '欢迎登录肺癌管理系统',
+            message: `欢迎登录${title.value}`,
             type: 'success',
             duration: 3000
           })

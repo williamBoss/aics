@@ -3,30 +3,25 @@
     :field="field"
     :rules="rules"
   >
-    <el-select
+    <el-date-picker
       ref="fieldEditor"
       v-model="fieldModel"
-      class="full-width-input"
+      :class="[customClass, field.options.autoFullWidth ? 'auto-full-width' : '']"
+      :type="field.options.type"
       :disabled="field.options.disabled"
+      :readonly="field.options.readonly"
       :size="widgetSize"
       :clearable="field.options.clearable"
-      :filterable="field.options.filterable"
-      :multiple="field.options.multiple"
-      :multiple-limit="field.options.multipleLimit"
-      :placeholder="field.options.placeholder"
+      :editable="field.options.editable"
+      :format="field.options.format"
+      :value-format="field.options.valueFormat"
+      :start-placeholder="field.options.startPlaceholder"
+      :end-placeholder="field.options.endPlaceholder"
       @focus="handleFocusCustomEvent"
       @blur="handleBlurCustomEvent"
       @change="handleChangeEvent"
     >
-      <el-option
-        v-for="item in field.options.optionItems"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :disabled="item.disabled"
-      >
-      </el-option>
-    </el-select>
+    </el-date-picker>
   </form-item-wrapper>
 </template>
 
@@ -36,7 +31,7 @@ import { commonProps, useCommonComputed, useEventFunction } from '@components/Fo
 import FormItemWrapper from '@components/FormRender/FormWidget/FormItemWrapper.vue'
 
 defineComponent({
-  name: 'SelectWidget'
+  name: 'DateRangeWidget'
 })
 
 const props = defineProps({
@@ -48,7 +43,7 @@ const oldFieldValue = ref(null)
 const fieldModel = ref(null)
 const rules = ref([])
 
-const { widgetSize } = useCommonComputed(props)
+const { widgetSize, customClass } = useCommonComputed(props)
 const { handleBlurCustomEvent, handleFocusCustomEvent, handleChangeEvent } = useEventFunction(
   getCurrentInstance,
   props,
@@ -57,7 +52,8 @@ const { handleBlurCustomEvent, handleFocusCustomEvent, handleChangeEvent } = use
 </script>
 
 <style scoped>
-.full-width-input {
+:deep(.auto-full-width.el-date-editor.el-input),
+:deep(.auto-full-width.el-date-editor .el-input__wrapper) {
   width: 100% !important;
 }
 </style>

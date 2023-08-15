@@ -5,7 +5,7 @@
   >
     <div class="flx margin-b-16">
       <div class="main-title">
-        <span>医院信息</span>
+        <span>会诊管理</span>
       </div>
     </div>
     <div class="body">
@@ -101,6 +101,7 @@
               type="primary"
               class="header-button-ri"
               :icon="Plus"
+              @click="handleAdd"
             >
               新增
             </el-button>
@@ -147,6 +148,7 @@
 import { defineComponent, reactive, ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 import DynamicTable from '@components/Table/DynamicTable.vue'
+import router from '@/router/index.js'
 
 defineComponent({
   name: 'ConsultationIndex'
@@ -182,6 +184,10 @@ const state = reactive({
   // 总参数(包含分页和查询参数)
   totalParam: {}
 })
+
+const handleAdd = () => {
+  router.push({ name: 'consultationForm' })
+}
 </script>
 
 <style scoped></style>

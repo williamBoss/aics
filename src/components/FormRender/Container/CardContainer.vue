@@ -3,14 +3,14 @@
     v-show="!widget.options.hidden"
     :ref="widget.id"
     :key="widget.id"
-    class="card-container"
+    class="card card-container"
     :class="[customClass]"
     :shadow="widget.options.shadow"
     :style="{ width: widget.options.cardWidth + '!important' || '' }"
     :body-style="widget.options.bodyStyle"
   >
     <template
-      v-if="widget.options.showLabel"
+      v-if="widget.options.showLabel || widget.options.label"
       #header
     >
       <div class="card-header">

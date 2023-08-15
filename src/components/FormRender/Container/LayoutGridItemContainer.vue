@@ -77,9 +77,7 @@ const layoutProps = reactive({
   offset: props.widget.options.offset || 0,
   push: props.widget.options.push || 0,
   pull: props.widget.options.pull || 0,
-  xs: props.widget.options.xs || 12,
-  sm: props.widget.options.sm || 12,
-  md: props.widget.options.md || 12
+  xs: props.widget.options.xs || 12
 })
 const { customClass, components, getComponentByContainer } = useCommonComputed(props)
 const colHeightStyle = computed(() => (props.colHeight ? { height: props.colHeight + 'px' } : {}))

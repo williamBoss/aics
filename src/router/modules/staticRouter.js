@@ -3,7 +3,7 @@ import { HOME_URL, LOGIN_URL } from '@/config/config'
 /**
  * staticRouter(静态路由)
  */
-export const staticRouter=[
+export const staticRouter = [
   {
     path: '/',
     redirect: LOGIN_URL
@@ -50,6 +50,18 @@ export const staticRouter=[
           icon: 'consultation',
           iconType: 'sl',
           hidden: false
+        }
+      },
+      {
+        path: '/consultation/form',
+        name: 'consultationForm',
+        component: () => import('@/views/consultation/consultationForm.vue'),
+        meta: {
+          requiresAuth: true,
+          title: '会诊管理表单',
+          icon: '',
+          iconType: '',
+          hidden: true
         }
       },
       {
@@ -108,7 +120,7 @@ export const staticRouter=[
 /**
  * errorRouter(错误页面路由)
  */
-export const errorRouter=[
+export const errorRouter = [
   {
     path: '/403',
     name: '403',
@@ -138,7 +150,7 @@ export const errorRouter=[
 /**
  * notFoundRouter(找不到路由)
  */
-export const notFoundRouter={
+export const notFoundRouter = {
   path: '/:pathMatch(.*)*',
   name: 'notFound',
   redirect: { name: '404' }

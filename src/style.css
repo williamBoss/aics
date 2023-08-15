@@ -157,6 +157,10 @@ body,
     line-height: 24px;
 }
 
+.card-container {
+    margin: 30px 0;
+}
+
 .margin-b-16 {
     margin-bottom: 16px;
 }

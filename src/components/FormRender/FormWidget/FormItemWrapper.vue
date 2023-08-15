@@ -34,7 +34,9 @@ const labelWidth = computed(() =>
   props.field.options.labelHidden ? 0 : props.field.options.labelWidth || formConfig.labelWidth || 0
 )
 const label = computed(() => props.field.options.label || '')
-const labelStyle = computed(() => (props.field.options.labelHidden ? 'visibility:hidden;' : ''))
+const labelStyle = computed(() =>
+  props.field.options.labelHidden && props.field.options.label !== '' ? 'visibility:hidden;' : ''
+)
 
 const getPropName = () => {
   return props.field.options.name

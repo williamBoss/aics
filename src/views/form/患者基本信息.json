@@ -1,0 +1,2056 @@
+{
+  "widgetList": [
+    {
+      "key": 97465,
+      "type": "card",
+      "category": "container",
+      "icon": "card",
+      "widgetList": [
+        {
+          "key": 89787,
+          "type": "layout-grid",
+          "category": "container",
+          "icon": "grid",
+          "cols": [
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 65122,
+                  "type": "textarea",
+                  "icon": "textarea-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "textarea45574",
+                    "label": "主要诊断",
+                    "labelAlign": "",
+                    "rows": 3,
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "minLength": null,
+                    "maxLength": null,
+                    "showWordLimit": false,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onInput": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "textarea45574"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio59552",
+                    "label": "特殊人群",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "老年患者(＞60岁)",
+                        "value": 1
+                      },
+                      {
+                        "label": "孕妇",
+                        "value": 2
+                      },
+                      {
+                        "label": "哺乳期妇女",
+                        "value": 3
+                      },
+                      {
+                        "value": 4,
+                        "label": "儿童"
+                      },
+                      {
+                        "value": 5,
+                        "label": "肝损害"
+                      },
+                      {
+                        "value": 6,
+                        "label": "肾损害"
+                      },
+                      {
+                        "value": 7,
+                        "label": "器官移植"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio59552"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio39020",
+                    "label": "是否肾损害（目前情况）",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio39020"
+                },
+                {
+                  "key": 46793,
+                  "type": "select",
+                  "icon": "select-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "select91784",
+                    "label": "内生肌酐清除率(Ccr)",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "filterable": false,
+                    "allowCreate": false,
+                    "remote": false,
+                    "automaticDropdown": false,
+                    "multiple": false,
+                    "multipleLimit": 0,
+                    "optionItems": [
+                      {
+                        "label": "轻度（51~70ml/min）",
+                        "value": 1
+                      },
+                      {
+                        "label": "中度（31~50ml/min）",
+                        "value": 2
+                      },
+                      {
+                        "label": "重度（＜30ml/min）",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onRemoteQuery": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "select91784"
+                },
+                {
+                  "key": 89787,
+                  "type": "layout-grid",
+                  "category": "container",
+                  "icon": "grid",
+                  "cols": [
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 24191,
+                          "type": "input",
+                          "icon": "text-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "input106818",
+                            "label": "肌酐",
+                            "labelAlign": "label-left-align",
+                            "type": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "readonly": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "showPassword": false,
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": [],
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "minLength": null,
+                            "maxLength": null,
+                            "showWordLimit": false,
+                            "prefixIcon": "",
+                            "suffixIcon": "",
+                            "appendButton": false,
+                            "appendButtonDisabled": false,
+                            "buttonIcon": "custom-search",
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onInput": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": "",
+                            "onAppendButtonClick": ""
+                          },
+                          "id": "input106818"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol85530",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-85530"
+                    },
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 24191,
+                          "type": "input",
+                          "icon": "text-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "input87986",
+                            "label": "肌酐清除率",
+                            "labelAlign": "",
+                            "type": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "readonly": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "showPassword": false,
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": "",
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "minLength": null,
+                            "maxLength": null,
+                            "showWordLimit": false,
+                            "prefixIcon": "",
+                            "suffixIcon": "",
+                            "appendButton": false,
+                            "appendButtonDisabled": false,
+                            "buttonIcon": "custom-search",
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onInput": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": "",
+                            "onAppendButtonClick": ""
+                          },
+                          "id": "input87986"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol46859",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-46859"
+                    }
+                  ],
+                  "options": {
+                    "name": "grid61856",
+                    "hidden": false,
+                    "gutter": 12,
+                    "colHeight": null,
+                    "customClass": []
+                  },
+                  "id": "grid61856"
+                },
+                {
+                  "key": 89787,
+                  "type": "layout-grid",
+                  "category": "container",
+                  "icon": "grid",
+                  "cols": [
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 31407,
+                          "type": "radio",
+                          "icon": "radio-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "radio79258",
+                            "label": "是否有药物过敏史",
+                            "labelAlign": "",
+                            "defaultValue": null,
+                            "columnWidth": "200px",
+                            "size": "",
+                            "displayStyle": "inline",
+                            "buttonStyle": true,
+                            "border": false,
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "optionItems": [
+                              {
+                                "label": "否",
+                                "value": "0"
+                              },
+                              {
+                                "label": "是",
+                                "value": "1"
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": [],
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onChange": "",
+                            "onValidate": ""
+                          },
+                          "id": "radio79258"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol97025",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-97025"
+                    },
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 46793,
+                          "type": "select",
+                          "icon": "select-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "select61933",
+                            "label": "过敏史类别",
+                            "labelAlign": "",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": true,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "filterable": false,
+                            "allowCreate": false,
+                            "remote": false,
+                            "automaticDropdown": false,
+                            "multiple": false,
+                            "multipleLimit": 0,
+                            "optionItems": [
+                              {
+                                "label": "青霉素过敏史",
+                                "value": 1
+                              },
+                              {
+                                "label": "头孢类药物过敏史",
+                                "value": 2
+                              },
+                              {
+                                "label": "磺胺过敏史",
+                                "value": 3
+                              },
+                              {
+                                "value": 4,
+                                "label": "其他类过敏药物"
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": [],
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onRemoteQuery": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": ""
+                          },
+                          "id": "select61933"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol25727",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": []
+                      },
+                      "id": "grid-col-25727"
+                    }
+                  ],
+                  "options": {
+                    "name": "grid16052",
+                    "hidden": false,
+                    "gutter": 12,
+                    "colHeight": null,
+                    "customClass": []
+                  },
+                  "id": "grid16052"
+                },
+                {
+                  "key": 24191,
+                  "type": "input",
+                  "icon": "text-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "input106181",
+                    "label": "",
+                    "labelAlign": "",
+                    "type": "text",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": true,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "showPassword": false,
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "minLength": null,
+                    "maxLength": null,
+                    "showWordLimit": false,
+                    "prefixIcon": "",
+                    "suffixIcon": "",
+                    "appendButton": false,
+                    "appendButtonDisabled": false,
+                    "buttonIcon": "custom-search",
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onInput": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": "",
+                    "onAppendButtonClick": ""
+                  },
+                  "id": "input106181"
+                },
+                {
+                  "key": 44308,
+                  "type": "checkbox",
+                  "icon": "checkbox-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "checkbox6788",
+                    "label": "过敏表现（多选）",
+                    "labelAlign": "",
+                    "defaultValue": [],
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "荨麻疹",
+                        "value": 1
+                      },
+                      {
+                        "label": "红斑",
+                        "value": 2
+                      },
+                      {
+                        "label": "风团",
+                        "value": 3
+                      },
+                      {
+                        "value": 4,
+                        "label": "水疱"
+                      },
+                      {
+                        "value": 5,
+                        "label": "瘙痒"
+                      },
+                      {
+                        "value": 6,
+                        "label": "剥脱性皮炎"
+                      },
+                      {
+                        "value": 7,
+                        "label": "中毒性表皮坏死松解症"
+                      },
+                      {
+                        "value": 8,
+                        "label": "哮喘"
+                      },
+                      {
+                        "value": 9,
+                        "label": "呼吸困难"
+                      },
+                      {
+                        "value": 10,
+                        "label": "咳嗽"
+                      },
+                      {
+                        "value": 11,
+                        "label": "打喷嚏"
+                      },
+                      {
+                        "value": 12,
+                        "label": "流涕"
+                      },
+                      {
+                        "value": 13,
+                        "label": "腹痛"
+                      },
+                      {
+                        "value": 14,
+                        "label": "腹泻"
+                      },
+                      {
+                        "value": 15,
+                        "label": "腹胀"
+                      },
+                      {
+                        "value": 16,
+                        "label": "喉头水肿"
+                      },
+                      {
+                        "value": 17,
+                        "label": "结膜炎"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "checkbox6788"
+                }
+              ],
+              "options": {
+                "name": "gridCol82605",
+                "hidden": false,
+                "span": 12,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": []
+              },
+              "id": "grid-col-82605"
+            },
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 44308,
+                  "type": "checkbox",
+                  "icon": "checkbox-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "checkbox104825",
+                    "label": "疾病史（多选）",
+                    "labelAlign": "",
+                    "defaultValue": [],
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "高血压",
+                        "value": 1
+                      },
+                      {
+                        "label": "糖尿病",
+                        "value": 2
+                      },
+                      {
+                        "label": "高血脂",
+                        "value": 3
+                      },
+                      {
+                        "value": 4,
+                        "label": "高尿酸"
+                      },
+                      {
+                        "value": 5,
+                        "label": "冠心病"
+                      },
+                      {
+                        "value": 6,
+                        "label": "其他"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "checkbox104825"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio108570",
+                    "label": "是否有低蛋白血症",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio108570"
+                },
+                {
+                  "key": 46793,
+                  "type": "select",
+                  "icon": "select-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "select107687",
+                    "label": "",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": true,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "filterable": false,
+                    "allowCreate": false,
+                    "remote": false,
+                    "automaticDropdown": false,
+                    "multiple": false,
+                    "multipleLimit": 0,
+                    "optionItems": [
+                      {
+                        "label": "轻度（30~35 g/L）",
+                        "value": 1
+                      },
+                      {
+                        "label": "中度（25~35 g/L）",
+                        "value": 2
+                      },
+                      {
+                        "label": "重度（＜25 g/L）",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onRemoteQuery": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "select107687"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio40356",
+                    "label": "是否肝损害",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio40356"
+                },
+                {
+                  "key": 89787,
+                  "type": "layout-grid",
+                  "category": "container",
+                  "icon": "grid",
+                  "cols": [
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 46793,
+                          "type": "select",
+                          "icon": "select-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "select23325",
+                            "label": "ALT",
+                            "labelAlign": "",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "filterable": false,
+                            "allowCreate": false,
+                            "remote": false,
+                            "automaticDropdown": false,
+                            "multiple": false,
+                            "multipleLimit": 0,
+                            "optionItems": [
+                              {
+                                "label": "轻度（60~200U/L）",
+                                "value": 1
+                              },
+                              {
+                                "label": "中度（200~400U/L）",
+                                "value": 2
+                              },
+                              {
+                                "label": "重度（＞400U/L）",
+                                "value": 3
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": [],
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onRemoteQuery": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": ""
+                          },
+                          "id": "select23325"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol26131",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": []
+                      },
+                      "id": "grid-col-26131"
+                    },
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 46793,
+                          "type": "select",
+                          "icon": "select-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "select73112",
+                            "label": "AST",
+                            "labelAlign": "",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "filterable": false,
+                            "allowCreate": false,
+                            "remote": false,
+                            "automaticDropdown": false,
+                            "multiple": false,
+                            "multipleLimit": 0,
+                            "optionItems": [
+                              {
+                                "label": "轻度（60~200U/L）",
+                                "value": 1
+                              },
+                              {
+                                "label": "中度（200~400U/L）",
+                                "value": 2
+                              },
+                              {
+                                "label": "重度（＞400U/L）",
+                                "value": 3
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": "",
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onRemoteQuery": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": ""
+                          },
+                          "id": "select73112"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol18505",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-18505"
+                    }
+                  ],
+                  "options": {
+                    "name": "grid113025",
+                    "hidden": false,
+                    "gutter": 12,
+                    "colHeight": null,
+                    "customClass": []
+                  },
+                  "id": "grid113025"
+                },
+                {
+                  "key": 89787,
+                  "type": "layout-grid",
+                  "category": "container",
+                  "icon": "grid",
+                  "cols": [
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 46793,
+                          "type": "select",
+                          "icon": "select-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "select75348",
+                            "label": "TBIL",
+                            "labelAlign": "",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "filterable": false,
+                            "allowCreate": false,
+                            "remote": false,
+                            "automaticDropdown": false,
+                            "multiple": false,
+                            "multipleLimit": 0,
+                            "optionItems": [
+                              {
+                                "label": "轻度（60~200U/L）",
+                                "value": 1
+                              },
+                              {
+                                "label": "中度（200~400U/L）",
+                                "value": 2
+                              },
+                              {
+                                "label": "重度（＞400U/L）",
+                                "value": 3
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": "",
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onRemoteQuery": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": ""
+                          },
+                          "id": "select75348"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol43906",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-43906"
+                    },
+                    {
+                      "type": "grid-col",
+                      "category": "container",
+                      "icon": "grid-col",
+                      "internal": true,
+                      "widgetList": [
+                        {
+                          "key": 46793,
+                          "type": "select",
+                          "icon": "select-field",
+                          "formItemFlag": true,
+                          "options": {
+                            "name": "select87107",
+                            "label": "DBIL",
+                            "labelAlign": "label-left-align",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "columnWidth": "200px",
+                            "size": "",
+                            "labelWidth": null,
+                            "labelHidden": false,
+                            "disabled": false,
+                            "hidden": false,
+                            "clearable": true,
+                            "filterable": false,
+                            "allowCreate": false,
+                            "remote": false,
+                            "automaticDropdown": false,
+                            "multiple": false,
+                            "multipleLimit": 0,
+                            "optionItems": [
+                              {
+                                "label": "轻度（60~200U/L）",
+                                "value": 1
+                              },
+                              {
+                                "label": "中度（200~400U/L）",
+                                "value": 2
+                              },
+                              {
+                                "label": "重度（＞400U/L）",
+                                "value": 3
+                              }
+                            ],
+                            "required": false,
+                            "requiredHint": "",
+                            "validation": "",
+                            "validationHint": "",
+                            "customClass": "",
+                            "labelIconClass": null,
+                            "labelIconPosition": "rear",
+                            "labelTooltip": null,
+                            "onCreated": "",
+                            "onMounted": "",
+                            "onRemoteQuery": "",
+                            "onChange": "",
+                            "onFocus": "",
+                            "onBlur": "",
+                            "onValidate": ""
+                          },
+                          "id": "select87107"
+                        }
+                      ],
+                      "options": {
+                        "name": "gridCol51869",
+                        "hidden": false,
+                        "span": 12,
+                        "offset": 0,
+                        "push": 0,
+                        "pull": 0,
+                        "responsive": false,
+                        "md": 12,
+                        "sm": 12,
+                        "xs": 12,
+                        "customClass": ""
+                      },
+                      "id": "grid-col-51869"
+                    }
+                  ],
+                  "options": {
+                    "name": "grid103858",
+                    "hidden": false,
+                    "gutter": 12,
+                    "colHeight": null,
+                    "customClass": ""
+                  },
+                  "id": "grid103858"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio24190",
+                    "label": "是否透析",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio24190"
+                },
+                {
+                  "key": 46793,
+                  "type": "select",
+                  "icon": "select-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "select76535",
+                    "label": "",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": true,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "filterable": false,
+                    "allowCreate": false,
+                    "remote": false,
+                    "automaticDropdown": false,
+                    "multiple": false,
+                    "multipleLimit": 0,
+                    "optionItems": [
+                      {
+                        "label": "腹透",
+                        "value": 1
+                      },
+                      {
+                        "label": "血滤",
+                        "value": 2
+                      },
+                      {
+                        "label": "CRRT",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onRemoteQuery": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "select76535"
+                },
+                {
+                  "key": 65122,
+                  "type": "textarea",
+                  "icon": "textarea-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "textarea32368",
+                    "label": "其他补充信息",
+                    "labelAlign": "",
+                    "rows": 3,
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "minLength": null,
+                    "maxLength": null,
+                    "showWordLimit": false,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onInput": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": ""
+                  },
+                  "id": "textarea32368"
+                }
+              ],
+              "options": {
+                "name": "gridCol61205",
+                "hidden": false,
+                "span": 12,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": []
+              },
+              "id": "grid-col-61205"
+            }
+          ],
+          "options": {
+            "name": "grid109173",
+            "hidden": false,
+            "gutter": 40,
+            "colHeight": null,
+            "customClass": ""
+          },
+          "id": "grid109173"
+        }
+      ],
+      "options": {
+        "name": "card77166",
+        "label": "患者基本信息",
+        "hidden": false,
+        "folded": false,
+        "showFold": false,
+        "cardWidth": "100%",
+        "shadow": "never",
+        "customClass": []
+      },
+      "id": "card77166"
+    },
+    {
+      "key": 97465,
+      "type": "card",
+      "category": "container",
+      "icon": "card",
+      "widgetList": [
+        {
+          "key": 89787,
+          "type": "layout-grid",
+          "category": "container",
+          "icon": "grid",
+          "cols": [
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio42795",
+                    "label": "是否进行外科手术",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio42795"
+                },
+                {
+                  "key": 44308,
+                  "type": "checkbox",
+                  "icon": "checkbox-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "checkbox69780",
+                    "label": "手术部位（可多选）",
+                    "labelAlign": "",
+                    "defaultValue": [],
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "头颈部",
+                        "value": 1
+                      },
+                      {
+                        "label": "口咽部",
+                        "value": 2
+                      },
+                      {
+                        "label": "肺部",
+                        "value": 3
+                      },
+                      {
+                        "value": "4",
+                        "label": "肾脏手术"
+                      },
+                      {
+                        "value": "5",
+                        "label": "肝胆手术"
+                      },
+                      {
+                        "value": "6",
+                        "label": "子宫附件"
+                      },
+                      {
+                        "value": "7",
+                        "label": "骨科手术"
+                      },
+                      {
+                        "value": 8,
+                        "label": "泌尿（输尿管、膀胱等）"
+                      },
+                      {
+                        "value": "9",
+                        "label": "消化道（食管、胃、结肠、直肠等）"
+                      },
+                      {
+                        "value": "10",
+                        "label": "心血管（人工心瓣膜植入、永久性心脏起搏器放置、人工关节置换等）"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "checkbox69780"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio62989",
+                    "label": "抗感染治疗类别",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "经验性治疗",
+                        "value": 1
+                      },
+                      {
+                        "label": "根据药敏目标治疗",
+                        "value": 2
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio62989"
+                }
+              ],
+              "options": {
+                "name": "gridCol58740",
+                "hidden": false,
+                "span": 12,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": []
+              },
+              "id": "grid-col-58740"
+            },
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio21876",
+                    "label": "术中有无异物植入",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": true,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio21876"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio56636",
+                    "label": "会诊前抗感染防治方案",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "未用药",
+                        "value": 1
+                      },
+                      {
+                        "label": "预防用药",
+                        "value": 2
+                      },
+                      {
+                        "label": "治疗用药",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio56636"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio25977",
+                    "label": "抗感染药物种类",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "1联",
+                        "value": 1
+                      },
+                      {
+                        "label": "2联",
+                        "value": 2
+                      },
+                      {
+                        "label": "3联",
+                        "value": 3
+                      },
+                      {
+                        "value": 4,
+                        "label": "≥3联"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio25977"
+                },
+                {
+                  "key": 31407,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio45239",
+                    "label": "抗感染时给药途径",
+                    "labelAlign": "",
+                    "defaultValue": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "口服给药",
+                        "value": 1
+                      },
+                      {
+                        "label": "静脉滴注",
+                        "value": 2
+                      },
+                      {
+                        "label": "静脉推注",
+                        "value": 3
+                      },
+                      {
+                        "value": 4,
+                        "label": "肌肉注射"
+                      },
+                      {
+                        "value": 5,
+                        "label": "其他"
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio45239"
+                },
+                {
+                  "key": 24191,
+                  "type": "input",
+                  "icon": "text-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "input98034",
+                    "label": "其他抗感染时给药途径",
+                    "labelAlign": "",
+                    "type": "text",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "showPassword": false,
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "minLength": null,
+                    "maxLength": null,
+                    "showWordLimit": false,
+                    "prefixIcon": "",
+                    "suffixIcon": "",
+                    "appendButton": false,
+                    "appendButtonDisabled": false,
+                    "buttonIcon": "custom-search",
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onInput": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": "",
+                    "onAppendButtonClick": ""
+                  },
+                  "id": "input98034"
+                }
+              ],
+              "options": {
+                "name": "gridCol26256",
+                "hidden": false,
+                "span": 12,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": []
+              },
+              "id": "grid-col-26256"
+            }
+          ],
+          "options": {
+            "name": "grid70684",
+            "hidden": false,
+            "gutter": 40,
+            "colHeight": null,
+            "customClass": ""
+          },
+          "id": "grid70684"
+        },
+        {
+          "key": 31407,
+          "type": "radio",
+          "icon": "radio-field",
+          "formItemFlag": true,
+          "options": {
+            "name": "radio44244",
+            "label": "对患者会诊前抗感染治疗效果和安全性进行评估",
+            "labelAlign": "",
+            "defaultValue": null,
+            "columnWidth": "200px",
+            "size": "",
+            "displayStyle": "inline",
+            "buttonStyle": false,
+            "border": false,
+            "labelWidth": null,
+            "labelHidden": false,
+            "disabled": false,
+            "hidden": false,
+            "optionItems": [
+              {
+                "label": "无效",
+                "value": 1
+              },
+              {
+                "label": "部分有效",
+                "value": 2
+              },
+              {
+                "label": "有效",
+                "value": 3
+              },
+              {
+                "value": 4,
+                "label": "发生ADR"
+              }
+            ],
+            "required": false,
+            "requiredHint": "",
+            "validation": "",
+            "validationHint": "",
+            "customClass": [],
+            "labelIconClass": null,
+            "labelIconPosition": "rear",
+            "labelTooltip": null,
+            "onCreated": "",
+            "onMounted": "",
+            "onChange": "",
+            "onValidate": ""
+          },
+          "id": "radio44244"
+        },
+        {
+          "key": 24191,
+          "type": "input",
+          "icon": "text-field",
+          "formItemFlag": true,
+          "options": {
+            "name": "input13717",
+            "label": "发生ADR",
+            "labelAlign": "",
+            "type": "text",
+            "defaultValue": "",
+            "placeholder": "",
+            "columnWidth": "200px",
+            "size": "",
+            "labelWidth": null,
+            "labelHidden": false,
+            "readonly": false,
+            "disabled": false,
+            "hidden": false,
+            "clearable": true,
+            "showPassword": false,
+            "required": false,
+            "requiredHint": "",
+            "validation": "",
+            "validationHint": "",
+            "customClass": "",
+            "labelIconClass": null,
+            "labelIconPosition": "rear",
+            "labelTooltip": null,
+            "minLength": null,
+            "maxLength": null,
+            "showWordLimit": false,
+            "prefixIcon": "",
+            "suffixIcon": "",
+            "appendButton": false,
+            "appendButtonDisabled": false,
+            "buttonIcon": "custom-search",
+            "onCreated": "",
+            "onMounted": "",
+            "onInput": "",
+            "onChange": "",
+            "onFocus": "",
+            "onBlur": "",
+            "onValidate": "",
+            "onAppendButtonClick": ""
+          },
+          "id": "input13717"
+        }
+      ],
+      "options": {
+        "name": "card109782",
+        "label": "抗感染信息",
+        "hidden": false,
+        "folded": false,
+        "showFold": false,
+        "cardWidth": "100%",
+        "shadow": "never",
+        "customClass": []
+      },
+      "id": "card109782"
+    }
+  ],
+  "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
+    "labelWidth": 80,
+    "labelPosition": "top",
+    "size": "",
+    "labelAlign": "label-left-align",
+    "cssCode": "",
+    "customClass": [],
+    "functions": "",
+    "layoutType": "PC",
+    "jsonVersion": 3,
+    "onFormCreated": "",
+    "onFormMounted": "",
+    "onFormDataChange": "",
+    "dataSources": []
+  }
+}

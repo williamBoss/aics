@@ -1922,6 +1922,13 @@
           "id": "grid70684"
         },
         {
+          "key": 243606,
+          "type": "ipcp",
+          "category": "self-component",
+          "icon": "",
+          "id": "ipcp243606"
+        },
+        {
           "key": 31407,
           "type": "radio",
           "icon": "radio-field",

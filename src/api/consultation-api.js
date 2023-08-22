@@ -167,3 +167,12 @@ export class ConsultationService {
     list: (query) => Request.post(`${apiPrefix}/patient/getPatientInfo`, query)
   }
 }
+
+/**
+ * 配置接口
+ */
+export class ConfigService {
+  static medicine = {
+    allList: (query) => Request.get(`${apiPrefix}/med-info/all-med`, query)
+  }
+}

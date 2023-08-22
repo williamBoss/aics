@@ -247,7 +247,7 @@
         </div>
       </div>
       <el-divider style="margin-top: 0" />
-      <dynamic-table
+      <dynamic-edit-table
         ref="pharmacistRef"
         :table-header="pharmacist.tableHeader"
         :table-data="pharmacist.tableData"
@@ -269,7 +269,7 @@ import { HospitalService } from '@api/consultation-api.js'
 import { getPinyinInitials, resetForm } from '@/utils/util.js'
 import { useConfirmHandle } from '@/hooks/useConfirmHandle.js'
 import { ElMessage } from 'element-plus'
-import DynamicTable from '@components/Table/DynamicEditTable.vue'
+import DynamicEditTable from '@components/Table/DynamicEditTable.vue'
 
 const antiInfectionSpecialtyEnum = {
   0: '否',
@@ -433,7 +433,7 @@ const submitPharmacist = (row) => {
   })
 }
 
-const handlePharmacistDelete = (row) => {
+const handlePharmacistDelete = (row, index) => {
   useConfirmHandle(HospitalService.pharmacist.del, row.pharmacistKey, `删除${row.pharmacistName}的数据项`).then(() => {
     getPharmacistList()
   })

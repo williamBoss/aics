@@ -42,6 +42,17 @@
                 :placeholder="`请输入${headerItem.label}`"
               />
             </template>
+            <template v-if="headerItem.type === 'autocomplete'">
+              <el-autocomplete
+                v-model="scope.row[headerItem.prop]"
+                :value-key="headerItem.valueKey"
+                :fetch-suggestions="headerItem.searchMethod()"
+                :trigger-on-focus="false"
+                size="small"
+                placeholder="请输入"
+                @select="headerItem.selectMethod($event, scope.row)"
+              />
+            </template>
             <template v-if="headerItem.type === 'select'">
               <el-select
                 v-model="scope.row[headerItem.prop]"
@@ -99,6 +110,7 @@
       <el-table-column
         align="center"
         label="操作"
+        width="160"
       >
         <template #default="scope">
           <el-button
@@ -150,6 +162,8 @@ defineComponent({
  * @property {boolean} editable
  * @property {string} type
  * @property {function} convert - 显示内容转换
+ * @property {function} searchMethod - 输入框为自动补偿类型的时候查询方法
+ * @property {function} selectMethod
  * @example {prop: 'name', label: '姓名', editable: false, type: 'input', convert: ()=>{}}
  */
 
@@ -204,7 +218,7 @@ const submit = (row) => {
   emits('submit', row)
 }
 const handleDelete = (row, index) => {
-  emits('handleDelete', row)
+  emits('handleDelete', { row, index })
 }
 const prepend = (index) => {
   rowItem.value.editable = true

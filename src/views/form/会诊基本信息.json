@@ -65,7 +65,14 @@
       "type": "card",
       "category": "container",
       "icon": "card",
-      "widgetList": [],
+      "widgetList": [
+        {
+          "key": 568725,
+          "type": "physician",
+          "category": "self-component",
+          "id": "physicianInfo568725"
+        }
+      ],
       "options": {
         "name": "card54553",
         "label": "会诊药师基本信息",
@@ -83,7 +90,14 @@
       "type": "card",
       "category": "container",
       "icon": "card",
-      "widgetList": [],
+      "widgetList": [
+        {
+          "key": 902760,
+          "type": "patient",
+          "category": "self-component",
+          "id": "patient902760"
+        }
+      ],
       "options": {
         "name": "card73882",
         "label": "患者信息",

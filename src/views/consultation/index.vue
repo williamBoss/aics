@@ -26,10 +26,10 @@
         >
           <el-form-item
             label="患者编号："
-            prop=""
+            prop="patientCode"
           >
             <el-input
-              v-model="state.searchParam"
+              v-model="state.searchParam.patientCode"
               placeholder="请输入"
               clearable
               style="width: 220px"
@@ -38,55 +38,90 @@
           </el-form-item>
           <el-form-item
             label="感染部位："
-            prop=""
+            prop="sitesInfection"
           >
             <el-select
-              v-model="state.searchParam"
+              v-model="state.searchParam.sitesInfection"
               placeholder="请选择"
               :clearable="true"
               style="width: 220px"
             >
               <el-option
-                :label="1"
-                :value="1"
+                v-for="(sitesInfection, index) in dict.sitesInfectionDict"
+                :key="index"
+                :label="sitesInfection.label"
+                :value="sitesInfection.value"
               />
             </el-select>
           </el-form-item>
           <el-form-item
             label="病原体："
-            prop=""
+            prop="pathogen"
           >
             <el-select
-              v-model="state.searchParam"
+              v-model="state.searchParam.pathogen"
               placeholder="请选择"
               :clearable="true"
               style="width: 220px"
             >
+              <el-option
+                v-for="(pathogen, index) in dict.pathogenDict"
+                :key="index"
+                :label="pathogen.label"
+                :value="pathogen.value"
+              />
             </el-select>
           </el-form-item>
           <el-form-item
             label="采纳会诊："
-            prop=""
+            prop="adopt"
           >
             <el-select
-              v-model="state.searchParam"
+              v-model="state.searchParam.adopt"
               placeholder="请选择"
               :clearable="true"
               style="width: 220px"
             >
+              <el-option
+                v-for="(adopt, index) in dict.adoptDict"
+                :key="index"
+                :label="adopt.label"
+                :value="adopt.value"
+              />
             </el-select>
           </el-form-item>
           <el-form-item
             label="转归结局："
-            prop=""
+            prop="lapse"
           >
             <el-select
-              v-model="state.searchParam"
+              v-model="state.searchParam.lapse"
               placeholder="请选择"
               :clearable="true"
               style="width: 220px"
             >
+              <el-option
+                v-for="(lapse, index) in dict.lapseDict"
+                :key="index"
+                :label="lapse.label"
+                :value="lapse.value"
+              />
             </el-select>
+          </el-form-item>
+          <el-form-item>
+            <el-button
+              type="primary"
+              :icon="Search"
+              @click="handleQuery"
+              >搜索
+            </el-button>
+            <el-button
+              type="info"
+              plain
+              :icon="Refresh"
+              @click="resetQuery"
+              >重置
+            </el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -113,16 +148,24 @@
         >
           <template #operations="scope">
             <el-button
+              type="text"
               size="small"
-              style="margin-left: 12px"
               @click="handleEdit(scope.row)"
-              >编辑
+              >查看
             </el-button>
+            <el-divider direction="vertical" />
             <el-button
+              type="text"
               size="small"
-              type="danger"
               @click="handleDelete(scope.row, scope.$index)"
-              >删除
+              >会诊
+            </el-button>
+            <el-divider direction="vertical" />
+            <el-button
+              type="text"
+              size="small"
+              @click="handleDelete(scope.row, scope.$index)"
+              >跟踪病历
             </el-button>
           </template>
         </dynamic-table>
@@ -145,10 +188,12 @@
 </template>
 
 <script setup>
-import { defineComponent, reactive, ref } from 'vue'
-import { Plus } from '@element-plus/icons-vue'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
+import { Plus, Refresh, Search } from '@element-plus/icons-vue'
 import DynamicTable from '@components/Table/DynamicTable.vue'
 import router from '@/router/index.js'
+import { ConsultationService } from '@api/consultation-api.js'
+import { addDateRange, resetForm } from '@/utils/util.js'
 
 defineComponent({
   name: 'ConsultationIndex'
@@ -160,13 +205,13 @@ const state = reactive({
   // 表格头
   tableHeader: [
     { prop: 'pharmacistName', label: '日期' },
-    { prop: 'pharmacistName', label: '患者编号' },
-    { prop: 'pharmacistName', label: '年龄' },
-    { prop: 'pharmacistName', label: '性别' },
-    { prop: 'pharmacistName', label: '感染部位' },
-    { prop: 'pharmacistName', label: '病原体' },
-    { prop: 'pharmacistName', label: '采纳会诊' },
-    { prop: 'pharmacistName', label: '转归结局' }
+    { prop: 'patientCode', label: '患者编号' },
+    { prop: 'age', label: '年龄' },
+    { prop: 'gender', label: '性别' },
+    { prop: 'adopt', label: '感染部位' },
+    { prop: 'adopt', label: '病原体' },
+    { prop: 'adopt', label: '采纳会诊' },
+    { prop: 'lapse', label: '转归结局' }
   ],
   // 表格数据
   tableData: [],
@@ -184,10 +229,90 @@ const state = reactive({
   // 总参数(包含分页和查询参数)
   totalParam: {}
 })
+const dict = reactive({
+  sitesInfectionDict: [
+    { label: '上呼吸道感染', value: 1 },
+    { label: '肺部感染', value: 2 },
+    { label: '泌尿系统感染', value: 3 },
+    { label: '腹腔内组织感染', value: 4 },
+    { label: '盆腔内组织感染', value: 5 },
+    { label: '手术切口或皮肤软组织感染', value: 6 },
+    { label: '胃肠道感染', value: 7 },
+    { label: '中枢神经系统感染', value: 8 },
+    { label: '血液系统感染', value: 9 },
+    { label: '心血管系统感染', value: 10 },
+    { label: '骨/关节感染', value: 11 },
+    { label: '导管相关感染', value: 12 },
+    { label: '其他', value: 13 }
+  ],
+  pathogenDict: [
+    { label: '细菌', value: '细菌' },
+    { label: '真菌', value: '真菌' },
+    { label: '病毒', value: '病毒' }
+  ],
+  adoptDict: [
+    { label: '不采纳', value: 0 },
+    { label: '采纳', value: 1 }
+  ],
+  lapseDict: [
+    { label: '无效', value: 1 },
+    { label: '部分缓解', value: 2 },
+    { label: '痊愈', value: 3 },
+    { label: '死亡', value: 4 }
+  ]
+})
+
+const getConsultationList = () => {
+  loading.value = true
+  Object.assign(state.totalParam, state.searchParam, state.pageable)
+  ConsultationService.consultation.list(addDateRange(state.totalParam)).then((response) => {
+    const data = response.data
+    state.tableData = data.records
+    state.pageable.total = Number(data.total)
+    loading.value = false
+  })
+}
+
+/** 搜索按钮操作 */
+const handleQuery = () => {
+  state.pageable.pageNum = 1
+  getConsultationList()
+}
+
+/** 重置按钮操作 */
+const resetQuery = () => {
+  resetForm(queryFormRef.value)
+  getConsultationList()
+}
+
+/**
+ * @description 每页条数改变
+ * @param {Number} val 当前条数
+ * @return {void}
+ * */
+const handleSizeChange = (val) => {
+  state.pageable.pageNum = 1
+  state.pageable.pageSize = val
+  getConsultationList()
+}
+
+/**
+ * @description 当前页改变
+ * @param {Number} val 当前页
+ * @return {void}
+ * */
+const handleCurrentChange = (val) => {
+  state.pageable.pageNum = val
+  getConsultationList()
+}
 
 const handleAdd = () => {
   router.push({ name: 'consultationForm' })
 }
+
+onMounted(() => {
+  getConsultationList()
+})
 </script>
 
 <style scoped></style>

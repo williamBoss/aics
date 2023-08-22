@@ -1,5 +1,5 @@
 import { computed, onMounted, ref } from 'vue'
-import { loadComponents } from '@components/FormRender/loadComponents.js'
+import { loadComponents } from '@components/loadComponents.js'
 
 export const commonProps = {
   widget: { type: Object, default: Object }
@@ -17,9 +17,14 @@ export const useCommonComputed = (props) => {
     return components.value[comp.type + '-container']
   }
 
+  const getSelfComponent = (widget) => {
+    return components.value[widget.type]
+  }
+
   return {
     customClass,
     components,
-    getComponentByContainer
+    getComponentByContainer,
+    getSelfComponent
   }
 }

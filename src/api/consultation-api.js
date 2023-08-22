@@ -89,6 +89,13 @@ export class HospitalService {
     getList: (hospitalKey) => Request.get(`${apiPrefix}/pharmacist/list/${hospitalKey}`),
 
     /**
+     * 查询药师信息详情 - 问卷中使用
+     * @param{Object} data
+     * @return {Promise<*>}
+     */
+    getPharmacistInfo: (data) => Request.post(`${apiPrefix}/pharmacist/getPharmacistInfo`, data),
+
+    /**
      * 查询详情
      * @param {string|number} id
      * @return {Promise<*>}
@@ -145,5 +152,18 @@ export class QuestionnaireService {
      * @return {Promise<*>}
      */
     getAnswer: (recordId) => Request.post(`${apiPrefix}/questionnaire/getAnswer/${recordId}`)
+  }
+}
+
+/**
+ * 会诊
+ */
+export class ConsultationService {
+  static consultation = {
+    list: (query) => Request.get(`${apiPrefix}/userRecord/page`, query)
+  }
+
+  static patient = {
+    list: (query) => Request.post(`${apiPrefix}/patient/getPatientInfo`, query)
   }
 }

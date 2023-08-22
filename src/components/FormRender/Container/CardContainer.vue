@@ -37,6 +37,24 @@
             </template>
           </component>
         </template>
+        <template v-else-if="'self-component' === subWidget.category">
+          <component
+            :is="getSelfComponent(subWidget)"
+            :key="swIdx"
+            :field="widget"
+          >
+            <!-- 递归传递插槽！！！ -->
+            <template
+              v-for="slot in Object.keys($slots)"
+              #[slot]="scope"
+            >
+              <slot
+                :name="slot"
+                v-bind="scope"
+              />
+            </template>
+          </component>
+        </template>
         <template v-else>
           <component
             :is="components[subWidget.type + '-widget']"
@@ -71,7 +89,7 @@ defineComponent({
 const props = defineProps({
   ...commonProps
 })
-const { customClass, components, getComponentByContainer } = useCommonComputed(props)
+const { customClass, components, getComponentByContainer, getSelfComponent } = useCommonComputed(props)
 </script>
 
 <style scoped></style>

@@ -31,6 +31,25 @@
           </template>
         </component>
       </template>
+      <template v-else-if="widget.category && 'self-component' === widget.category">
+        <component
+          :is="getSelfComponent(widget)"
+          :key="widget.id"
+          :field="widget"
+          :form-model="formDataModel"
+        >
+          <!-- 递归传递插槽！！！ -->
+          <template
+            v-for="slot in Object.keys($slots)"
+            #[slot]="scope"
+          >
+            <slot
+              :name="slot"
+              v-bind="scope"
+            />
+          </template>
+        </component>
+      </template>
       <template v-else>
         <component
           :is="getWidgetName(widget)"
@@ -55,11 +74,11 @@
 </template>
 
 <script setup>
-import { computed, defineComponent, getCurrentInstance, onMounted, provide, ref } from 'vue'
+import { computed, defineComponent, getCurrentInstance, onMounted, provide, ref, shallowRef } from 'vue'
 import { buildDefaultFormJson } from '@components/FormRender/formConfig.js'
 import { generateId } from '@/utils/util.js'
 import { cloneDeep } from 'lodash'
-import { loadComponents } from '@components/FormRender/loadComponents.js'
+import { loadComponents } from '@components/loadComponents.js'
 
 defineComponent({
   name: 'FormRender'
@@ -78,7 +97,7 @@ const props = defineProps({
   }
 })
 const instance = getCurrentInstance()
-const components = ref({})
+const components = shallowRef({})
 const formId = ref(null)
 const fromRenderRef = ref()
 const formJsonObj = ref(props.formJson)
@@ -104,6 +123,10 @@ const getContainerWidgetName = (widget) => {
 
 const getWidgetName = (widget) => {
   return components.value[widget.type + '-widget']
+}
+
+const getSelfComponent = (widget) => {
+  return components.value[widget.type]
 }
 
 const initFormObject = () => {

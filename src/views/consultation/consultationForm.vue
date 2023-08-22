@@ -45,6 +45,11 @@ const tabs = ref([])
 const activeTab = ref('base')
 const formRef = ref()
 const formData = ref({})
+const physicianInfo = ref({})
+const patientInfo = ref({})
+
+provide('physicianInfo', ref(physicianInfo.value))
+provide('patientInfo', ref(patientInfo.value))
 
 const getQuestionnaireTab = () => {
   tabs.value.push({

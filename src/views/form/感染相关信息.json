@@ -8,7 +8,7 @@
       "widgetList": [
         {
           "key": 55478,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -25,7 +25,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio37904",
-                    "label": "radio",
+                    "label": "院内感染",
                     "labelAlign": "",
                     "defaultValue": "",
                     "columnWidth": "200px",
@@ -38,9 +38,14 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "radio 1", "value": 1 },
-                      { "label": "radio 2", "value": 2 },
-                      { "label": "radio 3", "value": 3 }
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -64,7 +69,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "checkbox92228",
-                    "label": "checkbox",
+                    "label": "感染高危因素（可多选）",
                     "labelAlign": "",
                     "defaultValue": [],
                     "columnWidth": "200px",
@@ -77,9 +82,30 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "check 1", "value": 1 },
-                      { "label": "check 2", "value": 2 },
-                      { "label": "check 3", "value": 3 }
+                      {
+                        "label": "年龄＞65岁",
+                        "value": "1"
+                      },
+                      {
+                        "label": "糖尿病",
+                        "value": "2"
+                      },
+                      {
+                        "label": "手术",
+                        "value": "3"
+                      },
+                      {
+                        "label": "肥胖",
+                        "value": "4"
+                      },
+                      {
+                        "label": "呼吸系统感染",
+                        "value": "5"
+                      },
+                      {
+                        "label": "其他",
+                        "value": "6"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -125,7 +151,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio103762",
-                    "label": "radio",
+                    "label": "是否有感染高危因素",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -138,9 +164,14 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "radio 1", "value": 1 },
-                      { "label": "radio 2", "value": 2 },
-                      { "label": "radio 3", "value": 3 }
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -164,7 +195,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "checkbox64483",
-                    "label": "checkbox",
+                    "label": "感染部位（可多选）",
                     "labelAlign": "",
                     "defaultValue": [],
                     "columnWidth": "200px",
@@ -177,9 +208,38 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "check 1", "value": 1 },
-                      { "label": "check 2", "value": 2 },
-                      { "label": "check 3", "value": 3 }
+                      {
+                        "label": "肺部感染",
+                        "value": "1"
+                      },
+                      {
+                        "label": "腹腔脏器感染",
+                        "value": "2"
+                      },
+                      {
+                        "label": "泌尿系感染",
+                        "value": "3"
+                      },
+                      {
+                        "label": "血源感染",
+                        "value": "4"
+                      },
+                      {
+                        "label": "伤口或皮肤及软组织感染",
+                        "value": "5"
+                      },
+                      {
+                        "label": "骨或关节感染",
+                        "value": "6"
+                      },
+                      {
+                        "label": "颅内感染",
+                        "value": "7"
+                      },
+                      {
+                        "label": "其他",
+                        "value": "8"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -225,7 +285,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input94355",
-                    "label": "input",
+                    "label": "体征：会诊时体温（℃）",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -268,14 +328,18 @@
                 },
                 {
                   "key": 74218,
-                  "type": "textarea",
+                  "type": "input",
                   "icon": "textarea-field",
                   "formItemFlag": true,
                   "options": {
                     "name": "textarea60773",
-                    "label": "textarea",
+                    "label": "感染相关症状（描述）",
                     "labelAlign": "",
-                    "rows": 3,
+                    "type": "textarea",
+                    "autosize": {
+                      "minRows": 6,
+                      "maxRows": 8
+                    },
                     "defaultValue": "",
                     "placeholder": "",
                     "columnWidth": "200px",
@@ -323,7 +387,13 @@
               "id": "grid-col-82697"
             }
           ],
-          "options": { "name": "grid37444", "hidden": false, "gutter": 40, "colHeight": null, "customClass": "" },
+          "options": {
+            "name": "grid37444",
+            "hidden": false,
+            "gutter": 40,
+            "colHeight": null,
+            "customClass": ""
+          },
           "id": "grid37444"
         }
       ],
@@ -365,7 +435,7 @@
       "widgetList": [
         {
           "key": 104612,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -382,7 +452,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio40008",
-                    "label": "radio",
+                    "label": "是否进行病原体药敏实验",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -395,9 +465,14 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "radio 1", "value": 1 },
-                      { "label": "radio 2", "value": 2 },
-                      { "label": "radio 3", "value": 3 }
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -421,7 +496,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio59740",
-                    "label": "radio",
+                    "label": "是否多重耐药菌",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -434,9 +509,14 @@
                     "disabled": false,
                     "hidden": false,
                     "optionItems": [
-                      { "label": "radio 1", "value": 1 },
-                      { "label": "radio 2", "value": 2 },
-                      { "label": "radio 3", "value": 3 }
+                      {
+                        "label": "否",
+                        "value": "0"
+                      },
+                      {
+                        "label": "是",
+                        "value": "1"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -482,7 +562,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input23415",
-                    "label": "input",
+                    "label": "敏感药物",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -530,7 +610,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "checkbox102833",
-                    "label": "checkbox",
+                    "label": "多重耐药菌情况（多选）",
                     "labelAlign": "",
                     "defaultValue": [],
                     "columnWidth": "200px",
@@ -542,10 +622,36 @@
                     "labelHidden": false,
                     "disabled": false,
                     "hidden": false,
+                    "isRowCheckOption": true,
                     "optionItems": [
-                      { "label": "check 1", "value": 1 },
-                      { "label": "check 2", "value": 2 },
-                      { "label": "check 3", "value": 3 }
+                      {
+                        "label": "耐甲氧西林金黄色葡萄球菌(MRSA)",
+                        "value": "1"
+                      },
+                      {
+                        "label": "耐万古霉素肠球菌(VRE)",
+                        "value": "2"
+                      },
+                      {
+                        "label": "产超广谱D.内酰胺酶(产ESBLs)肠杆菌科细菌(如大肠埃希菌和肺炎克雷伯菌)",
+                        "value": "3"
+                      },
+                      {
+                        "label": "耐碳青霉烯类肠杆菌科细菌(CRE)",
+                        "value": "4"
+                      },
+                      {
+                        "label": "多重耐药铜绿假单胞菌(MDR．PA)",
+                        "value": "5"
+                      },
+                      {
+                        "label": "多重耐药鲍曼不动杆菌(MDR—AB)",
+                        "value": "6"
+                      },
+                      {
+                        "label": "其他",
+                        "value": "7"
+                      }
                     ],
                     "required": false,
                     "requiredHint": "",
@@ -579,7 +685,13 @@
               "id": "grid-col-77080"
             }
           ],
-          "options": { "name": "grid32625", "hidden": false, "gutter": 40, "colHeight": null, "customClass": [] },
+          "options": {
+            "name": "grid32625",
+            "hidden": false,
+            "gutter": 40,
+            "colHeight": null,
+            "customClass": []
+          },
           "id": "grid32625"
         }
       ],

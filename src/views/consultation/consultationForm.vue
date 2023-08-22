@@ -39,6 +39,7 @@ import { onMounted, ref } from 'vue'
 import FormRender from '@components/FormRender/FormRender.vue'
 import basejson from '../form/会诊基本信息.json'
 import patientjson from '../form/患者基本信息.json'
+import infectionInfo from '../form/感染相关信息.json'
 
 const loading = ref(false)
 const tabs = ref([])
@@ -62,7 +63,11 @@ const getQuestionnaireTab = () => {
     tabName: '患者基本信息',
     templateList: [{ templateCode: 'patient', templateInfo: patientjson }]
   })
-  tabs.value.push({ tabCode: 'infectionInfo', tabName: '感染相关信息', templateList: [] })
+  tabs.value.push({
+    tabCode: 'infectionInfo',
+    tabName: '感染相关信息',
+    templateList: [{ templateCode: 'infectionInfo', templateInfo: infectionInfo }]
+  })
   tabs.value.push({ tabCode: 'consultationResult', tabName: '会诊结果', templateList: [] })
   /*loading.value = true
   QuestionnaireService.questionnaire.getTabInfo('test').then((res) => {

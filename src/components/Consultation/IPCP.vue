@@ -1,6 +1,6 @@
 <template>
   <div class="flx">
-    <p class="title">具体抗感染防治方案</p>
+    <p class="title">{{ props.field.options?.staticText || '' }}</p>
     <div class="flx-align-center flx-right">
       <el-button
         color="#4949c9"
@@ -32,9 +32,14 @@ import DynamicEditTable from '@components/Table/DynamicEditTable.vue'
 import { ConfigService } from '@api/consultation-api.js'
 import { Plus } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
+import { commonProps } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
   name: 'IPCP'
+})
+
+const props = defineProps({
+  ...commonProps
 })
 
 const ipcpRef = ref()

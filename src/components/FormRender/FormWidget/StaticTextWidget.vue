@@ -1,7 +1,7 @@
 <template>
   <static-content-wrapper :field="field">
     <div>
-      <pre>{{ field.options.textContent }}</pre>
+      <pre class="static-text">{{ field.options.textContent }}</pre>
     </div>
   </static-content-wrapper>
 </template>
@@ -20,4 +20,12 @@ defineProps({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.static-text {
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  color: #222222;
+  line-height: 16px;
+}
+</style>

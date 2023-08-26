@@ -3,8 +3,8 @@
     <el-table
       v-loading="loading"
       :data="tableData"
-      :header-row-class-name="'table-header'"
-      :header-cell-class-name="'table-header-item'"
+      :header-row-class-name="headerRowClassName"
+      :header-cell-class-name="headerCellClassName"
       style="width: 100%"
     >
       <template #empty>
@@ -108,6 +108,7 @@
         </template>
       </el-table-column>
       <el-table-column
+        v-if="isShowOperationCol"
         align="center"
         label="操作"
         width="160"
@@ -174,6 +175,7 @@ defineComponent({
  * @property {Array.<Object>} rowItem - 表单属性
  * @property {Object} options
  * @property {boolean} isShowInsertIcon
+ * @property {boolean} isShowOperationCol
  */
 
 /**
@@ -197,9 +199,21 @@ const props = defineProps({
     type: Object,
     default: Object
   },
+  headerRowClassName: {
+    type: String,
+    default: 'table-header'
+  },
+  headerCellClassName: {
+    type: String,
+    default: 'table-header-item'
+  },
   isShowInsertIcon: {
     type: Boolean,
     default: false
+  },
+  isShowOperationCol: {
+    type: Boolean,
+    default: true
   }
 })
 

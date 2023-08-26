@@ -13,7 +13,7 @@
           "formItemFlag": true,
           "options": {
             "name": "checkbox20226",
-            "label": "checkbox",
+            "label": "判定会诊建议类型（可多选）",
             "labelAlign": "",
             "defaultValue": [],
             "columnWidth": "200px",
@@ -27,16 +27,52 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "check 1",
+                "label": "微生物种类",
                 "value": 1
               },
               {
-                "label": "check 2",
+                "label": "制定初始方案",
                 "value": 2
               },
               {
-                "label": "check 3",
+                "label": "抗生素降级",
                 "value": 3
+              },
+              {
+                "label": "抗生素升级",
+                "value": 4
+              },
+              {
+                "label": "停用当前用药方案",
+                "value": 5
+              },
+              {
+                "label": "维持当前治疗方案",
+                "value": 6
+              },
+              {
+                "label": "不良反应处理",
+                "value": 7
+              },
+              {
+                "label": "血药浓度监测，调整剂量",
+                "value": 8
+              },
+              {
+                "label": "特殊级别抗菌药使用",
+                "value": 9
+              },
+              {
+                "label": "根据肝肾功调整剂量",
+                "value": 10
+              },
+              {
+                "label": "其他",
+                "value": 11
+              },
+              {
+                "label": "患者申请抗感染次数",
+                "value": 12
               }
             ],
             "required": false,
@@ -56,7 +92,7 @@
         },
         {
           "key": 104612,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -73,7 +109,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input78145",
-                    "label": "input",
+                    "label": "抗生素降级（菌种）",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -143,7 +179,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input24136",
-                    "label": "input",
+                    "label": "抗生素升级（菌种）",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -212,7 +248,7 @@
         },
         {
           "key": 104612,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -229,7 +265,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio33266",
-                    "label": "radio",
+                    "label": "患者申请抗感染会诊次数",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -243,15 +279,15 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "radio 1",
+                        "label": "1次",
                         "value": 1
                       },
                       {
-                        "label": "radio 2",
+                        "label": "2次",
                         "value": 2
                       },
                       {
-                        "label": "radio 3",
+                        "label": "≥3次",
                         "value": 3
                       }
                     ],
@@ -299,7 +335,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio73065",
-                    "label": "radio",
+                    "label": "患者申请临床药师抗感染会诊次数",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -313,15 +349,15 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "radio 1",
+                        "label": "1次",
                         "value": 1
                       },
                       {
-                        "label": "radio 2",
+                        "label": "2次",
                         "value": 2
                       },
                       {
-                        "label": "radio 3",
+                        "label": "≥3次",
                         "value": 3
                       }
                     ],
@@ -369,7 +405,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio77040",
-                    "label": "radio",
+                    "label": "患者申请临床医师抗感染会诊次数",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -383,15 +419,15 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "radio 1",
+                        "label": "1次",
                         "value": 1
                       },
                       {
-                        "label": "radio 2",
+                        "label": "2次",
                         "value": 2
                       },
                       {
-                        "label": "radio 3",
+                        "label": "≥3次",
                         "value": 3
                       }
                     ],
@@ -464,27 +500,41 @@
             "name": "statictext27357",
             "columnWidth": "200px",
             "hidden": false,
-            "textContent": "static text",
+            "textContent": "治疗建议1",
             "textAlign": "left",
             "fontSize": "13px",
             "preWrap": false,
             "customClass": [],
             "onCreated": "",
             "onMounted": "",
-            "label": "static-text"
+            "label": "治疗建议1"
           },
           "id": "statictext27357"
         },
         {
+          "key": 7762666,
+          "type": "ipcp",
+          "category": "self-component",
+          "icon": "",
+          "options": {
+            "staticText": "提出抗感染药物治疗方案"
+          },
+          "id": "ipcp7762666"
+        },
+        {
           "key": 104237,
-          "type": "textarea",
+          "type": "input",
           "icon": "textarea-field",
           "formItemFlag": true,
           "options": {
             "name": "textarea36173",
-            "label": "textarea",
+            "label": "具体描述",
             "labelAlign": "",
-            "rows": 3,
+            "type": "textarea",
+            "autosize": {
+              "minRows": 6,
+              "maxRows": 8
+            },
             "defaultValue": "",
             "placeholder": "",
             "columnWidth": "200px",
@@ -516,8 +566,28 @@
           "id": "textarea36173"
         },
         {
+          "key": 9531300,
+          "type": "static-text",
+          "icon": "static-text",
+          "formItemFlag": false,
+          "options": {
+            "name": "statictext9531300",
+            "columnWidth": "200px",
+            "hidden": false,
+            "textContent": "治疗建议2",
+            "textAlign": "left",
+            "fontSize": "13px",
+            "preWrap": false,
+            "customClass": [],
+            "onCreated": "",
+            "onMounted": "",
+            "label": "治疗建议2"
+          },
+          "id": "statictext9531300"
+        },
+        {
           "key": 104612,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -534,7 +604,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input82154",
-                    "label": "input",
+                    "label": "需要完善的检查",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -604,7 +674,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "checkbox62629",
-                    "label": "checkbox",
+                    "label": "动态监测指标（多选）",
                     "labelAlign": "",
                     "defaultValue": [],
                     "columnWidth": "200px",
@@ -618,16 +688,20 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "check 1",
+                        "label": "监测血药浓度",
                         "value": 1
                       },
                       {
-                        "label": "check 2",
+                        "label": "肝肾功能",
                         "value": 2
                       },
                       {
-                        "label": "check 3",
+                        "label": "中性粒细胞",
                         "value": 3
+                      },
+                      {
+                        "label": "降钙素",
+                        "value": 4
                       }
                     ],
                     "required": false,
@@ -673,14 +747,18 @@
         },
         {
           "key": 104237,
-          "type": "textarea",
+          "type": "input",
           "icon": "textarea-field",
           "formItemFlag": true,
           "options": {
             "name": "textarea35699",
-            "label": "textarea",
+            "label": "其他补充",
             "labelAlign": "",
-            "rows": 3,
+            "type": "textarea",
+            "autosize": {
+              "minRows": 6,
+              "maxRows": 8
+            },
             "defaultValue": "",
             "placeholder": "",
             "columnWidth": "200px",
@@ -718,7 +796,7 @@
           "formItemFlag": true,
           "options": {
             "name": "radio60622",
-            "label": "radio",
+            "label": "是否采纳药师意见",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -732,15 +810,15 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "不采纳",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "全部采纳",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "部分采纳",
                 "value": 3
               }
             ],
@@ -766,7 +844,7 @@
           "formItemFlag": true,
           "options": {
             "name": "input106296",
-            "label": "input",
+            "label": "具体意见",
             "labelAlign": "",
             "type": "text",
             "defaultValue": "",
@@ -828,14 +906,18 @@
       "widgetList": [
         {
           "key": 104237,
-          "type": "textarea",
+          "type": "input",
           "icon": "textarea-field",
           "formItemFlag": true,
           "options": {
             "name": "textarea84653",
-            "label": "textarea",
+            "label": "会诊医师的会诊意见",
             "labelAlign": "",
-            "rows": 3,
+            "type": "textarea",
+            "autosize": {
+              "minRows": 6,
+              "maxRows": 8
+            },
             "defaultValue": "",
             "placeholder": "",
             "columnWidth": "200px",
@@ -867,8 +949,58 @@
           "id": "textarea84653"
         },
         {
+          "key": 2025816,
+          "type": "static-text",
+          "icon": "static-text",
+          "formItemFlag": false,
+          "options": {
+            "name": "statictext2025816",
+            "columnWidth": "200px",
+            "hidden": false,
+            "textContent": "治疗建议1",
+            "textAlign": "left",
+            "fontSize": "13px",
+            "preWrap": false,
+            "customClass": [],
+            "onCreated": "",
+            "onMounted": "",
+            "label": "治疗建议1"
+          },
+          "id": "statictext2025816"
+        },
+        {
+          "key": 8603815,
+          "type": "ipcp",
+          "category": "self-component",
+          "icon": "",
+          "options": {
+            "staticText": "用药调整"
+          },
+          "id": "ipcp8603815"
+        },
+        {
+          "key": 7856465,
+          "type": "static-text",
+          "icon": "static-text",
+          "formItemFlag": false,
+          "options": {
+            "name": "statictext7856465",
+            "columnWidth": "200px",
+            "hidden": false,
+            "textContent": "治疗建议2",
+            "textAlign": "left",
+            "fontSize": "13px",
+            "preWrap": false,
+            "customClass": [],
+            "onCreated": "",
+            "onMounted": "",
+            "label": "治疗建议2"
+          },
+          "id": "statictext7856465"
+        },
+        {
           "key": 91670,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -885,7 +1017,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input45912",
-                    "label": "input",
+                    "label": "需要完善的检查",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -955,7 +1087,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "checkbox116481",
-                    "label": "checkbox",
+                    "label": "动态监测指标（多选）",
                     "labelAlign": "",
                     "defaultValue": [],
                     "columnWidth": "200px",
@@ -969,16 +1101,20 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "check 1",
+                        "label": "监测血药浓度",
                         "value": 1
                       },
                       {
-                        "label": "check 2",
+                        "label": "肝肾功能",
                         "value": 2
                       },
                       {
-                        "label": "check 3",
+                        "label": "中性粒细胞",
                         "value": 3
+                      },
+                      {
+                        "label": "降钙素",
+                        "value": 4
                       }
                     ],
                     "required": false,
@@ -1029,7 +1165,7 @@
           "formItemFlag": true,
           "options": {
             "name": "radio14704",
-            "label": "radio",
+            "label": "是否采纳医师意见",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -1043,15 +1179,15 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "不采纳",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "全部采纳",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "部分采纳",
                 "value": 3
               }
             ],
@@ -1077,7 +1213,7 @@
           "formItemFlag": true,
           "options": {
             "name": "input70307",
-            "label": "input",
+            "label": "具体意见",
             "labelAlign": "",
             "type": "text",
             "defaultValue": "",
@@ -1125,7 +1261,7 @@
           "formItemFlag": true,
           "options": {
             "name": "radio14392",
-            "label": "radio",
+            "label": "医生和药师意见是否一致",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -1139,15 +1275,15 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "完全不一致",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "部分一致",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "完全一致",
                 "value": 3
               }
             ],
@@ -1168,7 +1304,7 @@
         },
         {
           "key": 91670,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -1185,7 +1321,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "select78853",
-                    "label": "select",
+                    "label": "不一致意见详情",
                     "labelAlign": "",
                     "defaultValue": "",
                     "placeholder": "",
@@ -1204,16 +1340,20 @@
                     "multipleLimit": 0,
                     "optionItems": [
                       {
-                        "label": "select 1",
+                        "label": "药物选择不同",
                         "value": 1
                       },
                       {
-                        "label": "select 2",
+                        "label": "给药剂量不同",
                         "value": 2
                       },
                       {
-                        "label": "select 3",
+                        "label": "疗程不同",
                         "value": 3
+                      },
+                      {
+                        "label": "其他",
+                        "value": 4
                       }
                     ],
                     "required": false,
@@ -1263,7 +1403,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "input59339",
-                    "label": "input",
+                    "label": "详情",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1337,7 +1477,7 @@
           "formItemFlag": true,
           "options": {
             "name": "radio74439",
-            "label": "radio",
+            "label": "最终采纳医生或者药师意见",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -1351,16 +1491,20 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "医师",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "药师",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "医师+药师",
                 "value": 3
+              },
+              {
+                "label": "都不采纳",
+                "value": 4
               }
             ],
             "required": false,
@@ -1399,252 +1543,7 @@
       "widgetList": [
         {
           "key": 91670,
-          "type": "grid",
-          "category": "container",
-          "icon": "grid",
-          "cols": [
-            {
-              "type": "grid-col",
-              "category": "container",
-              "icon": "grid-col",
-              "internal": true,
-              "widgetList": [
-                {
-                  "key": 15959,
-                  "type": "radio",
-                  "icon": "radio-field",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "radio85304",
-                    "label": "radio",
-                    "labelAlign": "",
-                    "defaultValue": null,
-                    "columnWidth": "200px",
-                    "size": "",
-                    "displayStyle": "inline",
-                    "buttonStyle": false,
-                    "border": false,
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "optionItems": [
-                      {
-                        "label": "radio 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "radio 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "radio 3",
-                        "value": 3
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": [],
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onChange": "",
-                    "onValidate": ""
-                  },
-                  "id": "radio85304"
-                }
-              ],
-              "options": {
-                "name": "gridCol96870",
-                "hidden": false,
-                "span": 8,
-                "offset": 0,
-                "push": 0,
-                "pull": 0,
-                "responsive": false,
-                "md": 12,
-                "sm": 12,
-                "xs": 12,
-                "customClass": ""
-              },
-              "id": "grid-col-96870"
-            },
-            {
-              "type": "grid-col",
-              "category": "container",
-              "icon": "grid-col",
-              "internal": true,
-              "widgetList": [
-                {
-                  "key": 15959,
-                  "type": "radio",
-                  "icon": "radio-field",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "radio59005",
-                    "label": "radio",
-                    "labelAlign": "",
-                    "defaultValue": null,
-                    "columnWidth": "200px",
-                    "size": "",
-                    "displayStyle": "inline",
-                    "buttonStyle": false,
-                    "border": false,
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "optionItems": [
-                      {
-                        "label": "radio 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "radio 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "radio 3",
-                        "value": 3
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": "",
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onChange": "",
-                    "onValidate": ""
-                  },
-                  "id": "radio59005"
-                }
-              ],
-              "options": {
-                "name": "gridCol98207",
-                "hidden": false,
-                "span": 8,
-                "offset": 0,
-                "push": 0,
-                "pull": 0,
-                "responsive": false,
-                "md": 12,
-                "sm": 12,
-                "xs": 12,
-                "customClass": ""
-              },
-              "id": "grid-col-98207"
-            },
-            {
-              "type": "grid-col",
-              "category": "container",
-              "icon": "grid-col",
-              "internal": true,
-              "widgetList": [
-                {
-                  "key": 15959,
-                  "type": "radio",
-                  "icon": "radio-field",
-                  "formItemFlag": true,
-                  "options": {
-                    "name": "radio55938",
-                    "label": "radio",
-                    "labelAlign": "",
-                    "defaultValue": null,
-                    "columnWidth": "200px",
-                    "size": "",
-                    "displayStyle": "inline",
-                    "buttonStyle": false,
-                    "border": false,
-                    "labelWidth": null,
-                    "labelHidden": false,
-                    "disabled": false,
-                    "hidden": false,
-                    "optionItems": [
-                      {
-                        "label": "radio 1",
-                        "value": 1
-                      },
-                      {
-                        "label": "radio 2",
-                        "value": 2
-                      },
-                      {
-                        "label": "radio 3",
-                        "value": 3
-                      }
-                    ],
-                    "required": false,
-                    "requiredHint": "",
-                    "validation": "",
-                    "validationHint": "",
-                    "customClass": "",
-                    "labelIconClass": null,
-                    "labelIconPosition": "rear",
-                    "labelTooltip": null,
-                    "onCreated": "",
-                    "onMounted": "",
-                    "onChange": "",
-                    "onValidate": ""
-                  },
-                  "id": "radio55938"
-                }
-              ],
-              "options": {
-                "name": "gridCol56084",
-                "hidden": false,
-                "span": 8,
-                "offset": 0,
-                "push": 0,
-                "pull": 0,
-                "responsive": false,
-                "md": 12,
-                "sm": 12,
-                "xs": 12,
-                "customClass": ""
-              },
-              "id": "grid-col-56084"
-            }
-          ],
-          "options": {
-            "name": "grid33126",
-            "hidden": false,
-            "gutter": 40,
-            "colHeight": null,
-            "customClass": []
-          },
-          "id": "grid33126"
-        }
-      ],
-      "options": {
-        "name": "card103414",
-        "label": "患者申请抗感染总次数",
-        "hidden": false,
-        "folded": false,
-        "showFold": false,
-        "cardWidth": "100%",
-        "shadow": "never",
-        "customClass": ""
-      },
-      "id": "card103414"
-    },
-    {
-      "key": 93259,
-      "type": "card",
-      "category": "container",
-      "icon": "card",
-      "widgetList": [
-        {
-          "key": 91670,
-          "type": "grid",
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -1661,7 +1560,7 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "radio19009",
-                    "label": "radio",
+                    "label": "跟踪病历",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -1675,12 +1574,12 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "radio 1",
-                        "value": 1
+                        "label": "否",
+                        "value": "0"
                       },
                       {
-                        "label": "radio 2",
-                        "value": 2
+                        "label": "是",
+                        "value": "1"
                       }
                     ],
                     "required": false,
@@ -1702,7 +1601,7 @@
               "options": {
                 "name": "gridCol23837",
                 "hidden": false,
-                "span": 8,
+                "span": 4,
                 "offset": 0,
                 "push": 0,
                 "pull": 0,
@@ -1727,14 +1626,14 @@
                   "formItemFlag": true,
                   "options": {
                     "name": "date54587",
-                    "label": "date",
+                    "label": "具体日期",
                     "labelAlign": "",
                     "type": "datetime",
                     "defaultValue": null,
                     "placeholder": "",
                     "columnWidth": "200px",
                     "size": "",
-                    "autoFullWidth": true,
+                    "autoFullWidth": false,
                     "labelWidth": null,
                     "labelHidden": false,
                     "readonly": false,
@@ -1765,7 +1664,7 @@
               "options": {
                 "name": "gridCol58678",
                 "hidden": false,
-                "span": 16,
+                "span": 20,
                 "offset": 0,
                 "push": 0,
                 "pull": 0,

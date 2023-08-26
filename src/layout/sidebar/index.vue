@@ -14,7 +14,7 @@
     </div>
     <el-scrollbar>
       <el-menu
-        :default-active="'index'"
+        :default-active="HOME_ROUTER_NAME"
         background-color="#4949C9"
         text-color="#fff"
         :collapse="sidebarCollapse"
@@ -30,6 +30,7 @@
 import { defineComponent, inject, ref } from 'vue'
 import SubMenu from '@/layout/sidebar/subMenu/index.vue'
 import { staticRouter } from '@/router/modules/staticRouter'
+import { HOME_ROUTER_NAME } from '@/config/config.js'
 
 defineComponent({
   name: 'SidebarMenu'

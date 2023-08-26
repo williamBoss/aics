@@ -20,14 +20,18 @@
               "widgetList": [
                 {
                   "key": 65122,
-                  "type": "textarea",
+                  "type": "input",
                   "icon": "textarea-field",
                   "formItemFlag": true,
                   "options": {
                     "name": "textarea45574",
                     "label": "主要诊断",
                     "labelAlign": "",
-                    "rows": 3,
+                    "type": "textarea",
+                    "autosize": {
+                      "minRows": 6,
+                      "maxRows": 8
+                    },
                     "defaultValue": "",
                     "placeholder": "",
                     "columnWidth": "200px",
@@ -1130,16 +1134,20 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "轻度（60~200U/L）",
+                                "label": "正常值：3.42～21.00μmol/L",
                                 "value": 1
                               },
                               {
-                                "label": "中度（200~400U/L）",
+                                "label": "轻度：<34.2μmol／L",
                                 "value": 2
                               },
                               {
-                                "label": "重度（＞400U/L）",
+                                "label": "中度：34.2～51.3μmol／L",
                                 "value": 3
+                              },
+                              {
+                                "label": "重度：>51.3μmol／L",
+                                "value": 4
                               }
                             ],
                             "required": false,
@@ -1208,16 +1216,8 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "轻度（60~200U/L）",
+                                "label": "正常值：0.00～6.84μmol/L",
                                 "value": 1
-                              },
-                              {
-                                "label": "中度（200~400U/L）",
-                                "value": 2
-                              },
-                              {
-                                "label": "重度（＞400U/L）",
-                                "value": 3
                               }
                             ],
                             "required": false,
@@ -1366,14 +1366,18 @@
                 },
                 {
                   "key": 65122,
-                  "type": "textarea",
+                  "type": "input",
                   "icon": "textarea-field",
                   "formItemFlag": true,
                   "options": {
                     "name": "textarea32368",
                     "label": "其他补充信息",
                     "labelAlign": "",
-                    "rows": 3,
+                    "type": "textarea",
+                    "autosize": {
+                      "minRows": 6,
+                      "maxRows": 8
+                    },
                     "defaultValue": "",
                     "placeholder": "",
                     "columnWidth": "200px",
@@ -1926,6 +1930,9 @@
           "type": "ipcp",
           "category": "self-component",
           "icon": "",
+          "options": {
+            "staticText": "具体抗感染防治方案"
+          },
           "id": "ipcp243606"
         },
         {

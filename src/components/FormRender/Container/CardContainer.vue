@@ -41,7 +41,7 @@
           <component
             :is="getSelfComponent(subWidget)"
             :key="swIdx"
-            :field="widget"
+            :field="subWidget"
           >
             <!-- 递归传递插槽！！！ -->
             <template

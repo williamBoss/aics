@@ -22,14 +22,20 @@
         </el-radio-button>
       </template>
       <template v-else>
-        <el-radio
-          v-for="(item, index) in field.options.optionItems"
-          :key="index"
-          :label="item.value"
-          :disabled="item.disabled"
-        >
-          {{ item.label }}
-        </el-radio>
+        <div class="radio-container">
+          <el-radio
+            v-for="(item, index) in field.options.optionItems"
+            :key="index"
+            :class="{
+              'el-radio': true,
+              'row-radio-option': field.options.isRowRadioOption
+            }"
+            :label="item.value"
+            :disabled="item.disabled"
+          >
+            {{ item.label }}
+          </el-radio>
+        </div>
       </template>
     </el-radio-group>
   </form-item-wrapper>
@@ -73,5 +79,18 @@ const { handleChangeEvent } = useEventFunction(instance, props, oldFieldValue)
 ::v-deep(.el-radio-button).is-active .el-radio-button__inner {
   background: #4949c9;
   color: #ffffff;
+}
+
+.radio-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.radio-container .el-radio {
+  margin-bottom: 10px;
+}
+
+.row-radio-option {
+  flex: 0 0 100%;
 }
 </style>

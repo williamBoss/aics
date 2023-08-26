@@ -41,6 +41,7 @@ import basejson from '../form/会诊基本信息.json'
 import patientjson from '../form/患者基本信息.json'
 import infectionInfo from '../form/感染相关信息.json'
 import consultationResult from '../form/会诊结果.json'
+import consultationEvaluation from '../form/会诊疗效评价.json'
 
 const loading = ref(false)
 const tabs = ref([])
@@ -73,6 +74,11 @@ const getQuestionnaireTab = () => {
     tabCode: 'consultationResult',
     tabName: '会诊结果',
     templateList: [{ templateCode: 'consultationResult', templateInfo: consultationResult }]
+  })
+  tabs.value.push({
+    tabCode: 'consultationEvaluation',
+    tabName: '会诊疗效评价',
+    templateList: [{ templateCode: 'consultationEvaluation', templateInfo: consultationEvaluation }]
   })
   /*loading.value = true
   QuestionnaireService.questionnaire.getTabInfo('test').then((res) => {

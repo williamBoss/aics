@@ -1,26 +1,26 @@
 {
   "widgetList": [
     {
-      "key": 20845,
+      "key": 79448,
       "type": "card",
       "category": "container",
       "icon": "card",
       "widgetList": [
         {
-          "key": 98582,
+          "key": 45337,
           "type": "date",
           "icon": "date-field",
           "formItemFlag": true,
           "options": {
-            "name": "date52894",
-            "label": "date",
+            "name": "date95950",
+            "label": "疗效评价日期",
             "labelAlign": "",
             "type": "date",
             "defaultValue": null,
             "placeholder": "",
             "columnWidth": "200px",
             "size": "",
-            "autoFullWidth": true,
+            "autoFullWidth": false,
             "labelWidth": null,
             "labelHidden": false,
             "readonly": false,
@@ -45,11 +45,11 @@
             "onBlur": "",
             "onValidate": ""
           },
-          "id": "date52894"
+          "id": "date95950"
         }
       ],
       "options": {
-        "name": "card53775",
+        "name": "card96062",
         "label": "",
         "hidden": false,
         "folded": false,
@@ -58,17 +58,17 @@
         "shadow": "never",
         "customClass": []
       },
-      "id": "card53775"
+      "id": "card96062"
     },
     {
-      "key": 20845,
+      "key": 79448,
       "type": "card",
       "category": "container",
       "icon": "card",
       "widgetList": [
         {
-          "key": 91670,
-          "type": "grid",
+          "key": 81335,
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -79,8 +79,8 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 91670,
-                  "type": "grid",
+                  "key": 81335,
+                  "type": "layout-grid",
                   "category": "container",
                   "icon": "grid",
                   "cols": [
@@ -91,13 +91,13 @@
                       "internal": true,
                       "widgetList": [
                         {
-                          "key": 17433,
+                          "key": 21040,
                           "type": "input",
                           "icon": "text-field",
                           "formItemFlag": true,
                           "options": {
-                            "name": "input75316",
-                            "label": "input",
+                            "name": "input39326",
+                            "label": "体温",
                             "labelAlign": "",
                             "type": "text",
                             "defaultValue": "",
@@ -136,13 +136,13 @@
                             "onValidate": "",
                             "onAppendButtonClick": ""
                           },
-                          "id": "input75316"
+                          "id": "input39326"
                         }
                       ],
                       "options": {
-                        "name": "gridCol22752",
+                        "name": "gridCol53111",
                         "hidden": false,
-                        "span": 12,
+                        "span": 8,
                         "offset": 0,
                         "push": 0,
                         "pull": 0,
@@ -150,9 +150,9 @@
                         "md": 12,
                         "sm": 12,
                         "xs": 12,
-                        "customClass": ""
+                        "customClass": []
                       },
-                      "id": "grid-col-22752"
+                      "id": "grid-col-53111"
                     },
                     {
                       "type": "grid-col",
@@ -161,31 +161,31 @@
                       "internal": true,
                       "widgetList": [
                         {
-                          "key": 15959,
+                          "key": 49593,
                           "type": "radio",
                           "icon": "radio-field",
                           "formItemFlag": true,
                           "options": {
-                            "name": "radio101502",
-                            "label": "radio",
+                            "name": "radio60120",
+                            "label": "体温状况",
                             "labelAlign": "",
-                            "defaultValue": 3,
+                            "defaultValue": "",
                             "columnWidth": "200px",
                             "size": "",
                             "displayStyle": "inline",
                             "buttonStyle": false,
                             "border": false,
                             "labelWidth": null,
-                            "labelHidden": false,
+                            "labelHidden": true,
                             "disabled": false,
                             "hidden": false,
                             "optionItems": [
                               {
-                                "label": "radio 1",
+                                "label": "较会诊前上升",
                                 "value": 1
                               },
                               {
-                                "label": "radio 2",
+                                "label": "较会诊前下降",
                                 "value": 2
                               }
                             ],
@@ -193,7 +193,7 @@
                             "requiredHint": "",
                             "validation": "",
                             "validationHint": "",
-                            "customClass": "",
+                            "customClass": [],
                             "labelIconClass": null,
                             "labelIconPosition": "rear",
                             "labelTooltip": null,
@@ -202,13 +202,13 @@
                             "onChange": "",
                             "onValidate": ""
                           },
-                          "id": "radio101502"
+                          "id": "radio60120"
                         }
                       ],
                       "options": {
-                        "name": "gridCol92943",
+                        "name": "gridCol40606",
                         "hidden": false,
-                        "span": 12,
+                        "span": 16,
                         "offset": 0,
                         "push": 0,
                         "pull": 0,
@@ -218,21 +218,21 @@
                         "xs": 12,
                         "customClass": ""
                       },
-                      "id": "grid-col-92943"
+                      "id": "grid-col-40606"
                     }
                   ],
                   "options": {
-                    "name": "grid77196",
+                    "name": "grid69262",
                     "hidden": false,
                     "gutter": 12,
                     "colHeight": null,
                     "customClass": ""
                   },
-                  "id": "grid77196"
+                  "id": "grid69262"
                 }
               ],
               "options": {
-                "name": "gridCol84825",
+                "name": "gridCol39248",
                 "hidden": false,
                 "span": 12,
                 "offset": 0,
@@ -244,7 +244,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-84825"
+              "id": "grid-col-39248"
             },
             {
               "type": "grid-col",
@@ -253,13 +253,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 15959,
+                  "key": 49593,
                   "type": "radio",
                   "icon": "radio-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "radio116770",
-                    "label": "radio",
+                    "name": "radio69960",
+                    "label": "检验指标",
                     "labelAlign": "",
                     "defaultValue": null,
                     "columnWidth": "200px",
@@ -273,15 +273,15 @@
                     "hidden": false,
                     "optionItems": [
                       {
-                        "label": "radio 1",
+                        "label": "恶化",
                         "value": 1
                       },
                       {
-                        "label": "radio 2",
+                        "label": "同前",
                         "value": 2
                       },
                       {
-                        "label": "radio 3",
+                        "label": "改善",
                         "value": 3
                       }
                     ],
@@ -298,11 +298,11 @@
                     "onChange": "",
                     "onValidate": ""
                   },
-                  "id": "radio116770"
+                  "id": "radio69960"
                 }
               ],
               "options": {
-                "name": "gridCol82415",
+                "name": "gridCol55538",
                 "hidden": false,
                 "span": 12,
                 "offset": 0,
@@ -312,23 +312,29 @@
                 "md": 12,
                 "sm": 12,
                 "xs": 12,
-                "customClass": []
+                "customClass": ""
               },
-              "id": "grid-col-82415"
+              "id": "grid-col-55538"
             }
           ],
           "options": {
-            "name": "grid35184",
+            "name": "grid65346",
             "hidden": false,
             "gutter": 40,
             "colHeight": null,
             "customClass": ""
           },
-          "id": "grid35184"
+          "id": "grid65346"
         },
         {
-          "key": 91670,
-          "type": "grid",
+          "key": 119996,
+          "type": "lab-tests",
+          "category": "self-component",
+          "id": "labTests119996"
+        },
+        {
+          "key": 81335,
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -339,8 +345,8 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 91670,
-                  "type": "grid",
+                  "key": 81335,
+                  "type": "layout-grid",
                   "category": "container",
                   "icon": "grid",
                   "cols": [
@@ -351,13 +357,13 @@
                       "internal": true,
                       "widgetList": [
                         {
-                          "key": 41789,
+                          "key": 57761,
                           "type": "select",
                           "icon": "select-field",
                           "formItemFlag": true,
                           "options": {
-                            "name": "select64661",
-                            "label": "select",
+                            "name": "select106748",
+                            "label": "G试验",
                             "labelAlign": "",
                             "defaultValue": "",
                             "placeholder": "",
@@ -376,16 +382,12 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
-                                "value": 1
+                                "label": "阳性",
+                                "value": "阳性"
                               },
                               {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
+                                "label": "阴性",
+                                "value": "阴性"
                               }
                             ],
                             "required": false,
@@ -404,11 +406,11 @@
                             "onBlur": "",
                             "onValidate": ""
                           },
-                          "id": "select64661"
+                          "id": "select106748"
                         }
                       ],
                       "options": {
-                        "name": "gridCol78725",
+                        "name": "gridCol109643",
                         "hidden": false,
                         "span": 12,
                         "offset": 0,
@@ -420,7 +422,7 @@
                         "xs": 12,
                         "customClass": ""
                       },
-                      "id": "grid-col-78725"
+                      "id": "grid-col-109643"
                     },
                     {
                       "type": "grid-col",
@@ -429,13 +431,13 @@
                       "internal": true,
                       "widgetList": [
                         {
-                          "key": 41789,
+                          "key": 57761,
                           "type": "select",
                           "icon": "select-field",
                           "formItemFlag": true,
                           "options": {
-                            "name": "select95315",
-                            "label": "select",
+                            "name": "select52026",
+                            "label": "GM试验",
                             "labelAlign": "",
                             "defaultValue": "",
                             "placeholder": "",
@@ -454,16 +456,12 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
-                                "value": 1
+                                "label": "阳性",
+                                "value": "阳性"
                               },
                               {
-                                "label": "select 2",
-                                "value": 2
-                              },
-                              {
-                                "label": "select 3",
-                                "value": 3
+                                "label": "阴性",
+                                "value": "阴性"
                               }
                             ],
                             "required": false,
@@ -482,11 +480,11 @@
                             "onBlur": "",
                             "onValidate": ""
                           },
-                          "id": "select95315"
+                          "id": "select52026"
                         }
                       ],
                       "options": {
-                        "name": "gridCol61970",
+                        "name": "gridCol81236",
                         "hidden": false,
                         "span": 12,
                         "offset": 0,
@@ -498,21 +496,21 @@
                         "xs": 12,
                         "customClass": ""
                       },
-                      "id": "grid-col-61970"
+                      "id": "grid-col-81236"
                     }
                   ],
                   "options": {
-                    "name": "grid54956",
+                    "name": "grid91720",
                     "hidden": false,
-                    "gutter": 12,
+                    "gutter": 40,
                     "colHeight": null,
                     "customClass": ""
                   },
-                  "id": "grid54956"
+                  "id": "grid91720"
                 }
               ],
               "options": {
-                "name": "gridCol96559",
+                "name": "gridCol33721",
                 "hidden": false,
                 "span": 12,
                 "offset": 0,
@@ -524,7 +522,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-96559"
+              "id": "grid-col-33721"
             },
             {
               "type": "grid-col",
@@ -533,13 +531,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input77345",
-                    "label": "input",
+                    "name": "input38925",
+                    "label": "其他补充",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -578,11 +576,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input77345"
+                  "id": "input38925"
                 }
               ],
               "options": {
-                "name": "gridCol47769",
+                "name": "gridCol58319",
                 "hidden": false,
                 "span": 12,
                 "offset": 0,
@@ -594,26 +592,26 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-47769"
+              "id": "grid-col-58319"
             }
           ],
           "options": {
-            "name": "grid12251",
+            "name": "grid12937",
             "hidden": false,
             "gutter": 40,
             "colHeight": null,
-            "customClass": ""
+            "customClass": []
           },
-          "id": "grid12251"
+          "id": "grid12937"
         },
         {
-          "key": 15959,
+          "key": 49593,
           "type": "radio",
           "icon": "radio-field",
           "formItemFlag": true,
           "options": {
-            "name": "radio89478",
-            "label": "radio",
+            "name": "radio14440",
+            "label": "检查指标",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -627,16 +625,20 @@
             "hidden": false,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "B超",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "X光平片",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "CT",
                 "value": 3
+              },
+              {
+                "label": "其他",
+                "value": 4
               }
             ],
             "required": false,
@@ -652,59 +654,11 @@
             "onChange": "",
             "onValidate": ""
           },
-          "id": "radio89478"
-        },
-        {
-          "key": 17433,
-          "type": "input",
-          "icon": "text-field",
-          "formItemFlag": true,
-          "options": {
-            "name": "input31648",
-            "label": "input",
-            "labelAlign": "",
-            "type": "text",
-            "defaultValue": "",
-            "placeholder": "",
-            "columnWidth": "200px",
-            "size": "",
-            "labelWidth": null,
-            "labelHidden": false,
-            "readonly": false,
-            "disabled": false,
-            "hidden": false,
-            "clearable": true,
-            "showPassword": false,
-            "required": false,
-            "requiredHint": "",
-            "validation": "",
-            "validationHint": "",
-            "customClass": "",
-            "labelIconClass": null,
-            "labelIconPosition": "rear",
-            "labelTooltip": null,
-            "minLength": null,
-            "maxLength": null,
-            "showWordLimit": false,
-            "prefixIcon": "",
-            "suffixIcon": "",
-            "appendButton": false,
-            "appendButtonDisabled": false,
-            "buttonIcon": "custom-search",
-            "onCreated": "",
-            "onMounted": "",
-            "onInput": "",
-            "onChange": "",
-            "onFocus": "",
-            "onBlur": "",
-            "onValidate": "",
-            "onAppendButtonClick": ""
-          },
-          "id": "input31648"
+          "id": "radio14440"
         }
       ],
       "options": {
-        "name": "card56200",
+        "name": "card65687",
         "label": "感染控制指标",
         "hidden": false,
         "folded": false,
@@ -713,17 +667,17 @@
         "shadow": "never",
         "customClass": []
       },
-      "id": "card56200"
+      "id": "card65687"
     },
     {
-      "key": 20845,
+      "key": 79448,
       "type": "card",
       "category": "container",
       "icon": "card",
       "widgetList": [
         {
-          "key": 91670,
-          "type": "grid",
+          "key": 81335,
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -734,13 +688,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input75866",
-                    "label": "input",
+                    "name": "input101026",
+                    "label": "药学抗感染治疗总天数",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -779,11 +733,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input75866"
+                  "id": "input101026"
                 }
               ],
               "options": {
-                "name": "gridCol65845",
+                "name": "gridCol108439",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -795,7 +749,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-65845"
+              "id": "grid-col-108439"
             },
             {
               "type": "grid-col",
@@ -804,13 +758,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input99719",
-                    "label": "input",
+                    "name": "input94537",
+                    "label": "会诊前治疗天数",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -849,11 +803,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input99719"
+                  "id": "input94537"
                 }
               ],
               "options": {
-                "name": "gridCol78082",
+                "name": "gridCol104920",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -865,7 +819,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-78082"
+              "id": "grid-col-104920"
             },
             {
               "type": "grid-col",
@@ -874,13 +828,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input27881",
-                    "label": "input",
+                    "name": "input98253",
+                    "label": "会诊后治疗天数",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -919,11 +873,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input27881"
+                  "id": "input98253"
                 }
               ],
               "options": {
-                "name": "gridCol79981",
+                "name": "gridCol32200",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -935,41 +889,41 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-79981"
+              "id": "grid-col-32200"
             }
           ],
           "options": {
-            "name": "grid23095",
+            "name": "grid40103",
             "hidden": false,
             "gutter": 40,
             "colHeight": null,
             "customClass": []
           },
-          "id": "grid23095"
+          "id": "grid40103"
         },
         {
-          "key": 20164,
+          "key": 53401,
           "type": "static-text",
           "icon": "static-text",
           "formItemFlag": false,
           "options": {
-            "name": "statictext91161",
+            "name": "statictext59970",
             "columnWidth": "200px",
             "hidden": false,
-            "textContent": "static text",
+            "textContent": "抗感染药物花费",
             "textAlign": "left",
             "fontSize": "13px",
             "preWrap": false,
             "customClass": "",
             "onCreated": "",
             "onMounted": "",
-            "label": "static-text"
+            "label": "抗感染药物花费"
           },
-          "id": "statictext91161"
+          "id": "statictext59970"
         },
         {
-          "key": 91670,
-          "type": "grid",
+          "key": 81335,
+          "type": "layout-grid",
           "category": "container",
           "icon": "grid",
           "cols": [
@@ -980,13 +934,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input82133",
-                    "label": "input",
+                    "name": "input71238",
+                    "label": "会诊前花费",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1025,16 +979,16 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input82133"
+                  "id": "input71238"
                 },
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input85968",
-                    "label": "input",
+                    "name": "input83308",
+                    "label": "药师会诊费",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1073,11 +1027,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input85968"
+                  "id": "input83308"
                 }
               ],
               "options": {
-                "name": "gridCol11240",
+                "name": "gridCol30104",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -1089,7 +1043,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-11240"
+              "id": "grid-col-30104"
             },
             {
               "type": "grid-col",
@@ -1098,13 +1052,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input59230",
-                    "label": "input",
+                    "name": "input50722",
+                    "label": "会诊后花费",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1143,16 +1097,16 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input59230"
+                  "id": "input50722"
                 },
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input54837",
-                    "label": "input",
+                    "name": "input22091",
+                    "label": "医师会诊费",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1191,11 +1145,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input54837"
+                  "id": "input22091"
                 }
               ],
               "options": {
-                "name": "gridCol30158",
+                "name": "gridCol103122",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -1207,7 +1161,7 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-30158"
+              "id": "grid-col-103122"
             },
             {
               "type": "grid-col",
@@ -1216,13 +1170,13 @@
               "internal": true,
               "widgetList": [
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input18236",
-                    "label": "input",
+                    "name": "input74347",
+                    "label": "会诊前后差额",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1261,16 +1215,16 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input18236"
+                  "id": "input74347"
                 },
                 {
-                  "key": 17433,
+                  "key": 21040,
                   "type": "input",
                   "icon": "text-field",
                   "formItemFlag": true,
                   "options": {
-                    "name": "input71648",
-                    "label": "input",
+                    "name": "input87866",
+                    "label": "抗感染总费用",
                     "labelAlign": "",
                     "type": "text",
                     "defaultValue": "",
@@ -1309,11 +1263,11 @@
                     "onValidate": "",
                     "onAppendButtonClick": ""
                   },
-                  "id": "input71648"
+                  "id": "input87866"
                 }
               ],
               "options": {
-                "name": "gridCol46592",
+                "name": "gridCol91937",
                 "hidden": false,
                 "span": 8,
                 "offset": 0,
@@ -1325,45 +1279,201 @@
                 "xs": 12,
                 "customClass": ""
               },
-              "id": "grid-col-46592"
+              "id": "grid-col-91937"
             }
           ],
           "options": {
-            "name": "grid93827",
+            "name": "grid28540",
             "hidden": false,
             "gutter": 40,
             "colHeight": null,
             "customClass": []
           },
-          "id": "grid93827"
+          "id": "grid28540"
         }
       ],
       "options": {
-        "name": "card40562",
-        "label": "card",
+        "name": "card92635",
+        "label": "药物经济学评价",
         "hidden": false,
         "folded": false,
         "showFold": false,
         "cardWidth": "100%",
         "shadow": "never",
-        "customClass": ""
+        "customClass": []
       },
-      "id": "card40562"
+      "id": "card92635"
     },
     {
-      "key": 20845,
+      "key": 79448,
       "type": "card",
       "category": "container",
       "icon": "card",
       "widgetList": [
         {
-          "key": 15959,
+          "key": 81335,
+          "type": "layout-grid",
+          "category": "container",
+          "icon": "grid",
+          "cols": [
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 49593,
+                  "type": "radio",
+                  "icon": "radio-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "radio31308",
+                    "label": "药敏情况",
+                    "labelAlign": "",
+                    "defaultValue": null,
+                    "columnWidth": "200px",
+                    "size": "",
+                    "displayStyle": "inline",
+                    "buttonStyle": false,
+                    "border": false,
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "optionItems": [
+                      {
+                        "label": "同前",
+                        "value": 1
+                      },
+                      {
+                        "label": "转阴",
+                        "value": 2
+                      },
+                      {
+                        "label": "新发",
+                        "value": 3
+                      }
+                    ],
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": [],
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onChange": "",
+                    "onValidate": ""
+                  },
+                  "id": "radio31308"
+                }
+              ],
+              "options": {
+                "name": "gridCol8946",
+                "hidden": false,
+                "span": 8,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": ""
+              },
+              "id": "grid-col-8946"
+            },
+            {
+              "type": "grid-col",
+              "category": "container",
+              "icon": "grid-col",
+              "internal": true,
+              "widgetList": [
+                {
+                  "key": 21040,
+                  "type": "input",
+                  "icon": "text-field",
+                  "formItemFlag": true,
+                  "options": {
+                    "name": "input116399",
+                    "label": "具体药敏情况",
+                    "labelAlign": "",
+                    "type": "text",
+                    "defaultValue": "",
+                    "placeholder": "",
+                    "columnWidth": "200px",
+                    "size": "",
+                    "labelWidth": null,
+                    "labelHidden": false,
+                    "readonly": false,
+                    "disabled": false,
+                    "hidden": false,
+                    "clearable": true,
+                    "showPassword": false,
+                    "required": false,
+                    "requiredHint": "",
+                    "validation": "",
+                    "validationHint": "",
+                    "customClass": "",
+                    "labelIconClass": null,
+                    "labelIconPosition": "rear",
+                    "labelTooltip": null,
+                    "minLength": null,
+                    "maxLength": null,
+                    "showWordLimit": false,
+                    "prefixIcon": "",
+                    "suffixIcon": "",
+                    "appendButton": false,
+                    "appendButtonDisabled": false,
+                    "buttonIcon": "custom-search",
+                    "onCreated": "",
+                    "onMounted": "",
+                    "onInput": "",
+                    "onChange": "",
+                    "onFocus": "",
+                    "onBlur": "",
+                    "onValidate": "",
+                    "onAppendButtonClick": ""
+                  },
+                  "id": "input116399"
+                }
+              ],
+              "options": {
+                "name": "gridCol79159",
+                "hidden": false,
+                "span": 16,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "responsive": false,
+                "md": 12,
+                "sm": 12,
+                "xs": 12,
+                "customClass": ""
+              },
+              "id": "grid-col-79159"
+            }
+          ],
+          "options": {
+            "name": "grid65418",
+            "hidden": false,
+            "gutter": 40,
+            "colHeight": null,
+            "customClass": ""
+          },
+          "id": "grid65418"
+        },
+        {
+          "key": 49593,
           "type": "radio",
           "icon": "radio-field",
           "formItemFlag": true,
           "options": {
-            "name": "radio109853",
-            "label": "radio",
+            "name": "radio48417",
+            "label": "转归情况",
             "labelAlign": "",
             "defaultValue": null,
             "columnWidth": "200px",
@@ -1375,18 +1485,23 @@
             "labelHidden": false,
             "disabled": false,
             "hidden": false,
+            "isRowRadioOption": true,
             "optionItems": [
               {
-                "label": "radio 1",
+                "label": "1、无效（用药72h后病情无明显进步或加重）",
                 "value": 1
               },
               {
-                "label": "radio 2",
+                "label": "2、部分缓解（病情明显好转，症状、体征、实验室检查结果和病原学检查结果4项中有1项未完全恢复正常，细菌转为定植无症状，视为部分缓解）",
                 "value": 2
               },
               {
-                "label": "radio 3",
+                "label": "3、痊愈（症状、体征、实验室检查结果和病原学检查结果 4 项恢复正常）",
                 "value": 3
+              },
+              {
+                "label": "4、死亡",
+                "value": 4
               }
             ],
             "required": false,
@@ -1402,116 +1517,20 @@
             "onChange": "",
             "onValidate": ""
           },
-          "id": "radio109853"
-        },
-        {
-          "key": 17433,
-          "type": "input",
-          "icon": "text-field",
-          "formItemFlag": true,
-          "options": {
-            "name": "input42802",
-            "label": "input",
-            "labelAlign": "",
-            "type": "text",
-            "defaultValue": "",
-            "placeholder": "",
-            "columnWidth": "200px",
-            "size": "",
-            "labelWidth": null,
-            "labelHidden": false,
-            "readonly": false,
-            "disabled": false,
-            "hidden": false,
-            "clearable": true,
-            "showPassword": false,
-            "required": false,
-            "requiredHint": "",
-            "validation": "",
-            "validationHint": "",
-            "customClass": "",
-            "labelIconClass": null,
-            "labelIconPosition": "rear",
-            "labelTooltip": null,
-            "minLength": null,
-            "maxLength": null,
-            "showWordLimit": false,
-            "prefixIcon": "",
-            "suffixIcon": "",
-            "appendButton": false,
-            "appendButtonDisabled": false,
-            "buttonIcon": "custom-search",
-            "onCreated": "",
-            "onMounted": "",
-            "onInput": "",
-            "onChange": "",
-            "onFocus": "",
-            "onBlur": "",
-            "onValidate": "",
-            "onAppendButtonClick": ""
-          },
-          "id": "input42802"
-        },
-        {
-          "key": 15959,
-          "type": "radio",
-          "icon": "radio-field",
-          "formItemFlag": true,
-          "options": {
-            "name": "radio27816",
-            "label": "radio",
-            "labelAlign": "",
-            "defaultValue": null,
-            "columnWidth": "200px",
-            "size": "",
-            "displayStyle": "inline",
-            "buttonStyle": false,
-            "border": false,
-            "labelWidth": null,
-            "labelHidden": false,
-            "disabled": false,
-            "hidden": false,
-            "optionItems": [
-              {
-                "label": "radio 1",
-                "value": 1
-              },
-              {
-                "label": "radio 2",
-                "value": 2
-              },
-              {
-                "label": "radio 3",
-                "value": 3
-              }
-            ],
-            "required": false,
-            "requiredHint": "",
-            "validation": "",
-            "validationHint": "",
-            "customClass": "",
-            "labelIconClass": null,
-            "labelIconPosition": "rear",
-            "labelTooltip": null,
-            "onCreated": "",
-            "onMounted": "",
-            "onChange": "",
-            "onValidate": ""
-          },
-          "id": "radio27816"
+          "id": "radio48417"
         }
       ],
       "options": {
-        "name": "card36632",
-        "label": "card",
+        "name": "card84428",
+        "label": "转归结果（会诊后3-7天）",
         "hidden": false,
         "folded": false,
         "showFold": false,
         "cardWidth": "100%",
         "shadow": "never",
-        "customClass": ""
+        "customClass": []
       },
-      "id": "card36632"
+      "id": "card84428"
     }
   ],
   "formConfig": {

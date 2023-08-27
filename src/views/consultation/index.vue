@@ -145,6 +145,7 @@
         <dynamic-table
           :table-data="state.tableData"
           :table-header="state.tableHeader"
+          :operation-item="state.operationItem"
         >
           <template #operations="scope">
             <el-button
@@ -204,15 +205,18 @@ const queryFormRef = ref()
 const state = reactive({
   // 表格头
   tableHeader: [
-    { prop: 'pharmacistName', label: '日期' },
+    { prop: 'consultationTime', label: '日期' },
     { prop: 'patientCode', label: '患者编号' },
     { prop: 'age', label: '年龄' },
-    { prop: 'gender', label: '性别' },
-    { prop: 'adopt', label: '感染部位' },
-    { prop: 'adopt', label: '病原体' },
+    { prop: 'gender', label: '性别', convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
+    { prop: 'sitesInfection', label: '感染部位' },
+    { prop: 'pathogen', label: '病原体' },
     { prop: 'adopt', label: '采纳会诊' },
     { prop: 'lapse', label: '转归结局' }
   ],
+  operationItem: {
+    width: 230
+  },
   // 表格数据
   tableData: [],
   // 分页数据

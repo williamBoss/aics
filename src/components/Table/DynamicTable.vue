@@ -32,6 +32,7 @@
       <el-table-column
         align="center"
         label="操作"
+        :width="(operationItem && operationItem.width) || ''"
       >
         <template #default="scope">
           <slot
@@ -63,6 +64,7 @@ defineComponent({
  * @typedef {Object} Props
  * @property {Array.<Header>} tableHeader - 表头结构
  * @property {Array.<Object>} tableData - 表格数据
+ * @property {Object} operationItem - 操作列元素属性设置
  */
 
 /**
@@ -77,6 +79,10 @@ const props = defineProps({
   tableData: {
     type: Array,
     required: true
+  },
+  operationItem: {
+    type: Object,
+    required: false
   }
 })
 

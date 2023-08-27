@@ -159,7 +159,7 @@
               type="text"
               size="small"
               @click="handleDelete(scope.row, scope.$index)"
-              >会诊
+              >继续会诊
             </el-button>
             <el-divider direction="vertical" />
             <el-button
@@ -215,7 +215,7 @@ const state = reactive({
     { prop: 'lapse', label: '转归结局' }
   ],
   operationItem: {
-    width: 230
+    width: 250
   },
   // 表格数据
   tableData: [],

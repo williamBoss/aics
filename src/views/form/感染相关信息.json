@@ -745,7 +745,8 @@
           "key": 3823947,
           "type": "pathogen-cx-results",
           "category": "self-component",
-          "id": "PathogenCxResults3823947"
+          "pathogenId": "pathogen3823947",
+          "id": "pathogenCxResults3823947"
         }
       ],
       "options": {

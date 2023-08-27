@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, inject, reactive, ref, watch } from 'vue'
 import DynamicEditTable from '@components/Table/DynamicEditTable.vue'
 import { ConfigService } from '@api/consultation-api.js'
 import { Plus } from '@element-plus/icons-vue'
@@ -89,6 +89,7 @@ const ipcp = reactive({
     ]
   }
 })
+const answer = ref(inject('answer'))
 
 const handlePharmacistAdd = () => {
   ipcpRef.value.prepend(0)
@@ -113,6 +114,14 @@ const handleDelete = (row, index) => {
   ipcp.tableData.splice(index, 1)
   ElMessage.success('成功')
 }
+
+watch(
+  ipcp.tableData,
+  () => {
+    Object.assign(answer.value, { [props.field.id]: [...ipcp.tableData] })
+  },
+  { deep: true }
+)
 </script>
 
 <style scoped>

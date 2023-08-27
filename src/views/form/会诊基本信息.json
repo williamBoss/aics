@@ -282,16 +282,140 @@
                     "multipleLimit": 0,
                     "optionItems": [
                       {
-                        "label": "select 1",
-                        "value": 1
+                        "label": "消化内科",
+                        "value": "消化内科"
                       },
                       {
-                        "label": "select 2",
-                        "value": 2
+                        "label": "感染科",
+                        "value": "感染科"
                       },
                       {
-                        "label": "select 3",
-                        "value": 3
+                        "label": "呼吸内科",
+                        "value": "呼吸内科"
+                      },
+                      {
+                        "label": "心血管内科",
+                        "value": "心血管内科"
+                      },
+                      {
+                        "label": "内分泌科",
+                        "value": "内分泌科"
+                      },
+                      {
+                        "label": "血液科",
+                        "value": "血液科"
+                      },
+                      {
+                        "label": "风湿免疫科",
+                        "value": "风湿免疫科"
+                      },
+                      {
+                        "label": "神经内科",
+                        "value": "神经内科"
+                      },
+                      {
+                        "label": "肾内科",
+                        "value": "肾内科"
+                      },
+                      {
+                        "label": "肿瘤内科",
+                        "value": "肿瘤内科"
+                      },
+                      {
+                        "label": "全科",
+                        "value": "全科"
+                      },
+                      {
+                        "label": "中医科",
+                        "value": "中医科"
+                      },
+                      {
+                        "label": "心脏外科",
+                        "value": "心脏外科"
+                      },
+                      {
+                        "label": "血管外科",
+                        "value": "血管外科"
+                      },
+                      {
+                        "label": "普外科",
+                        "value": "普外科"
+                      },
+                      {
+                        "label": "骨科",
+                        "value": "骨科"
+                      },
+                      {
+                        "label": "胸外科",
+                        "value": "胸外科"
+                      },
+                      {
+                        "label": "神经外科",
+                        "value": "神经外科"
+                      },
+                      {
+                        "label": "泌尿外科",
+                        "value": "泌尿外科"
+                      },
+                      {
+                        "label": "肿瘤外科",
+                        "value": "肿瘤外科"
+                      },
+                      {
+                        "label": "肝胆外科",
+                        "value": "肝胆外科"
+                      },
+                      {
+                        "label": "皮肤科",
+                        "value": "皮肤科"
+                      },
+                      {
+                        "label": "性病科",
+                        "value": "性病科"
+                      },
+                      {
+                        "label": "眼科",
+                        "value": "眼科"
+                      },
+                      {
+                        "label": "口腔科",
+                        "value": "口腔科"
+                      },
+                      {
+                        "label": "耳鼻喉科",
+                        "value": "耳鼻喉科"
+                      },
+                      {
+                        "label": "妇科",
+                        "value": "妇科"
+                      },
+                      {
+                        "label": "产科",
+                        "value": "产科"
+                      },
+                      {
+                        "label": "小儿内科",
+                        "value": "小儿内科"
+                      },
+                      {
+                        "label": "小儿外科",
+                        "value": "小儿外科"
+                      },
+                      {
+                        "label": "急诊科",
+                        "value": "急诊科"
+                      },
+                      {
+                        "label": "发热门诊",
+                        "value": "发热门诊"
+                      },
+                      {
+                        "label": "重症监护室",
+                        "value": "重症监护室"
+                      },
+                      {
+                        "label": "其他",
+                        "value": "其他"
                       }
                     ],
                     "required": false,
@@ -841,16 +965,140 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
-                                "value": 1
+                                "label": "消化内科",
+                                "value": "消化内科"
                               },
                               {
-                                "label": "select 2",
-                                "value": 2
+                                "label": "感染科",
+                                "value": "感染科"
                               },
                               {
-                                "label": "select 3",
-                                "value": 3
+                                "label": "呼吸内科",
+                                "value": "呼吸内科"
+                              },
+                              {
+                                "label": "心血管内科",
+                                "value": "心血管内科"
+                              },
+                              {
+                                "label": "内分泌科",
+                                "value": "内分泌科"
+                              },
+                              {
+                                "label": "血液科",
+                                "value": "血液科"
+                              },
+                              {
+                                "label": "风湿免疫科",
+                                "value": "风湿免疫科"
+                              },
+                              {
+                                "label": "神经内科",
+                                "value": "神经内科"
+                              },
+                              {
+                                "label": "肾内科",
+                                "value": "肾内科"
+                              },
+                              {
+                                "label": "肿瘤内科",
+                                "value": "肿瘤内科"
+                              },
+                              {
+                                "label": "全科",
+                                "value": "全科"
+                              },
+                              {
+                                "label": "中医科",
+                                "value": "中医科"
+                              },
+                              {
+                                "label": "心脏外科",
+                                "value": "心脏外科"
+                              },
+                              {
+                                "label": "血管外科",
+                                "value": "血管外科"
+                              },
+                              {
+                                "label": "普外科",
+                                "value": "普外科"
+                              },
+                              {
+                                "label": "骨科",
+                                "value": "骨科"
+                              },
+                              {
+                                "label": "胸外科",
+                                "value": "胸外科"
+                              },
+                              {
+                                "label": "神经外科",
+                                "value": "神经外科"
+                              },
+                              {
+                                "label": "泌尿外科",
+                                "value": "泌尿外科"
+                              },
+                              {
+                                "label": "肿瘤外科",
+                                "value": "肿瘤外科"
+                              },
+                              {
+                                "label": "肝胆外科",
+                                "value": "肝胆外科"
+                              },
+                              {
+                                "label": "皮肤科",
+                                "value": "皮肤科"
+                              },
+                              {
+                                "label": "性病科",
+                                "value": "性病科"
+                              },
+                              {
+                                "label": "眼科",
+                                "value": "眼科"
+                              },
+                              {
+                                "label": "口腔科",
+                                "value": "口腔科"
+                              },
+                              {
+                                "label": "耳鼻喉科",
+                                "value": "耳鼻喉科"
+                              },
+                              {
+                                "label": "妇科",
+                                "value": "妇科"
+                              },
+                              {
+                                "label": "产科",
+                                "value": "产科"
+                              },
+                              {
+                                "label": "小儿内科",
+                                "value": "小儿内科"
+                              },
+                              {
+                                "label": "小儿外科",
+                                "value": "小儿外科"
+                              },
+                              {
+                                "label": "急诊科",
+                                "value": "急诊科"
+                              },
+                              {
+                                "label": "发热门诊",
+                                "value": "发热门诊"
+                              },
+                              {
+                                "label": "重症监护室",
+                                "value": "重症监护室"
+                              },
+                              {
+                                "label": "其他",
+                                "value": "其他"
                               }
                             ],
                             "required": false,
@@ -956,15 +1204,15 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
+                                "label": "主治医师",
                                 "value": 1
                               },
                               {
-                                "label": "select 2",
+                                "label": "副主任医师",
                                 "value": 2
                               },
                               {
-                                "label": "select 3",
+                                "label": "主任医师",
                                 "value": 3
                               }
                             ],
@@ -1034,16 +1282,140 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
-                                "value": 1
+                                "label": "消化内科",
+                                "value": "消化内科"
                               },
                               {
-                                "label": "select 2",
-                                "value": 2
+                                "label": "感染科",
+                                "value": "感染科"
                               },
                               {
-                                "label": "select 3",
-                                "value": 3
+                                "label": "呼吸内科",
+                                "value": "呼吸内科"
+                              },
+                              {
+                                "label": "心血管内科",
+                                "value": "心血管内科"
+                              },
+                              {
+                                "label": "内分泌科",
+                                "value": "内分泌科"
+                              },
+                              {
+                                "label": "血液科",
+                                "value": "血液科"
+                              },
+                              {
+                                "label": "风湿免疫科",
+                                "value": "风湿免疫科"
+                              },
+                              {
+                                "label": "神经内科",
+                                "value": "神经内科"
+                              },
+                              {
+                                "label": "肾内科",
+                                "value": "肾内科"
+                              },
+                              {
+                                "label": "肿瘤内科",
+                                "value": "肿瘤内科"
+                              },
+                              {
+                                "label": "全科",
+                                "value": "全科"
+                              },
+                              {
+                                "label": "中医科",
+                                "value": "中医科"
+                              },
+                              {
+                                "label": "心脏外科",
+                                "value": "心脏外科"
+                              },
+                              {
+                                "label": "血管外科",
+                                "value": "血管外科"
+                              },
+                              {
+                                "label": "普外科",
+                                "value": "普外科"
+                              },
+                              {
+                                "label": "骨科",
+                                "value": "骨科"
+                              },
+                              {
+                                "label": "胸外科",
+                                "value": "胸外科"
+                              },
+                              {
+                                "label": "神经外科",
+                                "value": "神经外科"
+                              },
+                              {
+                                "label": "泌尿外科",
+                                "value": "泌尿外科"
+                              },
+                              {
+                                "label": "肿瘤外科",
+                                "value": "肿瘤外科"
+                              },
+                              {
+                                "label": "肝胆外科",
+                                "value": "肝胆外科"
+                              },
+                              {
+                                "label": "皮肤科",
+                                "value": "皮肤科"
+                              },
+                              {
+                                "label": "性病科",
+                                "value": "性病科"
+                              },
+                              {
+                                "label": "眼科",
+                                "value": "眼科"
+                              },
+                              {
+                                "label": "口腔科",
+                                "value": "口腔科"
+                              },
+                              {
+                                "label": "耳鼻喉科",
+                                "value": "耳鼻喉科"
+                              },
+                              {
+                                "label": "妇科",
+                                "value": "妇科"
+                              },
+                              {
+                                "label": "产科",
+                                "value": "产科"
+                              },
+                              {
+                                "label": "小儿内科",
+                                "value": "小儿内科"
+                              },
+                              {
+                                "label": "小儿外科",
+                                "value": "小儿外科"
+                              },
+                              {
+                                "label": "急诊科",
+                                "value": "急诊科"
+                              },
+                              {
+                                "label": "发热门诊",
+                                "value": "发热门诊"
+                              },
+                              {
+                                "label": "重症监护室",
+                                "value": "重症监护室"
+                              },
+                              {
+                                "label": "其他",
+                                "value": "其他"
                               }
                             ],
                             "required": false,
@@ -1149,15 +1521,15 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
+                                "label": "主治医师",
                                 "value": 1
                               },
                               {
-                                "label": "select 2",
+                                "label": "副主任医师",
                                 "value": 2
                               },
                               {
-                                "label": "select 3",
+                                "label": "主任医师",
                                 "value": 3
                               }
                             ],
@@ -1227,16 +1599,140 @@
                             "multipleLimit": 0,
                             "optionItems": [
                               {
-                                "label": "select 1",
-                                "value": 1
+                                "label": "消化内科",
+                                "value": "消化内科"
                               },
                               {
-                                "label": "select 2",
-                                "value": 2
+                                "label": "感染科",
+                                "value": "感染科"
                               },
                               {
-                                "label": "select 3",
-                                "value": 3
+                                "label": "呼吸内科",
+                                "value": "呼吸内科"
+                              },
+                              {
+                                "label": "心血管内科",
+                                "value": "心血管内科"
+                              },
+                              {
+                                "label": "内分泌科",
+                                "value": "内分泌科"
+                              },
+                              {
+                                "label": "血液科",
+                                "value": "血液科"
+                              },
+                              {
+                                "label": "风湿免疫科",
+                                "value": "风湿免疫科"
+                              },
+                              {
+                                "label": "神经内科",
+                                "value": "神经内科"
+                              },
+                              {
+                                "label": "肾内科",
+                                "value": "肾内科"
+                              },
+                              {
+                                "label": "肿瘤内科",
+                                "value": "肿瘤内科"
+                              },
+                              {
+                                "label": "全科",
+                                "value": "全科"
+                              },
+                              {
+                                "label": "中医科",
+                                "value": "中医科"
+                              },
+                              {
+                                "label": "心脏外科",
+                                "value": "心脏外科"
+                              },
+                              {
+                                "label": "血管外科",
+                                "value": "血管外科"
+                              },
+                              {
+                                "label": "普外科",
+                                "value": "普外科"
+                              },
+                              {
+                                "label": "骨科",
+                                "value": "骨科"
+                              },
+                              {
+                                "label": "胸外科",
+                                "value": "胸外科"
+                              },
+                              {
+                                "label": "神经外科",
+                                "value": "神经外科"
+                              },
+                              {
+                                "label": "泌尿外科",
+                                "value": "泌尿外科"
+                              },
+                              {
+                                "label": "肿瘤外科",
+                                "value": "肿瘤外科"
+                              },
+                              {
+                                "label": "肝胆外科",
+                                "value": "肝胆外科"
+                              },
+                              {
+                                "label": "皮肤科",
+                                "value": "皮肤科"
+                              },
+                              {
+                                "label": "性病科",
+                                "value": "性病科"
+                              },
+                              {
+                                "label": "眼科",
+                                "value": "眼科"
+                              },
+                              {
+                                "label": "口腔科",
+                                "value": "口腔科"
+                              },
+                              {
+                                "label": "耳鼻喉科",
+                                "value": "耳鼻喉科"
+                              },
+                              {
+                                "label": "妇科",
+                                "value": "妇科"
+                              },
+                              {
+                                "label": "产科",
+                                "value": "产科"
+                              },
+                              {
+                                "label": "小儿内科",
+                                "value": "小儿内科"
+                              },
+                              {
+                                "label": "小儿外科",
+                                "value": "小儿外科"
+                              },
+                              {
+                                "label": "急诊科",
+                                "value": "急诊科"
+                              },
+                              {
+                                "label": "发热门诊",
+                                "value": "发热门诊"
+                              },
+                              {
+                                "label": "重症监护室",
+                                "value": "重症监护室"
+                              },
+                              {
+                                "label": "其他",
+                                "value": "其他"
                               }
                             ],
                             "required": false,

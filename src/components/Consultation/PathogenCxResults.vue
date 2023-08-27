@@ -18,7 +18,22 @@
           v-show="item.isEdit || scope.row.isEdit"
           class="flx-align-center"
         >
-          <el-checkbox-group v-model="pathogenCxResults">
+          <el-checkbox-group
+            v-if="item.prop === 'pathogen'"
+            v-model="pathogen"
+          >
+            <el-checkbox
+              v-for="(option, index) in scope.row[`${item.prop}Options`]"
+              :key="index"
+              :label="option.value"
+            >
+              {{ option.label }}
+            </el-checkbox>
+          </el-checkbox-group>
+          <el-checkbox-group
+            v-else
+            v-model="pathogenCxResults"
+          >
             <el-checkbox
               v-for="(option, index) in scope.row[`${item.prop}Options`]"
               :key="index"
@@ -43,25 +58,41 @@
 </template>
 
 <script setup>
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, inject, reactive, ref, watch } from 'vue'
 import { PathogenCxResultList } from '@components/Consultation/config/Config.js'
+import { commonProps } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
   name: 'PathogenCxResults'
 })
 
+const props = defineProps({
+  ...commonProps
+})
+
+const pathogen = ref([])
 const pathogenCxResults = ref([])
 const pathogenCxResultList = reactive(PathogenCxResultList)
+const answer = ref(inject('answer'))
+
+watch(
+  pathogen,
+  () => {
+    Object.assign(answer.value, { [props.field.pathogenId]: [...pathogen.value] })
+  },
+  { deep: true }
+)
+
+watch(
+  pathogenCxResults,
+  () => {
+    Object.assign(answer.value, { [props.field.id]: [...pathogenCxResults.value, ...pathogen.value] })
+  },
+  { deep: true }
+)
 </script>
 
 <style scoped>
-.title {
-  font-size: 14px;
-  font-weight: 400;
-  color: #51515a;
-  line-height: 16px;
-}
-
 :deep(.table-header) {
   height: 48px;
   font-size: 14px;

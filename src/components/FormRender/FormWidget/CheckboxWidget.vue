@@ -30,7 +30,12 @@
 
 <script setup>
 import FormItemWrapper from '@components/FormRender/FormWidget/FormItemWrapper.vue'
-import { commonProps, useCommonComputed, useEventFunction } from '@components/FormRender/FormWidget/common.js'
+import {
+  commonProps,
+  useCommonComputed,
+  useEventFunction,
+  useInitField
+} from '@components/FormRender/FormWidget/common.js'
 import { getCurrentInstance, ref } from 'vue'
 
 const props = defineProps({
@@ -43,6 +48,8 @@ const rules = ref([])
 
 const { widgetSize } = useCommonComputed(props)
 const { handleChangeEvent } = useEventFunction(getCurrentInstance, props, oldFieldValue)
+const { initFieldModel } = useInitField(props, oldFieldValue, fieldModel)
+initFieldModel?.()
 </script>
 
 <style scoped>

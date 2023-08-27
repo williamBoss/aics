@@ -64,7 +64,7 @@ export const useTableHandle = (api, initParam, isPageable, dataCallBack) => {
       const { pageNum, pageSize, total } = data
       isPageable && updatePageable({ pageNum, pageSize, total })
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 

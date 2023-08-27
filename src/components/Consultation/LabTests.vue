@@ -86,14 +86,30 @@
 </template>
 
 <script setup>
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, inject, reactive, ref, watch } from 'vue'
 import { LabTestsList } from '@components/Consultation/config/Config.js'
+import { commonProps } from '@components/FormRender/FormWidget/common.js'
 
 defineComponent({
   name: 'LabTests'
 })
 
+const props = defineProps({
+  ...commonProps
+})
+
 const labTest = reactive(LabTestsList)
+const answer = ref(inject('answer'))
+
+watch(
+  labTest,
+  (newVal) => {
+    const testResult = {}
+    newVal.flatMap((v) => v.tableData).map((v) => Object.assign(testResult, { [v.key]: v.testResult }))
+    Object.assign(answer.value, { [props.field.id]: testResult })
+  },
+  { deep: true }
+)
 </script>
 
 <style scoped>

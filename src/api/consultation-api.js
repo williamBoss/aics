@@ -126,11 +126,18 @@ export class HospitalService {
 export class QuestionnaireService {
   static questionnaire = {
     /**
-     * 获取问卷tab和模板
-     * @param {string} code
+     * 根据code获取问卷tab和问卷模板
+     * @param {Object} data
      * @return {Promise<*>}
      */
-    getTabInfo: (code) => Request.get(`${apiPrefix}/questionnaire/getTabInfo/${code}`),
+    getTabInfo: (data) => Request.post(`${apiPrefix}/questionnaire/getTabInfo`, data),
+
+    /**
+     * 根据tabCode获取问卷模板
+     * @param {String} tabCode
+     * @return {Promise<*>}
+     */
+    getQuestionTemplate: (tabCode) => Request.get(`${apiPrefix}/questionnaire/getQuestionTemplate/${tabCode}`),
 
     /**
      * @typedef {object} answer

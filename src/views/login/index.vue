@@ -118,7 +118,7 @@ const login = (formEl) => {
           })
         })
         .catch((reason) => {
-          console.log('login:{}', reason)
+          console.error('login:{}', reason)
           getCode()
         })
     } finally {

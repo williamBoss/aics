@@ -79,6 +79,7 @@ import { buildDefaultFormJson } from '@components/FormRender/formConfig.js'
 import { generateId } from '@/utils/util.js'
 import { cloneDeep } from 'lodash'
 import { loadComponents } from '@components/loadComponents.js'
+import { ElMessage } from 'element-plus'
 
 defineComponent({
   name: 'FormRender'
@@ -194,11 +195,27 @@ const setFormData = (formData) => {
   })
 }
 
+const getFormData = (needValidation = true) => {
+  if (!needValidation) {
+    return formDataModel.value
+  }
+  fromRenderRef.value.validate((valid) => {
+    if (valid) {
+      return formDataModel.value
+    }
+    ElMessage.warning('请检查表单')
+  })
+}
+
 initFormObject()
 buildFormModel((formJsonObj.value && formJsonObj.value.widgetList) || null)
 
 onMounted(async () => {
   components.value = await loadComponents()
+})
+
+defineExpose({
+  getFormData
 })
 </script>
 

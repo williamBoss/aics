@@ -27,7 +27,12 @@
 
 <script setup>
 import { defineComponent, getCurrentInstance, ref } from 'vue'
-import { commonProps, useCommonComputed, useEventFunction } from '@components/FormRender/FormWidget/common.js'
+import {
+  commonProps,
+  useCommonComputed,
+  useEventFunction,
+  useInitField
+} from '@components/FormRender/FormWidget/common.js'
 import FormItemWrapper from '@components/FormRender/FormWidget/FormItemWrapper.vue'
 
 defineComponent({
@@ -49,6 +54,8 @@ const { handleBlurCustomEvent, handleFocusCustomEvent, handleChangeEvent } = use
   props,
   oldFieldValue
 )
+const { initFieldModel } = useInitField(props, oldFieldValue, fieldModel)
+initFieldModel?.()
 </script>
 
 <style scoped>

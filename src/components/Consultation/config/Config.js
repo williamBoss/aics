@@ -47,19 +47,19 @@ const LabTestsList = [
     tableData: [
       {
         projectName: 'IL-6',
-        key: 'wbc',
+        key: 'il6',
         testResult: '',
         reference: '＜7pg/mL'
       },
       {
         projectName: '尿白细胞计数',
-        key: 'ly',
+        key: 'ul',
         testResult: '',
         reference: '男：0~2个/hp <br/> 女：0~5个/hp'
       },
       {
         projectName: '血沉（ESR）',
-        key: 'crp',
+        key: 'esr',
         testResult: '',
         reference: '男：0～15mm/1h <br/> 女：0～20mm/1h'
       }

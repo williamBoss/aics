@@ -151,23 +151,27 @@
             <el-button
               type="text"
               size="small"
-              @click="handleEdit(scope.row)"
+              @click="handleView(scope.row)"
               >查看
             </el-button>
-            <el-divider direction="vertical" />
-            <el-button
-              type="text"
-              size="small"
-              @click="handleDelete(scope.row, scope.$index)"
-              >继续会诊
-            </el-button>
-            <el-divider direction="vertical" />
-            <el-button
-              type="text"
-              size="small"
-              @click="handleDelete(scope.row, scope.$index)"
-              >跟踪病历
-            </el-button>
+            <template v-if="scope.row.status === 0">
+              <el-divider direction="vertical" />
+              <el-button
+                type="text"
+                size="small"
+                @click="handleContinue(scope.row)"
+                >继续会诊
+              </el-button>
+            </template>
+            <template v-if="scope.row.isFollow === 1">
+              <el-divider direction="vertical" />
+              <el-button
+                type="text"
+                size="small"
+                @click="handleDelete(scope.row, scope.$index)"
+                >跟踪病历
+              </el-button>
+            </template>
           </template>
         </dynamic-table>
       </el-card>
@@ -312,6 +316,25 @@ const handleCurrentChange = (val) => {
 
 const handleAdd = () => {
   router.push({ name: 'consultationForm' })
+}
+
+const handleView = (row) => {
+  router.push({
+    name: 'consultationForm',
+    query: {
+      recordId: row.recordId,
+      isView: true
+    }
+  })
+}
+
+const handleContinue = (row) => {
+  router.push({
+    name: 'consultationForm',
+    query: {
+      recordId: row.recordId
+    }
+  })
 }
 
 onMounted(() => {

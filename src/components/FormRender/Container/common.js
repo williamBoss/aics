@@ -1,4 +1,4 @@
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, shallowRef } from 'vue'
 import { loadComponents } from '@components/loadComponents.js'
 
 export const commonProps = {
@@ -6,7 +6,7 @@ export const commonProps = {
 }
 
 export const useCommonComputed = (props) => {
-  const components = ref({})
+  const components = shallowRef({})
   const customClass = computed(() => (props.widget && props.widget.options.customClass) || '')
 
   onMounted(async () => {

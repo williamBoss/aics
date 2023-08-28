@@ -34,6 +34,7 @@ router.beforeEach((to, from, next) => {
     // 判断当前用户是否已拉取完user_info信息
     if (global.userInfo || Object.keys(global.userInfo).length !== 0) {
       next()
+      return
     }
     global
       .getUserInfo()

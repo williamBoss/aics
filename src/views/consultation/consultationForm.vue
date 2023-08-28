@@ -27,39 +27,51 @@
             ref="formRef"
             :form-json="template.templateInfo"
             :form-data="formData"
+            :disabled="isView"
           />
           <div class="flx flx-right">
-            <el-button
-              type="primary"
-              text
-              bg
-              @click="router.back"
-              >取消
-            </el-button>
-            <el-button
-              color="#626aef"
-              plain
-              @click="saveDraft"
-              >存草稿
-            </el-button>
-            <el-button
-              v-if="index !== 0"
-              type="primary"
-              @click="prev"
-              >上一步
-            </el-button>
-            <el-button
-              v-if="index !== tabs.length - 1"
-              type="primary"
-              @click="next"
-              >下一步
-            </el-button>
-            <el-button
-              v-else
-              type="primary"
-              @click="finish"
-              >完成
-            </el-button>
+            <template v-if="props.isView">
+              <el-button
+                type="primary"
+                text
+                bg
+                @click="router.back"
+                >返回
+              </el-button>
+            </template>
+            <template v-else>
+              <el-button
+                type="primary"
+                text
+                bg
+                @click="router.back"
+                >取消
+              </el-button>
+              <el-button
+                color="#626aef"
+                plain
+                @click="saveDraft"
+                >存草稿
+              </el-button>
+              <el-button
+                v-if="index !== 0"
+                type="primary"
+                @click="prev"
+                >上一步
+              </el-button>
+              <el-button
+                v-if="index !== tabs.length - 1"
+                type="primary"
+                @click="next"
+                >下一步
+              </el-button>
+              <el-button
+                v-else
+                type="primary"
+                @click="finish"
+                >完成
+              </el-button>
+            </template>
           </div>
         </template>
       </el-tab-pane>
@@ -75,7 +87,16 @@ import router from '@/router/index.js'
 import { ElMessage } from 'element-plus'
 
 const props = defineProps({
-  recordId: { type: String || Number, required: false, default: '' }
+  recordId: {
+    type: String || Number,
+    required: false,
+    default: ''
+  },
+  isView: {
+    type: Boolean,
+    required: false,
+    default: false
+  }
 })
 
 const loading = ref(false)
@@ -96,7 +117,7 @@ provide('answer', ref(answer.value))
 const getQuestionnaireTab = () => {
   loading.value = true
   QuestionnaireService.questionnaire
-    .getTabInfo({ code: 'PHYSICIAN_APOTHECARY', recordId: props.recordId || '' })
+    .getTabInfo({ code: 'PHYSICIAN_APOTHECARY', recordId: recordId.value || '' })
     .then((res) => {
       const { data } = res
       const [{ tabCode, templateList }] = data
@@ -108,6 +129,20 @@ const getQuestionnaireTab = () => {
       activeTab.value = tabCode
       loading.value = false
     })
+}
+
+const getAnswer = () => {
+  loading.value = true
+  if (!recordId.value) {
+    loading.value = false
+    return
+  }
+  QuestionnaireService.questionnaire.getAnswer(recordId.value).then((res) => {
+    const { data } = res
+    console.log(data)
+    formData.value = data
+    loading.value = false
+  })
 }
 
 const handleChange = () => {
@@ -169,14 +204,15 @@ const saveAnswer = (isFinished) => {
     ElMessage.warning('请选择药师/医师信息')
     return
   }
-  /* QuestionnaireService.questionnaire.saveAnswer(saveData).then((res) => {
-     ElMessage.success('成功')
-     router.replace('/consultation/index')
-   })*/
+  QuestionnaireService.questionnaire.saveAnswer(saveData).then((res) => {
+    ElMessage.success('成功')
+    router.replace('/consultation/index')
+  })
 }
 
 onMounted(() => {
   getQuestionnaireTab()
+  getAnswer()
 })
 </script>
 

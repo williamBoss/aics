@@ -63,7 +63,7 @@ export const staticRouter = [
           iconType: '',
           hidden: true
         },
-        props: (route) => ({ ...route.params })
+        props: (route) => ({ ...route.query })
       },
       {
         path: '/dataAnalysis/index',

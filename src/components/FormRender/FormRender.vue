@@ -95,6 +95,10 @@ const props = defineProps({
   formData: {
     type: Object,
     default: () => ({})
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
 const instance = getCurrentInstance()
@@ -111,7 +115,7 @@ const rules = computed(() => (formConfig.value && formConfig.value.rules) || {})
 const labelPosition = computed(() => (formConfig.value && formConfig.value.labelPosition) || 'left')
 const labelWidth = computed(() => (formConfig.value && formConfig.value.labelWidth + 'px') || '80px')
 const size = computed(() => (formConfig.value && formConfig.value.size) || 'default')
-const disabled = computed(() => (formConfig.value && formConfig.value.disabled) || false)
+const disabled = computed(() => (formConfig.value && formConfig.value.disabled) || props.disabled)
 
 provide('refList', widgetRefList)
 provide('formConfig', formJsonObj.value.formConfig)

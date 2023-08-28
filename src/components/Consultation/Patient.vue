@@ -1,5 +1,5 @@
 <template>
-  <el-row gutter="12">
+  <el-row :gutter="12">
     <el-col :span="4">
       <el-form-item
         label="患者编号"

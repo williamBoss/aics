@@ -167,7 +167,14 @@ export class QuestionnaireService {
  */
 export class ConsultationService {
   static consultation = {
-    list: (query) => Request.get(`${apiPrefix}/userRecord/page`, query)
+    list: (query) => Request.get(`${apiPrefix}/userRecord/page`, query),
+
+    /**
+     * 获取患者会诊详情
+     * @param {string|number} recordId
+     * @return {Promise<*>}
+     */
+    getConsultationDetail: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationDetail/${recordId}`)
   }
 
   static patient = {

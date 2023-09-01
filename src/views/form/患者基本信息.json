@@ -84,31 +84,31 @@
                     "optionItems": [
                       {
                         "label": "老年患者(＞60岁)",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "孕妇",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "哺乳期妇女",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "儿童"
+                        "label": "儿童",
+                        "value": "4"
                       },
                       {
-                        "value": 5,
-                        "label": "肝损害"
+                        "label": "肝损害",
+                        "value": "5"
                       },
                       {
-                        "value": 6,
-                        "label": "肾损害"
+                        "label": "肾损害",
+                        "value": "6"
                       },
                       {
-                        "value": 7,
-                        "label": "器官移植"
+                        "label": "器官移植",
+                        "value": "7"
                       }
                     ],
                     "required": false,
@@ -197,15 +197,15 @@
                     "optionItems": [
                       {
                         "label": "轻度（51~70ml/min）",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "中度（31~50ml/min）",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "重度（＜30ml/min）",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -487,19 +487,19 @@
                             "optionItems": [
                               {
                                 "label": "青霉素过敏史",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "头孢类药物过敏史",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "磺胺过敏史",
-                                "value": 3
+                                "value": "3"
                               },
                               {
-                                "value": 4,
-                                "label": "其他类过敏药物"
+                                "label": "其他类过敏药物",
+                                "value": "4"
                               }
                             ],
                             "required": false,
@@ -616,71 +616,71 @@
                     "optionItems": [
                       {
                         "label": "荨麻疹",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "红斑",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "风团",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "水疱"
+                        "label": "水疱",
+                        "value": "4"
                       },
                       {
-                        "value": 5,
-                        "label": "瘙痒"
+                        "label": "瘙痒",
+                        "value": "5"
                       },
                       {
-                        "value": 6,
-                        "label": "剥脱性皮炎"
+                        "label": "剥脱性皮炎",
+                        "value": "6"
                       },
                       {
-                        "value": 7,
-                        "label": "中毒性表皮坏死松解症"
+                        "label": "中毒性表皮坏死松解症",
+                        "value": "7"
                       },
                       {
-                        "value": 8,
-                        "label": "哮喘"
+                        "label": "哮喘",
+                        "value": "8"
                       },
                       {
-                        "value": 9,
-                        "label": "呼吸困难"
+                        "label": "呼吸困难",
+                        "value": "9"
                       },
                       {
-                        "value": 10,
-                        "label": "咳嗽"
+                        "label": "咳嗽",
+                        "value": "10"
                       },
                       {
-                        "value": 11,
-                        "label": "打喷嚏"
+                        "label": "打喷嚏",
+                        "value": "11"
                       },
                       {
-                        "value": 12,
-                        "label": "流涕"
+                        "label": "流涕",
+                        "value": "12"
                       },
                       {
-                        "value": 13,
-                        "label": "腹痛"
+                        "label": "腹痛",
+                        "value": "13"
                       },
                       {
-                        "value": 14,
-                        "label": "腹泻"
+                        "label": "腹泻",
+                        "value": "14"
                       },
                       {
-                        "value": 15,
-                        "label": "腹胀"
+                        "label": "腹胀",
+                        "value": "15"
                       },
                       {
-                        "value": 16,
-                        "label": "喉头水肿"
+                        "label": "喉头水肿",
+                        "value": "16"
                       },
                       {
-                        "value": 17,
-                        "label": "结膜炎"
+                        "label": "结膜炎",
+                        "value": "17"
                       }
                     ],
                     "required": false,
@@ -742,27 +742,27 @@
                     "optionItems": [
                       {
                         "label": "高血压",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "糖尿病",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "高血脂",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "高尿酸"
+                        "label": "高尿酸",
+                        "value": "4"
                       },
                       {
-                        "value": 5,
-                        "label": "冠心病"
+                        "label": "冠心病",
+                        "value": "5"
                       },
                       {
-                        "value": 6,
-                        "label": "其他"
+                        "label": "其他",
+                        "value": "6"
                       }
                     ],
                     "required": false,
@@ -851,15 +851,15 @@
                     "optionItems": [
                       {
                         "label": "轻度（30~35 g/L）",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "中度（25~35 g/L）",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "重度（＜25 g/L）",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -963,15 +963,15 @@
                             "optionItems": [
                               {
                                 "label": "轻度（60~200U/L）",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "中度（200~400U/L）",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "重度（＞400U/L）",
-                                "value": 3
+                                "value": "3"
                               }
                             ],
                             "required": false,
@@ -1041,15 +1041,15 @@
                             "optionItems": [
                               {
                                 "label": "轻度（60~200U/L）",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "中度（200~400U/L）",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "重度（＞400U/L）",
-                                "value": 3
+                                "value": "3"
                               }
                             ],
                             "required": false,
@@ -1135,19 +1135,19 @@
                             "optionItems": [
                               {
                                 "label": "正常值：3.42～21.00μmol/L",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "轻度：<34.2μmol／L",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "中度：34.2～51.3μmol／L",
-                                "value": 3
+                                "value": "3"
                               },
                               {
                                 "label": "重度：>51.3μmol／L",
-                                "value": 4
+                                "value": "4"
                               }
                             ],
                             "required": false,
@@ -1217,7 +1217,7 @@
                             "optionItems": [
                               {
                                 "label": "正常值：0.00～6.84μmol/L",
-                                "value": 1
+                                "value": "1"
                               }
                             ],
                             "required": false,
@@ -1335,15 +1335,15 @@
                     "optionItems": [
                       {
                         "label": "腹透",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "血滤",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "CRRT",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -1531,43 +1531,43 @@
                     "optionItems": [
                       {
                         "label": "头颈部",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "口咽部",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "肺部",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": "4",
-                        "label": "肾脏手术"
+                        "label": "肾脏手术",
+                        "value": "4"
                       },
                       {
-                        "value": "5",
-                        "label": "肝胆手术"
+                        "label": "肝胆手术",
+                        "value": "5"
                       },
                       {
-                        "value": "6",
-                        "label": "子宫附件"
+                        "label": "子宫附件",
+                        "value": "6"
                       },
                       {
-                        "value": "7",
-                        "label": "骨科手术"
+                        "label": "骨科手术",
+                        "value": "7"
                       },
                       {
-                        "value": 8,
-                        "label": "泌尿（输尿管、膀胱等）"
+                        "label": "泌尿（输尿管、膀胱等）",
+                        "value": "8"
                       },
                       {
-                        "value": "9",
-                        "label": "消化道（食管、胃、结肠、直肠等）"
+                        "label": "消化道（食管、胃、结肠、直肠等）",
+                        "value": "9"
                       },
                       {
-                        "value": "10",
-                        "label": "心血管（人工心瓣膜植入、永久性心脏起搏器放置、人工关节置换等）"
+                        "label": "心血管（人工心瓣膜植入、永久性心脏起搏器放置、人工关节置换等）",
+                        "value": "10"
                       }
                     ],
                     "required": false,
@@ -1607,11 +1607,11 @@
                     "optionItems": [
                       {
                         "label": "经验性治疗",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "根据药敏目标治疗",
-                        "value": 2
+                        "value": "2"
                       }
                     ],
                     "required": false,
@@ -1717,15 +1717,15 @@
                     "optionItems": [
                       {
                         "label": "未用药",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "预防用药",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "治疗用药",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -1765,19 +1765,19 @@
                     "optionItems": [
                       {
                         "label": "1联",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "2联",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "3联",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "≥3联"
+                        "label": "≥3联",
+                        "value": "4"
                       }
                     ],
                     "required": false,
@@ -1817,23 +1817,23 @@
                     "optionItems": [
                       {
                         "label": "口服给药",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "静脉滴注",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "静脉推注",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "肌肉注射"
+                        "label": "肌肉注射",
+                        "value": "4"
                       },
                       {
-                        "value": 5,
-                        "label": "其他"
+                        "label": "其他",
+                        "value": "5"
                       }
                     ],
                     "required": false,
@@ -1930,7 +1930,9 @@
           "type": "ipcp",
           "category": "self-component",
           "icon": "",
+          "formItemFlag": true,
           "options": {
+            "name": "ipcp243606",
             "staticText": "具体抗感染防治方案"
           },
           "id": "ipcp243606"
@@ -1957,19 +1959,19 @@
             "optionItems": [
               {
                 "label": "无效",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "部分有效",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "有效",
-                "value": 3
+                "value": "3"
               },
               {
-                "value": 4,
-                "label": "发生ADR"
+                "label": "发生ADR",
+                "value": "4"
               }
             ],
             "required": false,

@@ -28,51 +28,51 @@
             "optionItems": [
               {
                 "label": "微生物种类",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "制定初始方案",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "抗生素降级",
-                "value": 3
+                "value": "3"
               },
               {
                 "label": "抗生素升级",
-                "value": 4
+                "value": "4"
               },
               {
                 "label": "停用当前用药方案",
-                "value": 5
+                "value": "5"
               },
               {
                 "label": "维持当前治疗方案",
-                "value": 6
+                "value": "6"
               },
               {
                 "label": "不良反应处理",
-                "value": 7
+                "value": "7"
               },
               {
                 "label": "血药浓度监测，调整剂量",
-                "value": 8
+                "value": "8"
               },
               {
                 "label": "特殊级别抗菌药使用",
-                "value": 9
+                "value": "9"
               },
               {
                 "label": "根据肝肾功调整剂量",
-                "value": 10
+                "value": "10"
               },
               {
                 "label": "其他",
-                "value": 11
+                "value": "11"
               },
               {
                 "label": "患者申请抗感染次数",
-                "value": 12
+                "value": "12"
               }
             ],
             "required": false,
@@ -280,15 +280,15 @@
                     "optionItems": [
                       {
                         "label": "1次",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "2次",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "≥3次",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -350,15 +350,15 @@
                     "optionItems": [
                       {
                         "label": "1次",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "2次",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "≥3次",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -420,15 +420,15 @@
                     "optionItems": [
                       {
                         "label": "1次",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "2次",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "≥3次",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -517,8 +517,10 @@
           "category": "self-component",
           "icon": "",
           "options": {
+            "name": "ipcp7762666",
             "staticText": "提出抗感染药物治疗方案"
           },
+          "formItemFlag": true,
           "id": "ipcp7762666"
         },
         {
@@ -689,19 +691,19 @@
                     "optionItems": [
                       {
                         "label": "监测血药浓度",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "肝肾功能",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "中性粒细胞",
-                        "value": 3
+                        "value": "3"
                       },
                       {
                         "label": "降钙素",
-                        "value": 4
+                        "value": "4"
                       }
                     ],
                     "required": false,
@@ -811,15 +813,15 @@
             "optionItems": [
               {
                 "label": "不采纳",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "全部采纳",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "部分采纳",
-                "value": 3
+                "value": "3"
               }
             ],
             "required": false,
@@ -974,8 +976,10 @@
           "category": "self-component",
           "icon": "",
           "options": {
+            "name": "ipcp8603815",
             "staticText": "用药调整"
           },
+          "formItemFlag": true,
           "id": "ipcp8603815"
         },
         {
@@ -1102,19 +1106,19 @@
                     "optionItems": [
                       {
                         "label": "监测血药浓度",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "肝肾功能",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "中性粒细胞",
-                        "value": 3
+                        "value": "3"
                       },
                       {
                         "label": "降钙素",
-                        "value": 4
+                        "value": "4"
                       }
                     ],
                     "required": false,
@@ -1180,15 +1184,15 @@
             "optionItems": [
               {
                 "label": "不采纳",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "全部采纳",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "部分采纳",
-                "value": 3
+                "value": "3"
               }
             ],
             "required": false,
@@ -1276,15 +1280,15 @@
             "optionItems": [
               {
                 "label": "完全不一致",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "部分一致",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "完全一致",
-                "value": 3
+                "value": "3"
               }
             ],
             "required": false,
@@ -1341,19 +1345,19 @@
                     "optionItems": [
                       {
                         "label": "药物选择不同",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "给药剂量不同",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "疗程不同",
-                        "value": 3
+                        "value": "3"
                       },
                       {
                         "label": "其他",
-                        "value": 4
+                        "value": "4"
                       }
                     ],
                     "required": false,
@@ -1492,19 +1496,19 @@
             "optionItems": [
               {
                 "label": "医师",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "药师",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "医师+药师",
-                "value": 3
+                "value": "3"
               },
               {
                 "label": "都不采纳",
-                "value": 4
+                "value": "4"
               }
             ],
             "required": false,

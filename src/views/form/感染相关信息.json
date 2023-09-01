@@ -419,6 +419,10 @@
           "key": 1167088,
           "type": "lab-tests",
           "category": "self-component",
+          "formItemFlag": true,
+          "options": {
+            "name": "labTests1167088"
+          },
           "id": "labTests1167088"
         },
         {
@@ -746,6 +750,10 @@
           "type": "pathogen-cx-results",
           "category": "self-component",
           "pathogenId": "pathogen3823947",
+          "formItemFlag": true,
+          "options": {
+            "name": "pathogenCxResults3823947"
+          },
           "id": "pathogenCxResults3823947"
         }
       ],

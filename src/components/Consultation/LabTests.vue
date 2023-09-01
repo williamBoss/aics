@@ -86,7 +86,7 @@
 </template>
 
 <script setup>
-import { defineComponent, inject, reactive, ref, watch } from 'vue'
+import { defineComponent, inject, reactive, watch } from 'vue'
 import { LabTestsList } from '@components/Consultation/config/Config.js'
 import { commonProps } from '@components/FormRender/FormWidget/common.js'
 
@@ -99,14 +99,32 @@ const props = defineProps({
 })
 
 const labTest = reactive(LabTestsList)
-const answer = ref(inject('answer'))
+const { formModel } = inject('formModel')
+const setFormData = inject('setFormData')
+
+const initFieldModel = () => {
+  const element = formModel.value[props.field.options.name]
+  const formData = (typeof element === 'string' && JSON.parse(element)) || {}
+  labTest.forEach((item) => {
+    Object.keys(formData).forEach((key) => {
+      const data = item.tableData.find((d) => d.key === key)
+      if (data) {
+        data.testResult = formData[key]
+      }
+    })
+  })
+}
+initFieldModel()
 
 watch(
   labTest,
   (newVal) => {
     const testResult = {}
     newVal.flatMap((v) => v.tableData).map((v) => Object.assign(testResult, { [v.key]: v.testResult }))
-    Object.assign(answer.value, { [props.field.id]: testResult })
+    const formData = {
+      [props.field.options.name]: testResult
+    }
+    setFormData(formData)
   },
   { deep: true }
 )

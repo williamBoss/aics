@@ -35,7 +35,7 @@
                 type="primary"
                 text
                 bg
-                @click="router.back"
+                @click="backToConsultation"
                 >返回
               </el-button>
             </template>
@@ -44,7 +44,7 @@
                 type="primary"
                 text
                 bg
-                @click="router.back"
+                @click="backToConsultation"
                 >取消
               </el-button>
               <el-button
@@ -82,7 +82,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import FormRender from '@components/FormRender/FormRender.vue'
-import { QuestionnaireService } from '@api/consultation-api.js'
+import { ConsultationService, QuestionnaireService } from '@api/consultation-api.js'
 import router from '@/router/index.js'
 import { ElMessage } from 'element-plus'
 
@@ -93,6 +93,11 @@ const props = defineProps({
     default: ''
   },
   isView: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  isTrackMedicalRecords: {
     type: Boolean,
     required: false,
     default: false
@@ -110,8 +115,8 @@ const questionnaireCode = ref('PHYSICIAN_APOTHECARY')
 const recordId = ref(props.recordId)
 const answer = ref({})
 
-provide('physicianInfo', ref(physicianInfo.value))
-provide('patientInfo', ref(patientInfo.value))
+provide('physicianInfo', ref(physicianInfo))
+provide('patientInfo', ref(patientInfo))
 provide('answer', ref(answer.value))
 
 const getQuestionnaireTab = () => {
@@ -137,10 +142,13 @@ const getAnswer = () => {
     loading.value = false
     return
   }
-  QuestionnaireService.questionnaire.getAnswer(recordId.value).then((res) => {
+  ConsultationService.consultation.getConsultationDetail(recordId.value).then((res) => {
     const { data } = res
     console.log(data)
-    formData.value = data
+    const { answerMap, patientInfo: patientInfoVo, pharmacistVo } = data
+    formData.value = answerMap
+    patientInfo.value = patientInfoVo
+    physicianInfo.value = pharmacistVo
     loading.value = false
   })
 }
@@ -164,6 +172,10 @@ const handleChange = () => {
   }
 }
 
+const backToConsultation = () => {
+  router.replace('/consultation/index')
+}
+
 const prev = () => {
   const currentTabIndex = tabs.value.findIndex((pane) => pane.tabCode === activeTab.value)
   const nextTabIndex = (currentTabIndex - 1) % tabs.value.length
@@ -177,7 +189,7 @@ const next = () => {
 }
 
 const finish = () => {
-  saveAnswer(1)
+  saveAnswer(props.isTrackMedicalRecords ? 2 : 1)
 }
 
 const saveDraft = () => {
@@ -188,7 +200,7 @@ const saveAnswer = (isFinished) => {
   const saveData = {}
   Object.assign(answer.value, ...formRef.value.map((v) => v.getFormData(false)))
   Object.assign(saveData, {
-    answerMap: answer,
+    answerMap: answer.value,
     isFinished,
     patientInfo: patientInfo.value,
     pharmacistKey: physicianInfo.value.pharmacistKey,
@@ -199,20 +211,20 @@ const saveAnswer = (isFinished) => {
       recordId: recordId.value
     })
   }
-  console.log(saveData)
   if (!physicianInfo.value.pharmacistKey) {
     ElMessage.warning('请选择药师/医师信息')
     return
   }
+  console.log(saveData)
   QuestionnaireService.questionnaire.saveAnswer(saveData).then((res) => {
     ElMessage.success('成功')
     router.replace('/consultation/index')
   })
 }
 
-onMounted(() => {
-  getQuestionnaireTab()
-  getAnswer()
+onMounted(async () => {
+  await getQuestionnaireTab()
+  await getAnswer()
 })
 </script>
 

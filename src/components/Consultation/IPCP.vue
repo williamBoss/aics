@@ -89,7 +89,14 @@ const ipcp = reactive({
     ]
   }
 })
-const answer = ref(inject('answer'))
+const { formModel } = inject('formModel')
+const setFormData = inject('setFormData')
+
+const initFieldModel = () => {
+  const element = formModel.value[props.field.options.name]
+  ipcp.tableData = (typeof element === 'string' && JSON.parse(element)) || []
+}
+initFieldModel()
 
 const handlePharmacistAdd = () => {
   ipcpRef.value.prepend(0)
@@ -117,8 +124,11 @@ const handleDelete = (row, index) => {
 
 watch(
   ipcp.tableData,
-  () => {
-    Object.assign(answer.value, { [props.field.id]: [...ipcp.tableData] })
+  (newVal, oldVal) => {
+    const formData = {
+      [props.field.options.name]: newVal
+    }
+    setFormData(formData)
   },
   { deep: true }
 )

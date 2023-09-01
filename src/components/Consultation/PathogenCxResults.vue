@@ -73,7 +73,28 @@ const props = defineProps({
 const pathogen = ref([])
 const pathogenCxResults = ref([])
 const pathogenCxResultList = reactive(PathogenCxResultList)
+const { formModel } = inject('formModel')
+const setFormData = inject('setFormData')
 const answer = ref(inject('answer'))
+
+const initFieldModel = () => {
+  const element = formModel.value[props.field.options.name]
+  const formData = (typeof element === 'string' && JSON.parse(element)) || []
+  const options = pathogenCxResultList
+    .map(({ tableData }) => ({
+      pathogenValues: tableData.map(({ pathogenOptions }) => {
+        return {
+          pathogen: pathogenOptions.map(({ value }) => value)
+        }
+      })
+    }))
+    .flatMap((item) => item.pathogenValues)
+    .map((item) => item.pathogen)
+    .flat()
+  pathogen.value = formData.filter((data) => options.includes(data))
+  pathogenCxResults.value = formData.filter((data) => !options.includes(data))
+}
+initFieldModel()
 
 watch(
   pathogen,
@@ -84,9 +105,12 @@ watch(
 )
 
 watch(
-  pathogenCxResults,
+  [pathogenCxResults, pathogen],
   () => {
-    Object.assign(answer.value, { [props.field.id]: [...pathogenCxResults.value, ...pathogen.value] })
+    const formData = {
+      [props.field.options.name]: [...pathogenCxResults.value, ...pathogen.value]
+    }
+    setFormData(formData)
   },
   { deep: true }
 )

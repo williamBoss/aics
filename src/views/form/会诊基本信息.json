@@ -70,6 +70,9 @@
           "key": 568725,
           "type": "physician",
           "category": "self-component",
+          "options": {
+            "name": "physicianInfo568725"
+          },
           "id": "physicianInfo568725"
         }
       ],
@@ -95,6 +98,9 @@
           "key": 902760,
           "type": "patient",
           "category": "self-component",
+          "options": {
+            "name": "patient902760"
+          },
           "id": "patient902760"
         }
       ],
@@ -139,27 +145,27 @@
             "optionItems": [
               {
                 "label": "1. 会诊前尚未使用抗菌药物，请临床药师制定初始抗感染方案。",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "2. 目前感染方案效果欠佳，需调整当前抗感染方案。",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "3. 感染好转，调整治疗方案（抗生素降级、静脉转口服、给药疗程问题、能否停药问题）",
-                "value": 3
+                "value": "3"
               },
               {
-                "value": 4,
-                "label": "4. 抗感染发生不良反应，不良反应处理及调整用药方案。"
+                "label": "4. 抗感染发生不良反应，不良反应处理及调整用药方案。",
+                "value": "4"
               },
               {
-                "value": 5,
-                "label": "5. 药物相互作用处理"
+                "label": "5. 药物相互作用处理",
+                "value": "5"
               },
               {
-                "value": 6,
-                "label": "6.其他目的"
+                "label": "6.其他目的",
+                "value": "6"
               }
             ],
             "required": false,
@@ -625,23 +631,23 @@
                     "optionItems": [
                       {
                         "label": "全院会诊",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "普通会诊",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "急诊会诊",
-                        "value": 3
+                        "value": "3"
                       },
                       {
-                        "value": 4,
-                        "label": "重症会诊"
+                        "label": "重症会诊",
+                        "value": "4"
                       },
                       {
-                        "value": 5,
-                        "label": "其他"
+                        "label": "其他",
+                        "value": "5"
                       }
                     ],
                     "required": false,
@@ -888,15 +894,15 @@
                             "optionItems": [
                               {
                                 "label": "主治医师",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "副主任医师",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "主任医师",
-                                "value": 3
+                                "value": "3"
                               }
                             ],
                             "required": false,
@@ -1205,15 +1211,15 @@
                             "optionItems": [
                               {
                                 "label": "主治医师",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "副主任医师",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "主任医师",
-                                "value": 3
+                                "value": "3"
                               }
                             ],
                             "required": false,
@@ -1522,15 +1528,15 @@
                             "optionItems": [
                               {
                                 "label": "主治医师",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "副主任医师",
-                                "value": 2
+                                "value": "2"
                               },
                               {
                                 "label": "主任医师",
-                                "value": 3
+                                "value": "3"
                               }
                             ],
                             "required": false,

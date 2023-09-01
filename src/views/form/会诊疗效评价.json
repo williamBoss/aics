@@ -182,11 +182,11 @@
                             "optionItems": [
                               {
                                 "label": "较会诊前上升",
-                                "value": 1
+                                "value": "1"
                               },
                               {
                                 "label": "较会诊前下降",
-                                "value": 2
+                                "value": "2"
                               }
                             ],
                             "required": false,
@@ -274,15 +274,15 @@
                     "optionItems": [
                       {
                         "label": "恶化",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "同前",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "改善",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -330,6 +330,10 @@
           "key": 119996,
           "type": "lab-tests",
           "category": "self-component",
+          "formItemFlag": true,
+          "options": {
+            "name": "labTests119996"
+          },
           "id": "labTests119996"
         },
         {
@@ -626,19 +630,19 @@
             "optionItems": [
               {
                 "label": "B超",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "X光平片",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "CT",
-                "value": 3
+                "value": "3"
               },
               {
                 "label": "其他",
-                "value": 4
+                "value": "4"
               }
             ],
             "required": false,
@@ -1344,15 +1348,15 @@
                     "optionItems": [
                       {
                         "label": "同前",
-                        "value": 1
+                        "value": "1"
                       },
                       {
                         "label": "转阴",
-                        "value": 2
+                        "value": "2"
                       },
                       {
                         "label": "新发",
-                        "value": 3
+                        "value": "3"
                       }
                     ],
                     "required": false,
@@ -1489,19 +1493,19 @@
             "optionItems": [
               {
                 "label": "1、无效（用药72h后病情无明显进步或加重）",
-                "value": 1
+                "value": "1"
               },
               {
                 "label": "2、部分缓解（病情明显好转，症状、体征、实验室检查结果和病原学检查结果4项中有1项未完全恢复正常，细菌转为定植无症状，视为部分缓解）",
-                "value": 2
+                "value": "2"
               },
               {
                 "label": "3、痊愈（症状、体征、实验室检查结果和病原学检查结果 4 项恢复正常）",
-                "value": 3
+                "value": "3"
               },
               {
                 "label": "4、死亡",
-                "value": 4
+                "value": "4"
               }
             ],
             "required": false,

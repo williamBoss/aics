@@ -149,16 +149,18 @@
         >
           <template #operations="scope">
             <el-button
-              type="text"
+              type="primary"
               size="small"
+              text
               @click="handleView(scope.row)"
               >查看
             </el-button>
             <template v-if="scope.row.status === 0">
               <el-divider direction="vertical" />
               <el-button
-                type="text"
+                type="primary"
                 size="small"
+                text
                 @click="handleContinue(scope.row)"
                 >继续会诊
               </el-button>
@@ -166,9 +168,10 @@
             <template v-if="scope.row.isFollow === 1">
               <el-divider direction="vertical" />
               <el-button
-                type="text"
+                type="primary"
                 size="small"
-                @click="handleDelete(scope.row, scope.$index)"
+                text
+                @click="handleTrackMedicalRecords(scope.row)"
                 >跟踪病历
               </el-button>
             </template>
@@ -178,8 +181,8 @@
     </div>
     <div class="footer">
       <el-pagination
-        :current-page="state.pageable.pageNum"
-        :page-size="state.pageable.pageSize"
+        :current-page="state.pageable.current"
+        :page-size="state.pageable.size"
         :page-sizes="[10, 25, 50, 100]"
         background
         layout="->, total, sizes, prev, pager, next"
@@ -213,8 +216,8 @@ const state = reactive({
     { prop: 'patientCode', label: '患者编号' },
     { prop: 'age', label: '年龄' },
     { prop: 'gender', label: '性别', convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
-    { prop: 'sitesInfection', label: '感染部位' },
-    { prop: 'pathogen', label: '病原体' },
+    { prop: 'sitesInfection', label: '感染部位', convert: (item) => parseArray(item) },
+    { prop: 'pathogen', label: '病原体', convert: (item) => parseArray(item) },
     { prop: 'adopt', label: '采纳会诊' },
     { prop: 'lapse', label: '转归结局' }
   ],
@@ -226,9 +229,9 @@ const state = reactive({
   // 分页数据
   pageable: {
     // 当前页数
-    pageNum: 1,
+    current: 1,
     // 每页显示条数
-    pageSize: 10,
+    size: 10,
     // 总条数
     total: 0
   },
@@ -281,9 +284,13 @@ const getConsultationList = () => {
   })
 }
 
+const parseArray = (item) => {
+  return typeof item === 'string' && item === '' ? item : Array.from(JSON.parse(item)).join(',')
+}
+
 /** 搜索按钮操作 */
 const handleQuery = () => {
-  state.pageable.pageNum = 1
+  state.pageable.current = 1
   getConsultationList()
 }
 
@@ -299,8 +306,8 @@ const resetQuery = () => {
  * @return {void}
  * */
 const handleSizeChange = (val) => {
-  state.pageable.pageNum = 1
-  state.pageable.pageSize = val
+  state.pageable.current = 1
+  state.pageable.size = val
   getConsultationList()
 }
 
@@ -310,7 +317,7 @@ const handleSizeChange = (val) => {
  * @return {void}
  * */
 const handleCurrentChange = (val) => {
-  state.pageable.pageNum = val
+  state.pageable.current = val
   getConsultationList()
 }
 
@@ -329,6 +336,16 @@ const handleView = (row) => {
 }
 
 const handleContinue = (row) => {
+  router.push({
+    name: 'consultationForm',
+    query: {
+      recordId: row.recordId,
+      isTrackMedicalRecords: true
+    }
+  })
+}
+
+const handleTrackMedicalRecords = (row) => {
   router.push({
     name: 'consultationForm',
     query: {

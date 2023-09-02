@@ -141,10 +141,7 @@
       </template>
       <template #default>
         <div>
-          <el-row
-            gutter="40"
-            type="flex"
-          >
+          <el-row gutter="40">
             <el-col :span="12">
               <div class="sub-title margin-b-16">会诊建议类型</div>
               <div class="bg">
@@ -253,6 +250,12 @@ const medicine = reactive({
   background: #f4f7ff;
   border-radius: 6px;
   padding: 24px;
+  flex-grow: 1;
+}
+
+.report .card .el-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .report .card .bg .desc {

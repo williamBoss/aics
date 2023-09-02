@@ -21,16 +21,21 @@
           </div>
         </template>
         <template #default>
-          <form-render
-            v-for="template in tab.templateList"
-            :key="template.templateCode"
-            ref="formRef"
-            :form-json="template.templateInfo"
-            :form-data="formData"
-            :disabled="isView"
-          />
+          <template v-if="activeTab === 'P_A_CONSULTATION_REPORT'">
+            <component :is="ConsultationReport" />
+          </template>
+          <template v-else>
+            <form-render
+              v-for="template in tab.templateList"
+              :key="template.templateCode"
+              ref="formRef"
+              :form-json="template.templateInfo"
+              :form-data="formData"
+              :disabled="isView"
+            />
+          </template>
           <div class="flx flx-right">
-            <template v-if="props.isView">
+            <template v-if="props.isView || activeTab.value === 'P_A_CONSULTATION_REPORT'">
               <el-button
                 type="primary"
                 text
@@ -66,7 +71,7 @@
                 >下一步
               </el-button>
               <el-button
-                v-else
+                v-else-if="isTrackMedicalRecords || index === tabs.length"
                 type="primary"
                 @click="finish"
                 >完成
@@ -85,6 +90,7 @@ import FormRender from '@components/FormRender/FormRender.vue'
 import { ConsultationService, QuestionnaireService } from '@api/consultation-api.js'
 import router from '@/router/index.js'
 import { ElMessage } from 'element-plus'
+import ConsultationReport from '@/views/consultation/report.vue'
 
 const props = defineProps({
   recordId: {
@@ -156,20 +162,24 @@ const getAnswer = () => {
 const handleChange = () => {
   loading.value = true
   const activeTabCode = activeTab.value
-  const findTab = tabs.value.find((e) => e.tabCode === activeTabCode)
-  if (findTab?.templateList.length === 0) {
-    QuestionnaireService.questionnaire.getQuestionTemplate(activeTabCode).then((res) => {
-      const { data } = res
-      data.map((item) => {
-        item.templateInfo = JSON.parse(item.templateInfo)
-        return item
-      })
-      findTab.templateList = data
-      loading.value = false
-    })
-  } else {
+  if (activeTabCode === 'P_A_CONSULTATION_REPORT') {
     loading.value = false
+    return
   }
+  const findTab = tabs.value.find((e) => e.tabCode === activeTabCode)
+  findTab?.templateList.length === 0
+    ? QuestionnaireService.questionnaire
+        .getQuestionTemplate(activeTabCode)
+        .then((res) => {
+          const { data } = res
+          data.map((item) => {
+            item.templateInfo = JSON.parse(item.templateInfo)
+            return item
+          })
+          findTab.templateList = data
+        })
+        .finally(() => (loading.value = false))
+    : (loading.value = false)
 }
 
 const backToConsultation = () => {
@@ -197,6 +207,10 @@ const saveDraft = () => {
 }
 
 const saveAnswer = (isFinished) => {
+  if (activeTab.value === '') {
+    router.replace('/consultation/index')
+    return
+  }
   const saveData = {}
   Object.assign(answer.value, ...formRef.value.map((v) => v.getFormData(false)))
   Object.assign(saveData, {
@@ -223,8 +237,8 @@ const saveAnswer = (isFinished) => {
 }
 
 onMounted(async () => {
-  await getQuestionnaireTab()
   await getAnswer()
+  await getQuestionnaireTab()
 })
 </script>
 

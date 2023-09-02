@@ -30,6 +30,7 @@
         </template>
       </el-table-column>
       <el-table-column
+        v-if="isShowOperation"
         align="center"
         label="操作"
         :width="(operationItem && operationItem.width) || ''"
@@ -82,7 +83,13 @@ const props = defineProps({
   },
   operationItem: {
     type: Object,
-    required: false
+    required: false,
+    default: Object
+  },
+  isShowOperation: {
+    type: Boolean,
+    required: false,
+    default: true
   }
 })
 

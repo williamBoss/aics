@@ -148,7 +148,7 @@ const getAnswer = () => {
     loading.value = false
     return
   }
-  ConsultationService.consultation.getConsultationDetail(recordId.value).then((res) => {
+  ConsultationService.consultation.consultationDetail(recordId.value).then((res) => {
     const { data } = res
     console.log(data)
     const { answerMap, patientInfo: patientInfoVo, pharmacistVo } = data

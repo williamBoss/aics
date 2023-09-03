@@ -174,7 +174,14 @@ export class ConsultationService {
      * @param {string|number} recordId
      * @return {Promise<*>}
      */
-    getConsultationDetail: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationDetail/${recordId}`)
+    consultationDetail: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationDetail/${recordId}`),
+
+    /**
+     * 获取患者会诊报告
+     * @param {string|number} recordId
+     * @return {Promise<*>}
+     */
+    consultationReport: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationReport/${recordId}`)
   }
 
   static patient = {

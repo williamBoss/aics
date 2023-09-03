@@ -1,5 +1,9 @@
 <template>
-  <div class="report">
+  <div
+    v-loading="loading"
+    class="report"
+    element-loading-text="获取报告信息......"
+  >
     <div class="flx info">
       <div class="header">
         <svg-icon
@@ -171,12 +175,22 @@
 <script setup>
 import SvgIcon from '@components/SvgIcon/index.vue'
 import DynamicTable from '@components/Table/DynamicTable.vue'
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
+import { ConsultationService } from '@api/consultation-api.js'
 
 defineComponent({
   name: 'ConsultationReport'
 })
 
+const props = defineProps({
+  recordId: {
+    type: String || Number,
+    required: true
+  }
+})
+
+const loading = ref(false)
+const recordId = ref(props.recordId)
 const medicine = reactive({
   tableHeader: [
     { prop: 'drugName', label: '药物名称（通用名）', width: '200' },
@@ -192,6 +206,23 @@ const medicine = reactive({
   // 表格数据
   pharmacistTableData: [],
   physicianTableData: []
+})
+
+const getReport = () => {
+  loading.value = true
+  if (!recordId.value) {
+    loading.value = false
+    return
+  }
+  ConsultationService.consultation.consultationReport(recordId.value).then((res) => {
+    const { data } = res
+    console.log(data)
+    loading.value = false
+  })
+}
+
+onMounted(() => {
+  getReport()
 })
 </script>
 

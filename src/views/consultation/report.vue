@@ -17,19 +17,19 @@
             class="item"
             style="font-size: 20px"
           >
-            568798975
+            {{ patientInfo.patientCode }}
           </div>
           <div class="item">感染诊断</div>
           <div class="item">感染病原体</div>
         </el-row>
         <el-row>
           <div class="item">
-            <span>男</span>
+            <span>{{ patientInfo.gender }}</span>
             <el-divider :direction="'vertical'" />
-            <span>56岁</span>
+            <span>{{ `${patientInfo.age}岁` }}</span>
           </div>
-          <div class="item">肺部感染、上呼吸道感染</div>
-          <div class="item">细菌（阳性菌-金黄色葡萄球菌）</div>
+          <div class="item">{{ reportInfo.sitesInfection }}</div>
+          <div class="item">{{ reportInfo.pathogen }}</div>
         </el-row>
       </div>
     </div>
@@ -47,9 +47,7 @@
           <div class="sub-title margin-b-16">治疗建议一</div>
           <div class="bg">
             <div>
-              <p class="desc">
-                会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述
-              </p>
+              <p class="desc">会诊意见：{{ reportInfo.apothecarySpecificDescription }}</p>
             </div>
             <dynamic-table
               :table-data="medicine.pharmacistTableData"
@@ -59,13 +57,14 @@
           </div>
         </div>
         <div>
-          <el-row gutter="40">
+          <el-row :gutter="40">
             <el-col :span="12">
               <div class="sub-title margin-b-16">治疗建议二</div>
               <div class="bg">
                 <div>
-                  <p class="desc">需要完善的检查：具体检查项目</p>
-                  <p class="desc">动态监测指标：如监测血药浓度、肝肾功能</p>
+                  <p class="desc">需要完善的检查：{{ reportInfo.apothecaryPerfectCheck }}</p>
+                  <p class="desc">动态监测指标：{{ reportInfo.apothecaryDynamicMonitoring }}</p>
+                  <p class="desc">{{ reportInfo.apothecaryOther }}</p>
                 </div>
               </div>
             </el-col>
@@ -73,7 +72,7 @@
               <div class="sub-title margin-b-16">采纳意见</div>
               <div class="bg">
                 <div>
-                  <p class="desc">采纳部分会诊医师意见</p>
+                  <p class="desc">{{ reportInfo.apothecaryAdoptOpinions }}</p>
                 </div>
               </div>
             </el-col>
@@ -95,9 +94,7 @@
           <div class="sub-title margin-b-16">治疗建议一</div>
           <div class="bg">
             <div>
-              <p class="desc">
-                会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述会诊意见描述
-              </p>
+              <p class="desc">会诊意见：{{ reportInfo.physicianConsultationOpinions }}</p>
             </div>
             <dynamic-table
               :table-data="medicine.physicianTableData"
@@ -107,30 +104,30 @@
           </div>
         </div>
         <div class="margin-b-40">
-          <el-row gutter="40">
+          <el-row :gutter="40">
             <el-col :span="12">
               <div class="sub-title margin-b-16">治疗建议二</div>
               <div class="bg">
                 <div>
-                  <p class="desc">需要完善的检查：具体检查项目</p>
-                  <p class="desc">动态监测指标：如监测血药浓度、肝肾功能</p>
+                  <p class="desc">需要完善的检查：{{ reportInfo.physicianPerfectCheck }}</p>
+                  <p class="desc">动态监测指标：{{ reportInfo.physicianDynamicMonitoring }}</p>
                 </div>
               </div>
             </el-col>
             <el-col :span="12">
-              <div class="sub-title margin-b-16">采纳意见（医师和药师意见不一致）</div>
+              <div class="sub-title margin-b-16">采纳意见（{{ reportInfo.physicianAdoptOpinions }}）</div>
               <div class="bg">
                 <div>
-                  <p class="desc">
-                    具体不一致的内容描述具体不一致的内容描述具体不一致的内容描述具体不一致的内容描述具体不一致的内容描述
-                  </p>
+                  <p class="desc">不一致意见：</p>
+                  <p class="desc">{{ reportInfo.otherOpinion }}</p>
+                  <p class="desc">{{ reportInfo.otherOpinionDetail }}</p>
                 </div>
               </div>
             </el-col>
           </el-row>
         </div>
         <div>
-          <div class="sub-title margin-b-16">最终采纳意见（最终采纳药师+医师意见）</div>
+          <div class="sub-title margin-b-16">最终采纳意见（{{ reportInfo.physicianAdoptedWho }}）</div>
         </div>
       </template>
     </el-card>
@@ -145,14 +142,12 @@
       </template>
       <template #default>
         <div>
-          <el-row gutter="40">
+          <el-row :gutter="40">
             <el-col :span="12">
               <div class="sub-title margin-b-16">会诊建议类型</div>
               <div class="bg">
                 <div>
-                  <p class="desc">微生物种类：细菌、真菌</p>
-                  <p class="desc">维持当前治疗方案</p>
-                  <p class="desc">血药浓度监测，调整剂量</p>
+                  <p class="desc">{{ reportInfo.physician_Recommendation_type }}</p>
                 </div>
               </div>
             </el-col>
@@ -160,8 +155,8 @@
               <div class="sub-title margin-b-16">患者转归结局</div>
               <div class="bg">
                 <div>
-                  <p class="desc">药敏情况：同前</p>
-                  <p class="desc">转归结局：部分缓解</p>
+                  <p class="desc">药敏情况：{{ reportInfo.susceptibilityConditions }}</p>
+                  <p class="desc">转归结局：{{ reportInfo.outcome }}</p>
                 </div>
               </div>
             </el-col>
@@ -190,7 +185,8 @@ const props = defineProps({
 })
 
 const loading = ref(false)
-const recordId = ref(props.recordId)
+const patientInfo = ref({})
+const reportInfo = ref({})
 const medicine = reactive({
   tableHeader: [
     { prop: 'drugName', label: '药物名称（通用名）', width: '200' },
@@ -210,15 +206,30 @@ const medicine = reactive({
 
 const getReport = () => {
   loading.value = true
-  if (!recordId.value) {
+  if (!props.recordId) {
     loading.value = false
     return
   }
-  ConsultationService.consultation.consultationReport(recordId.value).then((res) => {
-    const { data } = res
-    console.log(data)
-    loading.value = false
-  })
+  ConsultationService.consultation
+    .consultationReport(props.recordId)
+    .then((res) => {
+      const {
+        data: { apothecaryMedScheme = [], physicianMedicationAdjustment = [], patientInfo: patient },
+        data
+      } = res
+      medicine.pharmacistTableData = apothecaryMedScheme
+      medicine.physicianTableData = physicianMedicationAdjustment
+      Object.entries(data).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          const filteredArray = value.filter((item) => typeof item !== 'object')
+          data[key] = filteredArray.length > 0 ? filteredArray.join('、 ') : value
+        }
+      })
+      reportInfo.value = data
+      patient && (patient.gender = patient.gender === 1 ? '男' : patient.gender === 2 ? '女' : '未知')
+      patient && (patientInfo.value = patient)
+    })
+    .finally(() => (loading.value = false))
 }
 
 onMounted(() => {

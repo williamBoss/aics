@@ -233,6 +233,7 @@ const handleCancel = (row, index) => {
   }
 }
 const submit = (row) => {
+  row.editable = false
   emits('submit', row)
 }
 const handleDelete = (row, index) => {

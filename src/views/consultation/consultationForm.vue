@@ -1,7 +1,7 @@
 <template>
   <div
     v-loading="loading"
-    element-loading-text="获取问卷信息......"
+    element-loading-text="请稍后......"
   >
     <el-tabs
       v-model="activeTab"
@@ -21,22 +21,21 @@
           </div>
         </template>
         <template #default>
-          <template v-if="activeTab === 'P_A_CONSULTATION_REPORT'">
-            <component
-              :is="ConsultationReport"
-              :record-id="recordId"
-            />
-          </template>
-          <template v-else>
-            <form-render
-              v-for="template in tab.templateList"
-              :key="template.templateCode"
-              ref="formRef"
-              :form-json="template.templateInfo"
-              :form-data="formData"
-              :disabled="isView"
-            />
-          </template>
+          <component
+            :is="ConsultationReport"
+            v-if="tab.tabCode === 'P_A_CONSULTATION_REPORT'"
+            key="P_A_CONSULTATION_REPORT"
+            :record-id="recordId"
+          />
+          <form-render
+            v-for="template in tab.templateList"
+            v-else
+            :key="template.templateCode"
+            ref="formRef"
+            :form-json="template.templateInfo"
+            :form-data="formData"
+            :disabled="isView"
+          />
           <div class="flx flx-right">
             <template v-if="isView || activeTab.value === 'P_A_CONSULTATION_REPORT'">
               <el-button
@@ -103,12 +102,12 @@ const props = defineProps({
     default: ''
   },
   isView: {
-    type: Boolean,
+    type: Boolean || String,
     required: false,
     default: false
   },
   isTrackMedicalRecords: {
-    type: Boolean,
+    type: Boolean || String,
     required: false,
     default: false
   },
@@ -123,7 +122,7 @@ const loading = ref(false)
 const isView = ref(Boolean(props.isView))
 const isTrackMedicalRecords = ref(Boolean(props.isTrackMedicalRecords))
 const tabs = ref([])
-const activeTab = ref('base')
+const activeTab = ref('')
 const formRef = ref()
 const formData = ref({})
 const physicianInfo = ref({})
@@ -165,7 +164,6 @@ const getAnswer = () => {
   }
   ConsultationService.consultation.consultationDetail(recordId.value).then((res) => {
     const { data } = res
-    console.log(data)
     const { answerMap, patientInfo: patientInfoVo, pharmacistVo } = data
     formData.value = answerMap
     patientInfo.value = patientInfoVo
@@ -226,6 +224,7 @@ const saveAnswer = (isFinished) => {
     router.replace('/consultation/index')
     return
   }
+  loading.value = true
   const saveData = {}
   Object.assign(answer.value, formData.value, ...formRef.value.map((v) => v.getFormData(false)))
   Object.assign(saveData, {
@@ -246,6 +245,7 @@ const saveAnswer = (isFinished) => {
   }
   console.log(saveData)
   QuestionnaireService.questionnaire.saveAnswer(saveData).then((res) => {
+    loading.value = false
     ElMessage.success('成功')
     router.replace('/consultation/index')
   })

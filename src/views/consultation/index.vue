@@ -215,7 +215,7 @@ const state = reactive({
     { prop: 'consultationTime', label: '日期' },
     { prop: 'patientCode', label: '患者编号' },
     { prop: 'age', label: '年龄' },
-    { prop: 'gender', label: '性别' },
+    { prop: 'gender', label: '性别', convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
     { prop: 'sitesInfection', label: '感染部位', convert: (item) => parseArray(item) },
     { prop: 'pathogen', label: '病原体', convert: (item) => parseArray(item) },
     { prop: 'adopt', label: '采纳会诊' },
@@ -330,7 +330,8 @@ const handleView = (row) => {
     name: 'consultationForm',
     query: {
       recordId: row.recordId,
-      isView: true
+      isView: true,
+      tabCode: 'P_A_CONSULTATION_REPORT'
     }
   })
 }

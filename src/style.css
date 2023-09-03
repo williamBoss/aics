@@ -12,6 +12,16 @@
     --el-button-active-border-color: rgb(62, 62, 165) !important;
 }
 
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+    --el-checkbox-disabled-checked-input-fill: #4949c9 !important;
+    --el-checkbox-disabled-checked-input-border-color: #4949c9 !important;
+}
+
+.el-radio__input.is-disabled.is-checked .el-radio__inner {
+    --el-disabled-bg-color: #4949c9 !important;
+    --el-disabled-border-color: #4949c9 !important;
+}
+
 html,
 body,
 #app {

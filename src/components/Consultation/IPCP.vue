@@ -93,8 +93,7 @@ const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
 
 const initFieldModel = () => {
-  const element = formModel.value[props.field.options.name]
-  ipcp.tableData = (typeof element === 'string' && JSON.parse(element)) || []
+  ipcp.tableData = formModel.value[props.field.options.name] || []
 }
 initFieldModel()
 

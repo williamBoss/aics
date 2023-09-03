@@ -89,6 +89,7 @@
 import { defineComponent, inject, reactive, watch } from 'vue'
 import { LabTestsList } from '@components/Consultation/config/Config.js'
 import { commonProps } from '@components/FormRender/FormWidget/common.js'
+import { cloneDeep } from 'lodash'
 
 defineComponent({
   name: 'LabTests'
@@ -98,13 +99,12 @@ const props = defineProps({
   ...commonProps
 })
 
-const labTest = reactive(LabTestsList)
+const labTest = reactive([...cloneDeep(LabTestsList)])
 const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
 
 const initFieldModel = () => {
-  const element = formModel.value[props.field.options.name]
-  const formData = (typeof element === 'string' && JSON.parse(element)) || {}
+  const formData = formModel.value[props.field.options.name] || {}
   labTest.forEach((item) => {
     Object.keys(formData).forEach((key) => {
       const data = item.tableData.find((d) => d.key === key)

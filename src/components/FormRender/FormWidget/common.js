@@ -72,10 +72,6 @@ export const useInitField = (props, oldFieldValue, fieldModel) => {
       fieldModel.value = props.field.options.defaultValue
     } else if (formModel.value[props.field.options.name] === undefined) {
       formModel.value[props.field.options.name] = null
-    } else if (props.field.type === 'checkbox') {
-      const formModelValue = formModel.value[props.field.options.name]
-      fieldModel.value = (typeof formModelValue === 'string' && JSON.parse(formModelValue)) || []
-      fieldModel.value = fieldModel.value.map((value) => value.trim())
     } else {
       fieldModel.value = formModel.value[props.field.options.name]
     }

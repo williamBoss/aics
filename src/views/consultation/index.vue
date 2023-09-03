@@ -165,7 +165,7 @@
                 >继续会诊
               </el-button>
             </template>
-            <template v-if="scope.row.isFollow === 1">
+            <template v-if="scope.row.status === 1 && scope.row.isFollow === 1">
               <el-divider direction="vertical" />
               <el-button
                 type="primary"
@@ -339,8 +339,7 @@ const handleContinue = (row) => {
   router.push({
     name: 'consultationForm',
     query: {
-      recordId: row.recordId,
-      isTrackMedicalRecords: true
+      recordId: row.recordId
     }
   })
 }
@@ -349,7 +348,9 @@ const handleTrackMedicalRecords = (row) => {
   router.push({
     name: 'consultationForm',
     query: {
-      recordId: row.recordId
+      recordId: row.recordId,
+      isTrackMedicalRecords: true,
+      tabCode: 'P_A_CONSULTATION_APPRAISE'
     }
   })
 }

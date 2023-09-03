@@ -22,7 +22,10 @@
         </template>
         <template #default>
           <template v-if="activeTab === 'P_A_CONSULTATION_REPORT'">
-            <component :is="ConsultationReport" />
+            <component
+              :is="ConsultationReport"
+              :record-id="recordId"
+            />
           </template>
           <template v-else>
             <form-render
@@ -35,7 +38,7 @@
             />
           </template>
           <div class="flx flx-right">
-            <template v-if="props.isView || activeTab.value === 'P_A_CONSULTATION_REPORT'">
+            <template v-if="isView || activeTab.value === 'P_A_CONSULTATION_REPORT'">
               <el-button
                 type="primary"
                 text
@@ -53,6 +56,7 @@
                 >取消
               </el-button>
               <el-button
+                v-if="!isTrackMedicalRecords"
                 color="#626aef"
                 plain
                 @click="saveDraft"
@@ -71,7 +75,7 @@
                 >下一步
               </el-button>
               <el-button
-                v-else-if="isTrackMedicalRecords || index === tabs.length"
+                v-if="isTrackMedicalRecords || index === tabs.length - 1"
                 type="primary"
                 @click="finish"
                 >完成
@@ -107,10 +111,17 @@ const props = defineProps({
     type: Boolean,
     required: false,
     default: false
+  },
+  tabCode: {
+    type: String,
+    required: false,
+    default: ''
   }
 })
 
 const loading = ref(false)
+const isView = ref(Boolean(props.isView))
+const isTrackMedicalRecords = ref(Boolean(props.isTrackMedicalRecords))
 const tabs = ref([])
 const activeTab = ref('base')
 const formRef = ref()
@@ -137,7 +148,11 @@ const getQuestionnaireTab = () => {
         return item
       })
       tabs.value = data
-      activeTab.value = tabCode
+      if (props.tabCode) {
+        activeTab.value = props.tabCode
+      } else {
+        activeTab.value = tabCode
+      }
       loading.value = false
     })
 }
@@ -199,7 +214,7 @@ const next = () => {
 }
 
 const finish = () => {
-  saveAnswer(props.isTrackMedicalRecords ? 2 : 1)
+  saveAnswer(isTrackMedicalRecords.value ? 2 : 1)
 }
 
 const saveDraft = () => {
@@ -212,7 +227,7 @@ const saveAnswer = (isFinished) => {
     return
   }
   const saveData = {}
-  Object.assign(answer.value, ...formRef.value.map((v) => v.getFormData(false)))
+  Object.assign(answer.value, formData.value, ...formRef.value.map((v) => v.getFormData(false)))
   Object.assign(saveData, {
     answerMap: answer.value,
     isFinished,

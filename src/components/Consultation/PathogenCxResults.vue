@@ -61,6 +61,7 @@
 import { defineComponent, inject, reactive, ref, watch } from 'vue'
 import { PathogenCxResultList } from '@components/Consultation/config/Config.js'
 import { commonProps } from '@components/FormRender/FormWidget/common.js'
+import { cloneDeep } from 'lodash'
 
 defineComponent({
   name: 'PathogenCxResults'
@@ -72,14 +73,13 @@ const props = defineProps({
 
 const pathogen = ref([])
 const pathogenCxResults = ref([])
-const pathogenCxResultList = reactive(PathogenCxResultList)
+const pathogenCxResultList = reactive([...cloneDeep(PathogenCxResultList)])
 const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
 const answer = ref(inject('answer'))
 
 const initFieldModel = () => {
-  const element = formModel.value[props.field.options.name]
-  const formData = (typeof element === 'string' && JSON.parse(element)) || []
+  const formData = formModel.value[props.field.options.name] || []
   const options = pathogenCxResultList
     .map(({ tableData }) => ({
       pathogenValues: tableData.map(({ pathogenOptions }) => {

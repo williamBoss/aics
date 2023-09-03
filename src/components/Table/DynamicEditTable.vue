@@ -118,7 +118,7 @@
             v-show="!scope.row.editable"
             size="small"
             style="margin-left: 12px"
-            @click="scope.row.editable = true"
+            @click="handleEdit(scope.row)"
             >编辑
           </el-button>
           <el-button
@@ -222,9 +222,13 @@ const loading = ref(false)
 
 const emits = defineEmits(['submit', 'handleDelete'])
 
+const handleEdit = (row) => {
+  row.editable = true
+  Object.assign(row, { operationType: 'edit' })
+}
 const handleCancel = (row, index) => {
   row.editable = false
-  if (!row?.pharmacistKey) {
+  if (row.operationType === 'add') {
     tableData.value.splice(index, 1)
   }
 }
@@ -236,11 +240,11 @@ const handleDelete = (row, index) => {
 }
 const prepend = (index) => {
   rowItem.value.editable = true
-  tableData.value.splice(index, 0, { ...rowItem.value })
+  tableData.value.splice(index, 0, { ...rowItem.value, operationType: 'add' })
 }
 const append = (index) => {
   rowItem.value.editable = true
-  tableData.value.splice(index + 1, 0, { ...rowItem.value })
+  tableData.value.splice(index + 1, 0, { ...rowItem.value, operationType: 'add' })
 }
 
 defineExpose({

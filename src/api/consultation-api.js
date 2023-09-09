@@ -170,6 +170,12 @@ export class ConsultationService {
     list: (query) => Request.get(`${apiPrefix}/userRecord/page`, query),
 
     /**
+     * 查询会诊系统问卷类型
+     * @return {Promise<*>}
+     */
+    getConsultationQuestionInfo: () => Request.get(`${apiPrefix}/questionnaire/getConsultationQuestionInfo`),
+
+    /**
      * 获取患者会诊详情
      * @param {string|number} recordId
      * @return {Promise<*>}

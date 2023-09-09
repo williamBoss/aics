@@ -92,7 +92,7 @@ import { onMounted, ref } from 'vue'
 import FormRender from '@components/FormRender/FormRender.vue'
 import { ConsultationService, QuestionnaireService } from '@api/consultation-api.js'
 import router from '@/router/index.js'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox, ElOption, ElSelect } from 'element-plus'
 import ConsultationReport from '@/views/consultation/report.vue'
 
 const props = defineProps({
@@ -127,18 +127,50 @@ const formRef = ref()
 const formData = ref({})
 const physicianInfo = ref({})
 const patientInfo = ref({})
-const questionnaireCode = ref('PHYSICIAN_APOTHECARY')
+const questionnaireCode = ref('')
 const recordId = ref(props.recordId)
+const questionTypeOptions = ref([])
 const answer = ref({})
 
 provide('physicianInfo', ref(physicianInfo))
 provide('patientInfo', ref(patientInfo))
 provide('answer', ref(answer.value))
 
+const chooseQuestionnaireType = async () => {
+  await ConsultationService.consultation.getConsultationQuestionInfo().then((res) => {
+    questionTypeOptions.value = res.data
+  })
+  ElMessageBox.confirm('会诊类型', '会诊类型', {
+    message: () =>
+      h(
+        ElSelect,
+        {
+          modelValue: questionnaireCode.value,
+          'onUpdate:modelValue': (val) => {
+            questionnaireCode.value = val
+          },
+          placeholder: '请选择'
+        },
+        () =>
+          questionTypeOptions.value?.map((item) => {
+            return h(ElOption, { label: item.name, value: item.code })
+          })
+      ),
+    closeOnClickModal: false,
+    beforeClose: (action, instance, done) => {
+      instance.confirmButtonLoading = true
+      questionnaireCode.value === '' ? ElMessage.warning('请选择会诊类型') : done()
+      instance.confirmButtonLoading = false
+    }
+  })
+    .then(() => getQuestionnaireTab())
+    .catch(() => backToConsultation())
+}
+
 const getQuestionnaireTab = () => {
   loading.value = true
   QuestionnaireService.questionnaire
-    .getTabInfo({ code: 'PHYSICIAN_APOTHECARY', recordId: recordId.value || '' })
+    .getTabInfo({ code: questionnaireCode.value, recordId: recordId.value || '' })
     .then((res) => {
       const { data } = res
       const [{ tabCode, templateList }] = data
@@ -152,8 +184,8 @@ const getQuestionnaireTab = () => {
       } else {
         activeTab.value = tabCode
       }
-      loading.value = false
     })
+    .finally(() => (loading.value = false))
 }
 
 const getAnswer = () => {
@@ -241,6 +273,7 @@ const saveAnswer = (isFinished) => {
   }
   if (!physicianInfo.value.pharmacistKey) {
     ElMessage.warning('请选择药师/医师信息')
+    loading.value = false
     return
   }
   console.log(saveData)
@@ -253,7 +286,7 @@ const saveAnswer = (isFinished) => {
 
 onMounted(async () => {
   await getAnswer()
-  await getQuestionnaireTab()
+  await chooseQuestionnaireType()
 })
 </script>
 

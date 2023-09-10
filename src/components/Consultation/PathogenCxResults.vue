@@ -5,13 +5,14 @@
     border
     :header-row-class-name="'table-header'"
     header-cell-class-name="table-header-cell"
+    :span-method="spanMethod"
   >
     <el-table-column
       v-for="(item, index) in pathogenCxResultList[0].tableHeader"
       :key="item.prop"
       :prop="item.prop"
       :label="item.label"
-      :width="index === 0 ? 120 : 'auto'"
+      :width="item.width || 'auto'"
     >
       <template #default="scope">
         <div
@@ -59,7 +60,7 @@
 
 <script setup>
 import { defineComponent, inject, reactive, ref, watch } from 'vue'
-import { PathogenCxResultList } from '@components/Consultation/config/Config.js'
+import { PathogenCxResultList } from '@components/Consultation/config/config.js'
 import { commonProps } from '@components/FormRender/FormWidget/common.js'
 import { cloneDeep } from 'lodash'
 
@@ -77,6 +78,12 @@ const pathogenCxResultList = reactive([...cloneDeep(PathogenCxResultList)])
 const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
 const answer = ref(inject('answer'))
+
+const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
+  if (columnIndex === 0) {
+    return row.spanArray
+  }
+}
 
 const initFieldModel = () => {
   const formData = formModel.value[props.field.options.name] || []

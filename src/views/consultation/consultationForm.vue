@@ -158,6 +158,10 @@ const chooseQuestionnaireType = async () => {
       ),
     closeOnClickModal: false,
     beforeClose: (action, instance, done) => {
+      if (action === 'cancel') {
+        done()
+        return
+      }
       instance.confirmButtonLoading = true
       questionnaireCode.value === '' ? ElMessage.warning('请选择会诊类型') : done()
       instance.confirmButtonLoading = false

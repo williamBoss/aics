@@ -87,7 +87,7 @@
 
 <script setup>
 import { defineComponent, inject, reactive, watch } from 'vue'
-import { LabTestsList } from '@components/Consultation/config/Config.js'
+import { LabTestsList } from '@components/Consultation/config/config.js'
 import { commonProps } from '@components/FormRender/FormWidget/common.js'
 import { cloneDeep } from 'lodash'
 

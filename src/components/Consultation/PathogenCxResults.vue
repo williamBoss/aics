@@ -19,22 +19,7 @@
           v-show="item.isEdit || scope.row.isEdit"
           class="flx-align-center"
         >
-          <el-checkbox-group
-            v-if="item.prop === 'pathogen'"
-            v-model="pathogen"
-          >
-            <el-checkbox
-              v-for="(option, index) in scope.row[`${item.prop}Options`]"
-              :key="index"
-              :label="option.value"
-            >
-              {{ option.label }}
-            </el-checkbox>
-          </el-checkbox-group>
-          <el-checkbox-group
-            v-else
-            v-model="pathogenCxResults"
-          >
+          <el-checkbox-group v-model="scope.row[`${item.prop}`]">
             <el-checkbox
               v-for="(option, index) in scope.row[`${item.prop}Options`]"
               :key="index"
@@ -72,8 +57,6 @@ const props = defineProps({
   ...commonProps
 })
 
-const pathogen = ref([])
-const pathogenCxResults = ref([])
 const pathogenCxResultList = reactive([...cloneDeep(PathogenCxResultList)])
 const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
@@ -86,36 +69,44 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 }
 
 const initFieldModel = () => {
+  const tableData = pathogenCxResultList[0].tableData
   const formData = formModel.value[props.field.options.name] || []
-  const options = pathogenCxResultList
-    .map(({ tableData }) => ({
-      pathogenValues: tableData.map(({ pathogenOptions }) => {
-        return {
-          pathogen: pathogenOptions.map(({ value }) => value)
-        }
-      })
-    }))
-    .flatMap((item) => item.pathogenValues)
-    .map((item) => item.pathogen)
-    .flat()
-  pathogen.value = formData.filter((data) => options.includes(data))
-  pathogenCxResults.value = formData.filter((data) => !options.includes(data))
+  formData.forEach((item, index) => {
+    tableData[index] && Object.assign(tableData[index], item)
+  })
 }
 initFieldModel()
 
 watch(
-  pathogen,
-  () => {
-    Object.assign(answer.value, { [props.field.pathogenId]: [...pathogen.value] })
+  () => pathogenCxResultList[0].tableData.map((item) => item.pathogen),
+  (newValue) => {
+    Object.assign(answer.value, { [props.field.pathogenId]: [...new Set(newValue.flat())] })
   },
   { deep: true }
 )
 
 watch(
-  [pathogenCxResults, pathogen],
-  () => {
+  pathogenCxResultList[0].tableData,
+  (newValue) => {
     const formData = {
-      [props.field.options.name]: [...pathogenCxResults.value, ...pathogen.value]
+      [props.field.options.name]: [
+        ...newValue.map(
+          ({ pathogen, classificationBacteria, specificStrains, pathogenOptions, classificationBacteriaOptions }) => {
+            specificStrains.length &&
+              !pathogen.length &&
+              pathogen.push(pathogenOptions[0].value) &&
+              !classificationBacteria.length &&
+              classificationBacteriaOptions?.length &&
+              classificationBacteria.push(classificationBacteriaOptions[0].value)
+
+            return {
+              pathogen,
+              classificationBacteria,
+              specificStrains
+            }
+          }
+        )
+      ]
     }
     setFormData(formData)
   },

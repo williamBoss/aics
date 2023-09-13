@@ -67,6 +67,41 @@ const LabTestsList = [
   }
 ]
 
+const PathogenOptions = [
+  {
+    label: '细菌',
+    value: '细菌'
+  },
+  {
+    label: '真菌',
+    value: '真菌'
+  },
+  {
+    label: '病毒',
+    value: '病毒'
+  },
+  {
+    label: '寄生虫类型',
+    value: '寄生虫类型'
+  },
+  {
+    label: '立克次体',
+    value: '立克次体'
+  },
+  {
+    label: '衣原体',
+    value: '衣原体'
+  },
+  {
+    label: '支原体',
+    value: '支原体'
+  },
+  {
+    label: '其他病原体',
+    value: '其他病原体'
+  }
+]
+
 const PathogenCxResultList = [
   {
     tableHeader: [
@@ -76,6 +111,9 @@ const PathogenCxResultList = [
     ],
     tableData: [
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '细菌', label: '细菌' }],
         classificationBacteriaOptions: [{ value: '革兰阳性菌', label: '革兰阳性菌' }],
         specificStrainsOptions: [
@@ -88,6 +126,9 @@ const PathogenCxResultList = [
         spanArray: [3, 1]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '细菌', label: '细菌' }],
         classificationBacteriaOptions: [{ value: '革兰阴性菌', label: '革兰阴性菌' }],
         specificStrainsOptions: [
@@ -103,6 +144,9 @@ const PathogenCxResultList = [
         spanArray: [0, 0]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '细菌', label: '细菌' }],
         classificationBacteriaOptions: [{ value: '厌氧菌', label: '厌氧菌' }],
         specificStrainsOptions: [
@@ -112,6 +156,9 @@ const PathogenCxResultList = [
         spanArray: [0, 0]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '真菌', label: '真菌' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -125,6 +172,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '病毒', label: '病毒' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -140,6 +190,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '寄生虫类型', label: '寄生虫类型' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -155,6 +208,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '立克次体', label: '立克次体' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -165,6 +221,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '衣原体', label: '衣原体' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -173,6 +232,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '支原体', label: '支原体' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: [
@@ -181,6 +243,9 @@ const PathogenCxResultList = [
         ]
       },
       {
+        pathogen: [],
+        classificationBacteria: [],
+        specificStrains: [],
         pathogenOptions: [{ value: '其他病原体', label: '其他病原体' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: []
@@ -189,4 +254,4 @@ const PathogenCxResultList = [
   }
 ]
 
-export { LabTestsList, PathogenCxResultList }
+export { LabTestsList, PathogenOptions, PathogenCxResultList }

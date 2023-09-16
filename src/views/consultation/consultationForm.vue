@@ -55,7 +55,6 @@
                 >取消
               </el-button>
               <el-button
-                v-if="!isTrackMedicalRecords"
                 color="#626aef"
                 plain
                 @click="saveDraft"
@@ -74,7 +73,7 @@
                 >下一步
               </el-button>
               <el-button
-                v-if="isTrackMedicalRecords || index === tabs.length - 1"
+                v-if="index === tabs.length - 1"
                 type="primary"
                 @click="finish"
                 >完成
@@ -106,12 +105,12 @@ const props = defineProps({
     required: false,
     default: false
   },
-  isTrackMedicalRecords: {
-    type: Boolean || String,
-    required: false,
-    default: false
-  },
   tabCode: {
+    type: String,
+    required: false,
+    default: ''
+  },
+  questionnaireCode: {
     type: String,
     required: false,
     default: ''
@@ -120,14 +119,13 @@ const props = defineProps({
 
 const loading = ref(false)
 const isView = ref(Boolean(props.isView))
-const isTrackMedicalRecords = ref(Boolean(props.isTrackMedicalRecords))
 const tabs = ref([])
 const activeTab = ref('')
 const formRef = ref()
 const formData = ref({})
 const physicianInfo = ref({})
 const patientInfo = ref({})
-const questionnaireCode = ref('')
+const currentQuestionnaireCode = ref('')
 const recordId = ref(props.recordId)
 const questionTypeOptions = ref([])
 const answer = ref({})
@@ -145,9 +143,9 @@ const chooseQuestionnaireType = async () => {
       h(
         ElSelect,
         {
-          modelValue: questionnaireCode.value,
+          modelValue: currentQuestionnaireCode.value,
           'onUpdate:modelValue': (val) => {
-            questionnaireCode.value = val
+            currentQuestionnaireCode.value = val
           },
           placeholder: '请选择'
         },
@@ -163,7 +161,7 @@ const chooseQuestionnaireType = async () => {
         return
       }
       instance.confirmButtonLoading = true
-      questionnaireCode.value === '' ? ElMessage.warning('请选择会诊类型') : done()
+      currentQuestionnaireCode.value === '' ? ElMessage.warning('请选择会诊类型') : done()
       instance.confirmButtonLoading = false
     }
   })
@@ -174,7 +172,7 @@ const chooseQuestionnaireType = async () => {
 const getQuestionnaireTab = () => {
   loading.value = true
   QuestionnaireService.questionnaire
-    .getTabInfo({ code: questionnaireCode.value, recordId: recordId.value || '' })
+    .getTabInfo({ code: currentQuestionnaireCode.value, recordId: recordId.value || '' })
     .then((res) => {
       const { data } = res
       const [{ tabCode, templateList }] = data
@@ -248,7 +246,7 @@ const next = () => {
 }
 
 const finish = () => {
-  saveAnswer(isTrackMedicalRecords.value ? 2 : 1)
+  saveAnswer(2)
 }
 
 const saveDraft = () => {
@@ -268,7 +266,7 @@ const saveAnswer = (isFinished) => {
     isFinished,
     patientInfo: patientInfo.value,
     pharmacistKey: physicianInfo.value.pharmacistKey,
-    questionnaireCode: questionnaireCode.value
+    questionnaireCode: currentQuestionnaireCode.value
   })
   if (recordId.value) {
     Object.assign(saveData, {
@@ -290,7 +288,12 @@ const saveAnswer = (isFinished) => {
 
 onMounted(async () => {
   await getAnswer()
-  await chooseQuestionnaireType()
+  if (props.questionnaireCode) {
+    currentQuestionnaireCode.value = props.questionnaireCode
+    await getQuestionnaireTab()
+  } else {
+    await chooseQuestionnaireType()
+  }
 })
 </script>
 

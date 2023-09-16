@@ -122,8 +122,7 @@ const PathogenCxResultList = [
           { value: '溶血性葡萄球菌', label: '溶血性葡萄球菌' },
           { value: '屎肠球菌', label: '屎肠球菌' },
           { value: '粪肠球菌', label: '粪肠球菌' }
-        ],
-        spanArray: [3, 1]
+        ]
       },
       {
         pathogen: [],
@@ -140,8 +139,7 @@ const PathogenCxResultList = [
           { value: '阴沟肠杆菌', label: '阴沟肠杆菌' },
           { value: '嗜麦芽窄食单胞菌', label: '嗜麦芽窄食单胞菌' },
           { value: '洋葱伯克霍尔德菌', label: '洋葱伯克霍尔德菌' }
-        ],
-        spanArray: [0, 0]
+        ]
       },
       {
         pathogen: [],
@@ -152,8 +150,7 @@ const PathogenCxResultList = [
         specificStrainsOptions: [
           { value: '产气荚膜梭菌', label: '产气荚膜梭菌' },
           { value: '破伤风梭菌', label: '破伤风梭菌' }
-        ],
-        spanArray: [0, 0]
+        ]
       },
       {
         pathogen: [],
@@ -246,6 +243,7 @@ const PathogenCxResultList = [
         pathogen: [],
         classificationBacteria: [],
         specificStrains: [],
+        otherPathogen: '',
         pathogenOptions: [{ value: '其他病原体', label: '其他病原体' }],
         classificationBacteriaOptions: [],
         specificStrainsOptions: []

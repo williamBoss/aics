@@ -5,10 +5,9 @@
     border
     :header-row-class-name="'table-header'"
     header-cell-class-name="table-header-cell"
-    :span-method="spanMethod"
   >
     <el-table-column
-      v-for="(item, index) in pathogenCxResultList[0].tableHeader"
+      v-for="item in pathogenCxResultList[0].tableHeader"
       :key="item.prop"
       :prop="item.prop"
       :label="item.label"
@@ -29,6 +28,12 @@
             </el-checkbox>
           </el-checkbox-group>
         </div>
+        <el-input
+          v-if="item.prop === 'specificStrains' && !scope.row.specificStrainsOptions.length"
+          v-model="scope.row.otherPathogen"
+          placeholder="请输入"
+          clearable
+        />
         <div
           v-show="!item.isEdit && !scope.row.isEdit"
           class="flx-align-center"
@@ -62,12 +67,6 @@ const { formModel } = inject('formModel')
 const setFormData = inject('setFormData')
 const answer = ref(inject('answer'))
 
-const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
-  if (columnIndex === 0) {
-    return row.spanArray
-  }
-}
-
 const initFieldModel = () => {
   const tableData = pathogenCxResultList[0].tableData
   const formData = formModel.value[props.field.options.name] || []
@@ -91,7 +90,14 @@ watch(
     const formData = {
       [props.field.options.name]: [
         ...newValue.map(
-          ({ pathogen, classificationBacteria, specificStrains, pathogenOptions, classificationBacteriaOptions }) => {
+          ({
+            pathogen,
+            classificationBacteria,
+            specificStrains,
+            otherPathogen = '',
+            pathogenOptions,
+            classificationBacteriaOptions
+          }) => {
             specificStrains.length &&
               !pathogen.length &&
               pathogen.push(pathogenOptions[0].value) &&
@@ -99,10 +105,15 @@ watch(
               classificationBacteriaOptions?.length &&
               classificationBacteria.push(classificationBacteriaOptions[0].value)
 
+            if (otherPathogen !== '' && !pathogen.length) {
+              pathogen.push(pathogenOptions[0].value)
+            }
+
             return {
               pathogen,
               classificationBacteria,
-              specificStrains
+              specificStrains,
+              otherPathogen
             }
           }
         )

@@ -8,7 +8,21 @@
     :rules="rules"
   >
     <template #label>
-      <div :style="[labelStyle]">{{ label }}</div>
+      <div :style="[labelStyle]">
+        {{ label }}
+        <el-tooltip
+          v-if="field.options.tooltip"
+          placement="right"
+          effect="dark"
+        >
+          <template #content>
+            <div>{{ field.options.tooltipContent }}</div>
+          </template>
+          <el-icon>
+            <question-filled />
+          </el-icon>
+        </el-tooltip>
+      </div>
     </template>
     <slot></slot>
   </el-form-item>
@@ -17,6 +31,7 @@
 <script setup>
 import { computed, defineComponent } from 'vue'
 import { commonProps, useCommonComputed } from '@components/FormRender/FormWidget/common.js'
+import { QuestionFilled } from '@element-plus/icons-vue'
 
 defineComponent({
   name: 'FormItemWrapper'

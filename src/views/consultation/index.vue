@@ -165,16 +165,6 @@
                 >继续会诊
               </el-button>
             </template>
-            <template v-if="scope.row.status === 1 && scope.row.isFollow === 1">
-              <el-divider direction="vertical" />
-              <el-button
-                type="primary"
-                size="small"
-                text
-                @click="handleTrackMedicalRecords(scope.row)"
-                >跟踪病历
-              </el-button>
-            </template>
           </template>
         </dynamic-table>
       </el-card>
@@ -202,6 +192,8 @@ import DynamicTable from '@components/Table/DynamicTable.vue'
 import router from '@/router/index.js'
 import { ConsultationService } from '@api/consultation-api.js'
 import { addDateRange, resetForm } from '@/utils/util.js'
+import { PathogenOptions } from '@components/Consultation/config/config.js'
+import { cloneDeep } from 'lodash'
 
 defineComponent({
   name: 'ConsultationIndex'
@@ -256,11 +248,7 @@ const dict = reactive({
     { label: '导管相关感染', value: 12 },
     { label: '其他', value: 13 }
   ],
-  pathogenDict: [
-    { label: '细菌', value: '细菌' },
-    { label: '真菌', value: '真菌' },
-    { label: '病毒', value: '病毒' }
-  ],
+  pathogenDict: [...cloneDeep(PathogenOptions)],
   adoptDict: [
     { label: '不采纳', value: 0 },
     { label: '采纳', value: 1 }
@@ -331,7 +319,8 @@ const handleView = (row) => {
     query: {
       recordId: row.recordId,
       isView: true,
-      tabCode: 'P_A_CONSULTATION_REPORT'
+      tabCode: 'P_A_CONSULTATION_REPORT',
+      questionnaireCode: row.questionnaireCode
     }
   })
 }
@@ -340,18 +329,8 @@ const handleContinue = (row) => {
   router.push({
     name: 'consultationForm',
     query: {
-      recordId: row.recordId
-    }
-  })
-}
-
-const handleTrackMedicalRecords = (row) => {
-  router.push({
-    name: 'consultationForm',
-    query: {
       recordId: row.recordId,
-      isTrackMedicalRecords: true,
-      tabCode: 'P_A_CONSULTATION_APPRAISE'
+      questionnaireCode: row.questionnaireCode
     }
   })
 }

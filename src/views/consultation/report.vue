@@ -20,7 +20,6 @@
             {{ patientInfo.patientCode }}
           </div>
           <div class="item">感染诊断</div>
-          <div class="item">感染病原体</div>
         </el-row>
         <el-row>
           <div class="item">
@@ -29,10 +28,30 @@
             <span>{{ `${patientInfo.age}岁` }}</span>
           </div>
           <div class="item">{{ reportInfo.sitesInfection }}</div>
-          <div class="item">{{ reportInfo.pathogen }}</div>
         </el-row>
       </div>
     </div>
+    <el-card
+      class="card card-container"
+      shadow="never"
+    >
+      <template #header>
+        <div class="card-header">
+          <span class="title">感染相关信息</span>
+        </div>
+      </template>
+      <template #default>
+        <div class="sub-title margin-b-16">感染病原体</div>
+        <div class="bg">
+          <div>
+            <p
+              class="desc"
+              v-html="getPathogen()"
+            ></p>
+          </div>
+        </div>
+      </template>
+    </el-card>
     <el-card
       class="card card-container"
       shadow="never"
@@ -230,6 +249,19 @@ const getReport = () => {
       patient && (patientInfo.value = patient)
     })
     .finally(() => (loading.value = false))
+}
+
+const getPathogen = () => {
+  const pathogen = reportInfo.value.pathogen
+  if (Array.isArray(pathogen)) {
+    const pathogenArr = pathogen.map((item) => {
+      return [item.pathogen?.[0], item.classificationBacteria?.[0], item.specificStrains?.join(','), item.otherPathogen]
+        .filter((v) => v)
+        .join('-')
+    })
+    return pathogenArr.join('<br/><br/>')
+  }
+  return pathogen
 }
 
 onMounted(() => {

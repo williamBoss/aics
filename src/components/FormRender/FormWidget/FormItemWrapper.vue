@@ -11,12 +11,12 @@
       <div :style="[labelStyle]">
         {{ label }}
         <el-tooltip
-          v-if="field.options.tooltip"
+          v-if="field.options.labelTooltip"
           placement="right"
           effect="dark"
         >
           <template #content>
-            <div>{{ field.options.tooltipContent }}</div>
+            <div v-html="field.options.tooltipContent"></div>
           </template>
           <el-icon>
             <question-filled />

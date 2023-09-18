@@ -13,6 +13,7 @@
       <el-card
         v-show="isShowSearch"
         class="table-search"
+        shadow="never"
       >
         <el-form
           ref="queryFormRef"
@@ -79,7 +80,7 @@
         </el-form>
         <div>
           <el-button
-            color="#3156A3"
+            type="primary"
             :icon="Search"
             @click="handleQuery"
             >搜索
@@ -93,11 +94,14 @@
           </el-button>
         </div>
       </el-card>
-      <el-card class="table-box">
+      <el-card
+        class="table-box"
+        shadow="never"
+      >
         <div class="table-header">
           <div class="header-button-lf">
             <el-button
-              color="#3156A3"
+              type="primary"
               :icon="Plus"
               @click="handleAdd"
             >

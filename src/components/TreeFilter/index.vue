@@ -1,5 +1,8 @@
 <template>
-  <el-card class="filter">
+  <el-card
+    class="filter"
+    shadow="never"
+  >
     <h4
       v-if="title"
       class="title sle"

@@ -132,7 +132,7 @@
     <template #footer>
       <div class="dialog-footer">
         <el-button
-          color="#3156A3"
+          type="primary"
           @click="submitForm(userFormRef)"
           >确 定
         </el-button>

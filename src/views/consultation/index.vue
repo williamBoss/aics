@@ -314,13 +314,20 @@ const handleAdd = () => {
 }
 
 const handleView = (row) => {
+  const questionnaireCode = row.questionnaireCode
+  const tabCode = {
+    PHYSICIAN: 'PHYSICIAN_CONSULTATION_REPORT',
+    APOTHECARY: 'APOTHECARY_CONSULTATION_REPORT',
+    PHYSICIAN_APOTHECARY: 'P_A_CONSULTATION_REPORT'
+  }
+  const reportTabCode = tabCode[questionnaireCode] || ''
   router.push({
     name: 'consultationForm',
     query: {
       recordId: row.recordId,
       isView: true,
-      tabCode: 'P_A_CONSULTATION_REPORT',
-      questionnaireCode: row.questionnaireCode
+      tabCode: reportTabCode,
+      questionnaireCode
     }
   })
 }

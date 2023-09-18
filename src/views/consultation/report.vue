@@ -58,7 +58,7 @@
     >
       <template #header>
         <div class="card-header">
-          <span class="title">药师会诊意见</span>
+          <span class="title">{{ `${props.currentQuestionnaireCode === 'PHYSICIAN' ? '医师' : '药师'}会诊意见` }}</span>
         </div>
       </template>
       <template #default>
@@ -100,6 +100,7 @@
       </template>
     </el-card>
     <el-card
+      v-if="props.currentQuestionnaireCode === 'PHYSICIAN_APOTHECARY'"
       class="card card-container"
       shadow="never"
     >
@@ -200,6 +201,10 @@ const props = defineProps({
   recordId: {
     type: String || Number,
     required: true
+  },
+  currentQuestionnaireCode: {
+    type: String,
+    required: true
   }
 })
 
@@ -254,12 +259,19 @@ const getReport = () => {
 const getPathogen = () => {
   const pathogen = reportInfo.value.pathogen
   if (Array.isArray(pathogen)) {
-    const pathogenArr = pathogen.map((item) => {
-      return [item.pathogen?.[0], item.classificationBacteria?.[0], item.specificStrains?.join(','), item.otherPathogen]
-        .filter((v) => v)
-        .join('-')
-    })
-    return pathogenArr.join('<br/><br/>')
+    return pathogen
+      .map((item) => {
+        return [
+          item.pathogen?.[0],
+          item.classificationBacteria?.[0],
+          item.specificStrains?.join(','),
+          item.otherPathogen
+        ]
+          .filter((v) => v)
+          .join('-')
+      })
+      .filter((v) => v.trim() !== '')
+      .join('<br/><br/>')
   }
   return pathogen
 }

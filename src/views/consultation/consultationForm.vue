@@ -23,9 +23,10 @@
         <template #default>
           <component
             :is="ConsultationReport"
-            v-if="tab.tabCode === 'P_A_CONSULTATION_REPORT'"
-            key="P_A_CONSULTATION_REPORT"
+            v-if="tab.tabCode.endsWith('CONSULTATION_REPORT')"
+            :key="tab.tabCode"
             :record-id="recordId"
+            :current-questionnaire-code="currentQuestionnaireCode"
           />
           <form-render
             v-for="template in tab.templateList"
@@ -209,7 +210,7 @@ const getAnswer = () => {
 const handleChange = () => {
   loading.value = true
   const activeTabCode = activeTab.value
-  if (activeTabCode === 'P_A_CONSULTATION_REPORT') {
+  if (activeTabCode.endsWith('CONSULTATION_REPORT')) {
     loading.value = false
     return
   }

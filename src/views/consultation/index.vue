@@ -205,6 +205,7 @@ const state = reactive({
   // 表格头
   tableHeader: [
     { prop: 'consultationTime', label: '日期' },
+    { prop: 'questionnaireCode', label: '会诊类型', width: 200, convert: (item) => questionnaireCode.value[item] },
     { prop: 'patientCode', label: '患者编号' },
     { prop: 'age', label: '年龄' },
     { prop: 'gender', label: '性别', convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
@@ -259,6 +260,11 @@ const dict = reactive({
     { label: '痊愈', value: 3 },
     { label: '死亡', value: 4 }
   ]
+})
+const questionnaireCode = ref({
+  PHYSICIAN: '医生会诊',
+  APOTHECARY: '药师会诊',
+  PHYSICIAN_APOTHECARY: '医生/药师共同会诊'
 })
 
 const getConsultationList = () => {

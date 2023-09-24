@@ -237,7 +237,7 @@ const submit = (row) => {
   emits('submit', row)
 }
 const handleDelete = (row, index) => {
-  emits('handleDelete', { row, index })
+  emits('handleDelete', row, index)
 }
 const prepend = (index) => {
   rowItem.value.editable = true

@@ -434,9 +434,11 @@ const submitPharmacist = (row) => {
 }
 
 const handlePharmacistDelete = (row, index) => {
-  useConfirmHandle(HospitalService.pharmacist.del, row.pharmacistKey, `删除${row.pharmacistName}的数据项`).then(() => {
-    getPharmacistList()
-  })
+  useConfirmHandle(HospitalService.pharmacist.del, row.pharmacistKey, `删除 ${row.pharmacistName} 的数据项`).then(
+    () => {
+      getPharmacistList()
+    }
+  )
 }
 
 onMounted(() => {

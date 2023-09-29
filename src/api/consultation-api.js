@@ -187,7 +187,14 @@ export class ConsultationService {
      * @param {string|number} recordId
      * @return {Promise<*>}
      */
-    consultationReport: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationReport/${recordId}`)
+    consultationReport: (recordId) => Request.get(`${apiPrefix}/userRecord/getConsultationReport/${recordId}`),
+
+    /**
+     * 导出会诊记录
+     * @return {Promise<*>}
+     */
+    exportConsultation: () =>
+      Request.post(`${apiPrefix}/userRecord/exportConsultationReport`, {}, { responseType: 'blob' })
   }
 
   static patient = {

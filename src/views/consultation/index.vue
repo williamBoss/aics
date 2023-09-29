@@ -1,7 +1,7 @@
 <template>
   <div
     v-loading="loading"
-    element-loading-text="获取数据中"
+    :element-loading-text="loadingText"
   >
     <div class="flx margin-b-16">
       <div class="main-title">
@@ -140,6 +140,13 @@
             >
               新增
             </el-button>
+            <el-button
+              class="header-button-ri margin-r-10"
+              :icon="Download"
+              @click="handleExport"
+            >
+              导出
+            </el-button>
           </div>
         </template>
         <dynamic-table
@@ -187,7 +194,7 @@
 
 <script setup>
 import { defineComponent, onMounted, reactive, ref } from 'vue'
-import { Plus, Refresh, Search } from '@element-plus/icons-vue'
+import { Download, Plus, Refresh, Search } from '@element-plus/icons-vue'
 import DynamicTable from '@components/Table/DynamicTable.vue'
 import router from '@/router/index.js'
 import { ConsultationService } from '@api/consultation-api.js'
@@ -200,6 +207,7 @@ defineComponent({
 })
 
 const loading = ref(false)
+const loadingText = ref('获取数据中')
 const queryFormRef = ref()
 const state = reactive({
   // 表格头
@@ -268,6 +276,7 @@ const questionnaireCode = ref({
 })
 
 const getConsultationList = () => {
+  loadingText.value = '获取数据中...'
   loading.value = true
   Object.assign(state.totalParam, state.searchParam, state.pageable)
   ConsultationService.consultation.list(addDateRange(state.totalParam)).then((response) => {
@@ -317,6 +326,47 @@ const handleCurrentChange = (val) => {
 
 const handleAdd = () => {
   router.push({ name: 'consultationForm' })
+}
+
+const handleExport = () => {
+  loadingText.value = '导出数据中...'
+  loading.value = true
+  ConsultationService.consultation
+    .exportConsultation()
+    .then((data) => {
+      const now = new Date()
+      const dateTimeFormat = new Intl.DateTimeFormat('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      })
+      const fileName = '会诊记录-' + dateTimeFormat.format(now).replaceAll(/[\/:]/g, '') + '.xlsx'
+      // 如果支持微软的文件下载方式(ie10+浏览器)
+      if (window.navigator.msSaveBlob) {
+        try {
+          const blobObject = new Blob([data])
+          window.navigator.msSaveBlob(blobObject, fileName)
+        } catch (e) {
+          console.log(e)
+        }
+      } else {
+        // 其他浏览器
+        const url = window.URL.createObjectURL(data)
+        const link = document.createElement('a')
+        link.style.display = 'none'
+        link.href = url
+        link.setAttribute('download', fileName)
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+      }
+    })
+    .finally(() => (loading.value = false))
 }
 
 const handleView = (row) => {

@@ -93,8 +93,8 @@
     </div>
     <div class="footer">
       <el-pagination
-        :current-page="state.pageable.pageNum"
-        :page-size="state.pageable.pageSize"
+        :current-page="state.pageable.current"
+        :page-size="state.pageable.size"
         :page-sizes="[10, 25, 50, 100]"
         background
         layout="->, total, sizes, prev, pager, next"
@@ -137,9 +137,9 @@ const state = reactive({
   // 分页数据
   pageable: {
     // 当前页数
-    pageNum: 1,
+    current: 1,
     // 每页显示条数
-    pageSize: 10,
+    size: 10,
     // 总条数
     total: 0
   },
@@ -153,7 +153,7 @@ const title = ref('')
 
 /** 搜索按钮操作 */
 const handleQuery = () => {
-  state.pageable.pageNum = 1
+  state.pageable.current = 1
   getList()
 }
 
@@ -175,8 +175,8 @@ const getList = () => {
  * @return {void}
  * */
 const handleSizeChange = (val) => {
-  state.pageable.pageNum = 1
-  state.pageable.pageSize = val
+  state.pageable.current = 1
+  state.pageable.size = val
   getList()
 }
 
@@ -186,7 +186,7 @@ const handleSizeChange = (val) => {
  * @return {void}
  * */
 const handleCurrentChange = (val) => {
-  state.pageable.pageNum = val
+  state.pageable.current = val
   getList()
 }
 

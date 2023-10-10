@@ -197,14 +197,16 @@ const getAnswer = () => {
     loading.value = false
     return
   }
-  ConsultationService.consultation.consultationDetail(recordId.value).then((res) => {
-    const { data } = res
-    const { answerMap, patientInfo: patientInfoVo, pharmacistVo } = data
-    formData.value = answerMap
-    patientInfo.value = patientInfoVo
-    physicianInfo.value = pharmacistVo
-    loading.value = false
-  })
+  return ConsultationService.consultation
+    .consultationDetail(recordId.value)
+    .then((res) => {
+      const { data } = res
+      const { answerMap, patientInfo: patientInfoVo, pharmacistVo } = data
+      formData.value = answerMap
+      patientInfo.value = patientInfoVo
+      physicianInfo.value = pharmacistVo
+    })
+    .finally(() => (loading.value = false))
 }
 
 const handleChange = () => {
@@ -287,14 +289,15 @@ const saveAnswer = (isFinished) => {
   })
 }
 
-onMounted(async () => {
-  await getAnswer()
-  if (props.questionnaireCode) {
-    currentQuestionnaireCode.value = props.questionnaireCode
-    await getQuestionnaireTab()
-  } else {
-    await chooseQuestionnaireType()
-  }
+onMounted(() => {
+  getAnswer().then(() => {
+    if (props.questionnaireCode) {
+      currentQuestionnaireCode.value = props.questionnaireCode
+      getQuestionnaireTab()
+    } else {
+      chooseQuestionnaireType()
+    }
+  })
 })
 </script>
 

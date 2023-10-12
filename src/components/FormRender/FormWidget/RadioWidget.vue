@@ -17,6 +17,7 @@
           :key="index"
           :label="item.value"
           :disabled="item.disabled"
+          @click.prevent="radioChange(item.value)"
         >
           {{ item.label }}
         </el-radio-button>
@@ -32,6 +33,7 @@
             }"
             :label="item.value"
             :disabled="item.disabled"
+            @click.prevent="radioChange(item.value)"
           >
             {{ item.label }}
           </el-radio>
@@ -69,6 +71,10 @@ const { widgetSize, customClass } = useCommonComputed(props)
 const { handleChangeEvent } = useEventFunction(instance, props, oldFieldValue)
 const { initFieldModel } = useInitField(props, oldFieldValue, fieldModel)
 initFieldModel?.()
+
+const radioChange = (e) => {
+  e === fieldModel.value ? (fieldModel.value = '') : (fieldModel.value = e)
+}
 </script>
 
 <style scoped>

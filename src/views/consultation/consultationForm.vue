@@ -289,15 +289,14 @@ const saveAnswer = (isFinished) => {
   })
 }
 
-onMounted(() => {
-  getAnswer().then(() => {
-    if (props.questionnaireCode) {
-      currentQuestionnaireCode.value = props.questionnaireCode
-      getQuestionnaireTab()
-    } else {
-      chooseQuestionnaireType()
-    }
-  })
+onMounted(async () => {
+  await getAnswer()
+  if (props.questionnaireCode) {
+    currentQuestionnaireCode.value = props.questionnaireCode
+    getQuestionnaireTab()
+  } else {
+    await chooseQuestionnaireType()
+  }
 })
 </script>
 

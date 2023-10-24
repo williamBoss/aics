@@ -112,7 +112,10 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="医院">
+          <el-form-item
+            label="医院"
+            prop="roleIds"
+          >
             <el-select
               v-model="userForm.roleIds"
               placeholder="请选择"
@@ -174,6 +177,7 @@ const rules = reactive({
   userName: [{ required: true, message: '用户名称不能为空', trigger: 'blur' }],
   nickName: [{ required: true, message: '用户昵称不能为空', trigger: 'blur' }],
   password: [{ required: true, message: '用户密码不能为空', trigger: 'blur' }],
+  roleIds: [{ required: true, message: '医院不能为空', trigger: 'blur' }],
   email: [
     {
       type: 'email',

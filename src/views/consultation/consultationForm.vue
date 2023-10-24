@@ -58,8 +58,14 @@
               <el-button
                 color="#626aef"
                 plain
-                @click="saveDraft"
-                >存草稿
+                @click="saveDraft(false)"
+                >保存草稿
+              </el-button>
+              <el-button
+                color="#626aef"
+                plain
+                @click="saveDraft(true)"
+                >保存草稿并退出
               </el-button>
               <el-button
                 v-if="index !== 0"
@@ -252,11 +258,11 @@ const finish = () => {
   saveAnswer(2)
 }
 
-const saveDraft = () => {
-  saveAnswer(0)
+const saveDraft = (isExit) => {
+  saveAnswer(0, isExit)
 }
 
-const saveAnswer = (isFinished) => {
+const saveAnswer = (isFinished, isExit = true) => {
   if (activeTab.value === '') {
     router.replace('/consultation/index')
     return
@@ -282,11 +288,17 @@ const saveAnswer = (isFinished) => {
     return
   }
   console.log(saveData)
-  QuestionnaireService.questionnaire.saveAnswer(saveData).then((res) => {
-    loading.value = false
-    ElMessage.success('成功')
-    router.replace('/consultation/index')
-  })
+  QuestionnaireService.questionnaire
+    .saveAnswer(saveData)
+    .then((res) => {
+      ElMessage.success('成功')
+    })
+    .finally(() => {
+      loading.value = false
+      if (isExit) {
+        router.replace('/consultation/index')
+      }
+    })
 }
 
 onMounted(async () => {

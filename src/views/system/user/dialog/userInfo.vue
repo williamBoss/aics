@@ -204,12 +204,8 @@ const acceptParams = (data) => {
       delete userForm.value.deptId
     }
   }
-  if (data.postIds && data.postIds.length > 0) {
-    userForm.value.postIds = String(data.postIds[0])
-  }
-  if (data.roleIds && data.roleIds.length > 0) {
-    userForm.value.roleIds = String(data.roleIds[0])
-  }
+  userForm.value.postIds = data.postIds && data.postIds.length > 0 ? String(data.postIds[0]) : ''
+  userForm.value.roleIds = data.roleIds && data.roleIds.length > 0 ? String(data.roleIds[0]) : ''
   open.value = true
 }
 
@@ -218,12 +214,8 @@ const submitForm = async (formEl) => {
   await formEl.validate((valid, fields) => {
     if (valid) {
       const { postIds, roleIds } = userForm.value
-      if (postIds) {
-        userForm.value.postIds = [postIds]
-      }
-      if (roleIds) {
-        userForm.value.roleIds = [roleIds]
-      }
+      userForm.value.postIds = postIds ? [postIds] : []
+      userForm.value.roleIds = roleIds ? [roleIds] : []
       if (userForm.value.userId) {
         UserService.user
           .updateUser(userForm.value)

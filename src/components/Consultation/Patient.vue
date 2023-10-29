@@ -35,9 +35,9 @@
         prop="age"
       >
         <el-input
-          v-model.number="patientInfo.age"
+          v-model="patientInfo.age"
           placeholder="请输入"
-          oninput="value=value.replace(/[^0-9]/g,'')"
+          oninput="value=value.replace(/[^\d.]/g, '').replace(/\.{2,}/g, '.').replace('.', '$#$').replace(/\./g, '').replace('$#$', '.').replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3').replace(/^\./g, '')"
         >
           <template #suffix>
             <span class="input-suffix">岁</span>
@@ -51,8 +51,9 @@
         prop="height"
       >
         <el-input
-          v-model.number="patientInfo.height"
+          v-model="patientInfo.height"
           placeholder="请输入"
+          oninput="value=value.replace(/[^\d.]/g, '').replace(/\.{2,}/g, '.').replace('.', '$#$').replace(/\./g, '').replace('$#$', '.').replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3').replace(/^\./g, '')"
           @change="calcBMI"
         >
           <template #suffix>
@@ -67,8 +68,9 @@
         prop="weight"
       >
         <el-input
-          v-model.number="patientInfo.weight"
+          v-model="patientInfo.weight"
           placeholder="请输入"
+          oninput="value=value.replace(/[^\d.]/g, '').replace(/\.{2,}/g, '.').replace('.', '$#$').replace(/\./g, '').replace('$#$', '.').replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3').replace(/^\./g, '')"
           @change="calcBMI"
         >
           <template #suffix>

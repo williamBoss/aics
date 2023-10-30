@@ -292,6 +292,8 @@ const saveAnswer = (isFinished, isExit = true) => {
     .saveAnswer(saveData)
     .then((res) => {
       ElMessage.success('成功')
+      const { data } = res
+      recordId.value = data
     })
     .finally(() => {
       loading.value = false

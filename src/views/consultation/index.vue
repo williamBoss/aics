@@ -147,6 +147,33 @@
             >
               导出
             </el-button>
+            <div class="header-button-ri">
+              <div
+                class="order-wrap"
+                style="line-height: 32px"
+                @click="changeOrder"
+              >
+                <span class="text">{{ reverse ? '正序' : '倒序' }}</span>
+                <span class="triangle">
+                  <i
+                    class="sort-caret ascending"
+                    :class="{ topActive: !reverse }"
+                  />
+                  <i
+                    class="sort-caret descending"
+                    :class="{ bottomActive: reverse }"
+                  />
+                </span>
+              </div>
+            </div>
+            <span>列表排序</span>
+            <el-radio-group
+              v-model="orderBy"
+              class="header-button-ri margin-r-10"
+            >
+              <el-radio :label="1">会诊日期</el-radio>
+              <el-radio :label="2">创建时间</el-radio>
+            </el-radio-group>
           </div>
         </template>
         <dynamic-table
@@ -208,6 +235,8 @@ defineComponent({
 
 const loading = ref(false)
 const loadingText = ref('获取数据中')
+const reverse = ref(true)
+const orderBy = ref(2)
 const queryFormRef = ref()
 const state = reactive({
   // 表格头
@@ -324,6 +353,15 @@ const handleCurrentChange = (val) => {
   getConsultationList()
 }
 
+/**
+ * 排序规则改变
+ */
+const changeOrder = () => {
+  state.pageable.current = 1
+  reverse.value = !reverse.value
+  getConsultationList()
+}
+
 const handleAdd = () => {
   router.push({ name: 'consultationForm' })
 }
@@ -403,4 +441,54 @@ onMounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.order-wrap {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.order-wrap .text {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3c456c;
+}
+
+.order-wrap .triangle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  height: 14px;
+  width: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: initial;
+  position: relative;
+}
+
+.order-wrap .triangle .sort-caret {
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  position: absolute;
+  left: 7px;
+}
+
+.order-wrap .triangle .sort-caret.ascending {
+  border-bottom-color: #a8abb2;
+  top: -5px;
+}
+
+.order-wrap .triangle .sort-caret.descending {
+  border-top-color: #a8abb2;
+  bottom: -3px;
+}
+
+.order-wrap .triangle .sort-caret.ascending.topActive {
+  border-bottom-color: #6995ff;
+}
+
+.order-wrap .triangle .sort-caret.descending.bottomActive {
+  border-top-color: #6995ff;
+}
+</style>

@@ -153,7 +153,7 @@
                 style="line-height: 32px"
                 @click="changeOrder"
               >
-                <span class="text">{{ reverse ? '正序' : '倒序' }}</span>
+                <span class="text">{{ reverse ? '倒序' : '正序' }}</span>
                 <span class="triangle">
                   <i
                     class="sort-caret ascending"
@@ -170,6 +170,7 @@
             <el-radio-group
               v-model="orderBy"
               class="header-button-ri margin-r-10"
+              @change="changeOrderBy"
             >
               <el-radio :label="1">会诊日期</el-radio>
               <el-radio :label="2">创建时间</el-radio>
@@ -359,6 +360,14 @@ const handleCurrentChange = (val) => {
 const changeOrder = () => {
   state.pageable.current = 1
   reverse.value = !reverse.value
+  getConsultationList()
+}
+
+/**
+ * 排序字段改变
+ */
+const changeOrderBy = () => {
+  state.pageable.current = 1
   getConsultationList()
 }
 

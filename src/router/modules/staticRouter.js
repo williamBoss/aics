@@ -31,7 +31,7 @@ export const staticRouter = [
           title: '首页',
           icon: 'homePage',
           iconType: 'sl',
-          hidden: false
+          hidden: true
         }
       },
       {
@@ -68,7 +68,7 @@ export const staticRouter = [
           title: '数据分析',
           icon: 'dataAnalysis',
           iconType: 'sl',
-          hidden: false
+          hidden: true
         }
       },
       {

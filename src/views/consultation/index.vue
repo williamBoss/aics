@@ -307,7 +307,7 @@ const questionnaireCode = ref({
 const getConsultationList = () => {
   loadingText.value = '获取数据中...'
   loading.value = true
-  Object.assign(state.totalParam, state.searchParam, state.pageable)
+  Object.assign(state.totalParam, state.searchParam, state.pageable, { reverse: reverse.value ? 1 : 0, orderBy })
   ConsultationService.consultation.list(addDateRange(state.totalParam)).then((response) => {
     const data = response.data
     state.tableData = data.records

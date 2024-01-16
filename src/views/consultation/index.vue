@@ -242,7 +242,7 @@ const queryFormRef = ref()
 const state = reactive({
   // 表格头
   tableHeader: [
-    { prop: 'consultationTime', label: '日期', width: 100 },
+    { prop: 'consultationTime', label: '日期', width: 120 },
     { prop: 'questionnaireCode', label: '会诊类型', width: 150, convert: (item) => questionnaireCode.value[item] },
     { prop: 'patientCode', label: '患者编号', width: 90 },
     { prop: 'age', label: '年龄', width: 70 },

@@ -242,18 +242,18 @@ const queryFormRef = ref()
 const state = reactive({
   // 表格头
   tableHeader: [
-    { prop: 'consultationTime', label: '日期' },
-    { prop: 'questionnaireCode', label: '会诊类型', width: 200, convert: (item) => questionnaireCode.value[item] },
-    { prop: 'patientCode', label: '患者编号' },
-    { prop: 'age', label: '年龄' },
-    { prop: 'gender', label: '性别', convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
-    { prop: 'sitesInfection', label: '感染部位', convert: (item) => parseArray(item) },
+    { prop: 'consultationTime', label: '日期', width: 100 },
+    { prop: 'questionnaireCode', label: '会诊类型', width: 150, convert: (item) => questionnaireCode.value[item] },
+    { prop: 'patientCode', label: '患者编号', width: 90 },
+    { prop: 'age', label: '年龄', width: 70 },
+    { prop: 'gender', label: '性别', width: 70, convert: (item) => (item === 1 ? '男' : item === 2 ? '女' : '未知') },
+    { prop: 'sitesInfection', label: '感染部位', width: 150, convert: (item) => parseArray(item) },
     { prop: 'pathogen', label: '病原体', convert: (item) => parseArray(item) },
     { prop: 'adopt', label: '采纳会诊' },
-    { prop: 'lapse', label: '转归结局' }
+    { prop: 'lapse', label: '转归结局', width: 300 }
   ],
   operationItem: {
-    width: 250
+    width: 200
   },
   // 表格数据
   tableData: [],
